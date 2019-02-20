@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Dimensions, StyleSheet, Text, TextInput, View} from "react-native";
+import {Button, Dimensions, Image, StyleSheet, Text, TextInput, View} from "react-native";
 
 const width = Dimensions.get('window').width; //full width
 const height = Dimensions.get('window').height; //full height
@@ -17,12 +17,13 @@ class Header extends React.Component {
 
 class TextField extends React.Component {
     render() {
-        const {placeholder} = this.props;
+        const {placeholder, onChangeFn} = this.props;
         return (
             <TextInput
                 style={styles.textInput}
                 placeholder={placeholder}
-                placeholderTextColor={colors.darkGrey}/>
+                placeholderTextColor={colors.darkGrey}
+                onChangeText={(text) => onChangeFn(text)}/>
         );
     }
 }
@@ -43,6 +44,23 @@ class HorizontalSeparator extends React.Component {
     render() {
         return (
             <View style={styles.horizontal}></View>
+        );
+    }
+}
+
+class PcInfo extends React.Component {
+    render() {
+        return (
+            <View style={styles.pcInfoContainer}>
+                <Image
+                    source={require("../assets/img/computer_icon.png")}
+                    style={styles.computerImage}/>
+                <Text style={styles.pcText}>
+                    <Text style={styles.pcTextBold}>PC Name {"\n"}</Text>
+                    <Text style={styles.pcTextBold}>IP:</Text> 123.456.78.910 {"\n"}
+                    <Text style={styles.pcTextBold}>Bluetooth:</Text> off {"\n"}
+                </Text>
+            </View>
         );
     }
 }
@@ -88,6 +106,26 @@ const styles = StyleSheet.create({
         height: 1,
         backgroundColor: colors.darkGrey,
         marginVertical: 30
+    },
+    pcInfoContainer: {
+        height: 200,
+        backgroundColor: colors.lightPurple,
+        width: width,
+        justifyContent: 'space-around',
+        flexDirection: 'row',
+        paddingTop: 40
+    },
+    computerImage: {
+        height: 120,
+        width: 130,
+        marginLeft: 30
+    },
+    pcText: {
+        fontSize: 18,
+        lineHeight: 40
+    },
+    pcTextBold: {
+        fontWeight: 'bold'
     }
 });
 
@@ -112,7 +150,7 @@ const commonStyles = StyleSheet.create({
         marginVertical: 30,
         width: width-30,
         lineHeight: 40
-    },
+    }
 });
 
 export {
@@ -121,5 +159,6 @@ export {
     colors,
     NavigationLink,
     HorizontalSeparator,
-    commonStyles
+    commonStyles,
+    PcInfo
 };

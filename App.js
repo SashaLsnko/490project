@@ -7,7 +7,9 @@ import RegistrationScreen from './components/Registration';
 import LoginScreen from './components/Login';
 import PairingScreen from './components/Pairing';
 import ManageDevice from './components/ManageDevice';
-import SettingsScreen from './components/Settings'
+import SettingsScreen from './components/Settings';
+import LoginInfoScreen from './components/LoginInfo';
+import DeviceSettingsScreen from "./components/DeviceSettings";
 
 const width = Dimensions.get('window').width; //full width
 const height = Dimensions.get('window').height; //full height
@@ -15,10 +17,33 @@ const height = Dimensions.get('window').height; //full height
 
 const AppNavigator = createStackNavigator(
     {
-        Home: HomeScreen,
-        Registration: RegistrationScreen,
+        Home: {
+            screen: HomeScreen,
+            navigationOptions: {
+                headerTitle: "Tab 1 Screen",
+                headerStyle: {
+                    backgroundColor: "transparent"
+                },
+                headerTitleStyle: {
+                    fontWeight: "bold",
+                    color: "#fff",
+                    zIndex: 1,
+                    fontSize: 18,
+                    lineHeight: 23
+                },
+                headerTintColor: "#fff",
+                animationEnabled: true
+            }
+        },
+        Registration: {
+            screen: RegistrationScreen,
+            navigationOptions: {
+                header: null,
+            }},
         Login: LoginScreen,
         Fake: Fake,
+        LoginInfo: LoginInfoScreen,
+        DeviceSettings: DeviceSettingsScreen,
 
         LoggedHome: LoggedHome,
         PairedHome: PairedHome,

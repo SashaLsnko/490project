@@ -1,30 +1,36 @@
 import React from "react";
 import {Button, Dimensions, StyleSheet, Text, TouchableOpacity, View, Image} from "react-native";
 import {colors, commonStyles} from "./common";
-
+import {SafeAreaView} from 'react-navigation';
 const width = Dimensions.get('window').width; //full width
 const height = Dimensions.get('window').height; //full height
 
 class HomeScreen extends React.Component {
     render() {
         return (
-            <View style={{alignItems: 'center',}}>
-                <View style={styles.logoContainer}>
-                    <Image
-                        source={require("../assets/img/logo_home.png")}
-                        style={styles.logo}/>
+            <SafeAreaView>
+                <View style={{alignItems: 'center',}}>
+                    <View style={styles.logoContainerSmall}>
+                        <Image
+                            source={require("../assets/img/logo_home.png")}
+                            style={styles.logo}/>
+                    </View>
+                    <TouchableOpacity
+                        style={commonStyles.submitButton}
+                        onPress={() => this.props.navigation.navigate('Login')}>
+                        <Text style={commonStyles.buttonText}>Login</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        style={commonStyles.submitButton}
+                        onPress={() => this.props.navigation.navigate('Registration')}>
+                        <Text style={commonStyles.buttonText}>Register</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        style={commonStyles.submitButton}>
+                        <Text style={commonStyles.buttonText}>About</Text>
+                    </TouchableOpacity>
                 </View>
-                <TouchableOpacity
-                    style={commonStyles.submitButton}
-                    onPress={() => this.props.navigation.navigate('Login')}>
-                    <Text style={commonStyles.buttonText}>Login</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    style={commonStyles.submitButton}
-                    onPress={() => this.props.navigation.navigate('Registration')}>
-                    <Text style={commonStyles.buttonText}>Register</Text>
-                </TouchableOpacity>
-            </View>
+            </SafeAreaView>
         );
     }
 }
@@ -33,7 +39,7 @@ class LoggedHome extends React.Component {
     render() {
         return (
             <View style={{alignItems: 'center'}}>
-                <View style={styles.logoContainer}>
+                <View style={styles.logoContainerSmall}>
                     <Image
                         source={require("../assets/img/logo_home.png")}
                         style={styles.logo}/>
@@ -41,6 +47,10 @@ class LoggedHome extends React.Component {
                 <TouchableOpacity
                     style={commonStyles.submitButton}>
                     <Text style={commonStyles.buttonText}>Pair Device</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={commonStyles.submitButton}>
+                    <Text style={commonStyles.buttonText}>Settings</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={commonStyles.submitButton}>

@@ -1,6 +1,6 @@
 import React from "react";
-import {Dimensions, StyleSheet, Text, TextInput, TouchableOpacity, View} from "react-native";
-import {Header, colors, TextField, NavigationLink, commonStyles} from './common';
+import {Dimensions, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import {Header, TextField, NavigationLink, commonStyles} from './common';
 
 const width = Dimensions.get('window').width; //full width
 const height = Dimensions.get('window').height; //full height
