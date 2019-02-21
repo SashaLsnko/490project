@@ -8,7 +8,8 @@ import ManageDevice from './components/ManageDevice';
 import SettingsScreen from './components/Settings';
 import LoginInfoScreen from './components/LoginInfo';
 import DeviceSettingsScreen from "./components/DeviceSettings";
-import ModalExample from "./components/Qrscanner.js";
+import QRexample from "./components/QRexample.js";
+import HTTPexample from "./components/HTTPexample.js";
 import { colors } from "./components/common";
 
 let getHeader = (title) => {
@@ -69,8 +70,12 @@ const AppNavigator = createStackNavigator(
             navigationOptions: getHeader("Settings")
         },
         QRScannerScreen: {
-            screen: ModalExample,
-            navigationOptions: getHeader("Wut")
+            screen: QRexample,
+            navigationOptions: getHeader("QR example")
+        },
+        HTTPRequestScreen: {
+            screen: HTTPexample,
+            navigationOptions: getHeader("HTTP example")
         },
 
         LoggedHome: LoggedHome,

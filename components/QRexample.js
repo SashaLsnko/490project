@@ -25,7 +25,7 @@ import {
 
 import QRCodeScanner from 'react-native-qrcode-scanner';
 
-export default class ModalExample extends Component {
+class QRexample extends Component {
   state = {
     modalVisible: false,
   };
@@ -112,3 +112,5 @@ const styles = StyleSheet.create({
     padding: 16,
   },
 });
+
+export default QRexample;
