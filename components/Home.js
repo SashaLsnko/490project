@@ -126,6 +126,10 @@ class Fake extends React.Component {
                     title="Go to Settings"
                     onPress={() => navigate('SettingsScreen')}
                 />
+                <Button
+                    title="QR-Code Scanner"
+                    onPress={() => navigate('SettingsScreen')}
+                />
             </View>
         );
     }
