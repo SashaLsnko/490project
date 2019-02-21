@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		003E7962C8794CD89B32DCBA /* dog.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9387A35A2F7B4E0889C98121 /* dog.svg */; };
 		00475DEA544E49E8A7EE6003 /* firefox.svg in Resources */ = {isa = PBXBuildFile; fileRef = 776643313A114A5DB0B2248B /* firefox.svg */; };
@@ -544,6 +545,7 @@
 		68CA18C130E042FAA9E3180A /* bomb.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6DA178D960F94A2482BB431D /* bomb.svg */; };
 		6921EA0505834FC6859AF692 /* i-cursor.svg in Resources */ = {isa = PBXBuildFile; fileRef = 986955A4AB924ACABB81AD33 /* i-cursor.svg */; };
 		69F229658F9B4133A422DCF4 /* tv.svg in Resources */ = {isa = PBXBuildFile; fileRef = DA902FB6F1994BF5AE237ECF /* tv.svg */; };
+		6A24FF987D2C4E39A7753479 /* libReactNativePermissions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF0E1C615E674006B3E08A57 /* libReactNativePermissions.a */; };
 		6A2964CD55164140A4B6104F /* grunt.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0CAF84A1AB6340F688A01657 /* grunt.svg */; };
 		6A62D7B5A58B46A8BF5B149A /* hand-lizard.svg in Resources */ = {isa = PBXBuildFile; fileRef = E76CF7D14F8A46C995F4EC36 /* hand-lizard.svg */; };
 		6A6812A636394B31B90FB5A0 /* leanpub.svg in Resources */ = {isa = PBXBuildFile; fileRef = 32ADF03724684204BD86CA2B /* leanpub.svg */; };
@@ -868,6 +870,7 @@
 		A8616FDE716D4685AAC333A2 /* bluetooth-b.svg in Resources */ = {isa = PBXBuildFile; fileRef = D7A118199F3D4B21B822931F /* bluetooth-b.svg */; };
 		A8F83F68131741689C5388E6 /* ioxhost.svg in Resources */ = {isa = PBXBuildFile; fileRef = 343D0B5D2CDC4F1EBA66DB46 /* ioxhost.svg */; };
 		A9BF3864F5654E6D8F608F45 /* amilia.svg in Resources */ = {isa = PBXBuildFile; fileRef = 1AF83013B59A4D579BA44672 /* amilia.svg */; };
+		A9CAEB570F4D443C9BE2E74F /* libRNCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E69135D712C146DBACCE1D5C /* libRNCamera.a */; };
 		AA146A11C94E491BBD9FADD1 /* edge.svg in Resources */ = {isa = PBXBuildFile; fileRef = F2FABB05D8EE4FA5A706751E /* edge.svg */; };
 		AA3AD101A95B41B5A9E024B7 /* fa-brands-400.svg in Resources */ = {isa = PBXBuildFile; fileRef = BB68D7D8427A4F2499097B74 /* fa-brands-400.svg */; };
 		AA40E6784F4B4FBA86B47164 /* compress.svg in Resources */ = {isa = PBXBuildFile; fileRef = 214C468D22954685B96AE266 /* compress.svg */; };
@@ -1294,8 +1297,6 @@
 		FF547CB3A5D84FDA8BD085EF /* directions.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0306B9139C7449FC9DE729BD /* directions.svg */; };
 		FF9206BD8C134939AB7C3A8C /* archive.svg in Resources */ = {isa = PBXBuildFile; fileRef = 43A5F5FF028D46108F25C852 /* archive.svg */; };
 		FFF8FE15CD6947F3B8DF8B18 /* windows.svg in Resources */ = {isa = PBXBuildFile; fileRef = FC8D95EE532E4E41ADAD4E28 /* windows.svg */; };
-		A9CAEB570F4D443C9BE2E74F /* libRNCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E69135D712C146DBACCE1D5C /* libRNCamera.a */; };
-		6A24FF987D2C4E39A7753479 /* libReactNativePermissions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF0E1C615E674006B3E08A57 /* libReactNativePermissions.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1508,6 +1509,20 @@
 			proxyType = 2;
 			remoteGlobalIDString = 3D3CD9321DE5FBEE00167DC4;
 			remoteInfo = "cxxreact-tvOS";
+		};
+		5E37B610221F3D7D003D0938 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C982488C0494CBA8A793F8B /* ReactNativePermissions.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9D23B34F1C767B80008B4819;
+			remoteInfo = ReactNativePermissions;
+		};
+		5E37B615221F3D7D003D0938 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5D10A8C80484651A7B23BAC /* RNCamera.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4107012F1ACB723B00C6AA39;
+			remoteInfo = RNCamera;
 		};
 		5E9157321DD0AC6500FF2AA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1975,6 +1990,7 @@
 		4C1FE7866BD043DEB773B163 /* hourglass.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = hourglass.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/regular/hourglass.svg"; sourceTree = "<group>"; };
 		4C4FDEBD19D94CCEB59B4E51 /* microsoft.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = microsoft.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/microsoft.svg"; sourceTree = "<group>"; };
 		4C53CD1EB9C948D6BCC2CDD2 /* grip-horizontal.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "grip-horizontal.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/grip-horizontal.svg"; sourceTree = "<group>"; };
+		4C982488C0494CBA8A793F8B /* ReactNativePermissions.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativePermissions.xcodeproj; path = "../node_modules/react-native-permissions/ios/ReactNativePermissions.xcodeproj"; sourceTree = "<group>"; };
 		4CE7896136D04824A5642910 /* people-carry.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "people-carry.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/people-carry.svg"; sourceTree = "<group>"; };
 		4D03347EC6D6433AB3A63AB9 /* renren.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = renren.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/renren.svg"; sourceTree = "<group>"; };
 		4D4111D804A2438A98F4189A /* megaport.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = megaport.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/megaport.svg"; sourceTree = "<group>"; };
@@ -2572,6 +2588,7 @@
 		C56104A25D434D9486561C3C /* smile-wink.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "smile-wink.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/regular/smile-wink.svg"; sourceTree = "<group>"; };
 		C58D9BF5CB224D0493193FCB /* cloudversify.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = cloudversify.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/cloudversify.svg"; sourceTree = "<group>"; };
 		C5B9A56ADFFB4B4A914283E1 /* sort-numeric-up.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "sort-numeric-up.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/sort-numeric-up.svg"; sourceTree = "<group>"; };
+		C5D10A8C80484651A7B23BAC /* RNCamera.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNCamera.xcodeproj; path = "../node_modules/react-native-camera/ios/RNCamera.xcodeproj"; sourceTree = "<group>"; };
 		C5DB4EEAC6AD4F5883E86090 /* aws.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = aws.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/aws.svg"; sourceTree = "<group>"; };
 		C5FE4431BC2F4F2880C32749 /* home.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = home.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/home.svg"; sourceTree = "<group>"; };
 		C68FFE9FCF774154B1061A5E /* twitch.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = twitch.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/twitch.svg"; sourceTree = "<group>"; };
@@ -2747,6 +2764,7 @@
 		E6390C05253249AFA7166DB4 /* wordpress-simple.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "wordpress-simple.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/wordpress-simple.svg"; sourceTree = "<group>"; };
 		E63BC9FBC7F54E17B1484DB5 /* buysellads.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = buysellads.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/buysellads.svg"; sourceTree = "<group>"; };
 		E68A32D53565486CB8BF4246 /* fire.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = fire.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/fire.svg"; sourceTree = "<group>"; };
+		E69135D712C146DBACCE1D5C /* libRNCamera.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNCamera.a; sourceTree = "<group>"; };
 		E6A8E9EBD7D847EB8852B199 /* anchor.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = anchor.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/anchor.svg"; sourceTree = "<group>"; };
 		E6C682A821474D148CF16561 /* yandex-international.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "yandex-international.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/yandex-international.svg"; sourceTree = "<group>"; };
 		E6E04C433AE645E9B9D0D7FE /* car.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = car.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/car.svg"; sourceTree = "<group>"; };
@@ -2862,14 +2880,11 @@
 		FE5541FA9F664E2AA2D0B134 /* telegram.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = telegram.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/telegram.svg"; sourceTree = "<group>"; };
 		FE70812098A941B29C85BF9B /* frown-open.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "frown-open.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/regular/frown-open.svg"; sourceTree = "<group>"; };
 		FE7BA5A2869E4B318E1D73B0 /* eraser.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = eraser.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/eraser.svg"; sourceTree = "<group>"; };
+		FF0E1C615E674006B3E08A57 /* libReactNativePermissions.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libReactNativePermissions.a; sourceTree = "<group>"; };
 		FF122F5CF4ED488599F55186 /* bity.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = bity.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/bity.svg"; sourceTree = "<group>"; };
 		FF3A59C001934B31AFDD3606 /* users.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = users.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/users.svg"; sourceTree = "<group>"; };
 		FFC666B59C8B45569E1BFA01 /* long-arrow-alt-up.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "long-arrow-alt-up.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/long-arrow-alt-up.svg"; sourceTree = "<group>"; };
 		FFEDBAA8BC32437C91B0C10C /* hand-point-left.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "hand-point-left.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/regular/hand-point-left.svg"; sourceTree = "<group>"; };
-		C5D10A8C80484651A7B23BAC /* RNCamera.xcodeproj */ = {isa = PBXFileReference; name = "RNCamera.xcodeproj"; path = "../node_modules/react-native-camera/ios/RNCamera.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		E69135D712C146DBACCE1D5C /* libRNCamera.a */ = {isa = PBXFileReference; name = "libRNCamera.a"; path = "libRNCamera.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
-		4C982488C0494CBA8A793F8B /* ReactNativePermissions.xcodeproj */ = {isa = PBXFileReference; name = "ReactNativePermissions.xcodeproj"; path = "../node_modules/react-native-permissions/ios/ReactNativePermissions.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		FF0E1C615E674006B3E08A57 /* libReactNativePermissions.a */ = {isa = PBXFileReference; name = "libReactNativePermissions.a"; path = "libReactNativePermissions.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3055,6 +3070,22 @@
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E37B60D221F3D7D003D0938 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5E37B611221F3D7D003D0938 /* libReactNativePermissions.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5E37B612221F3D7D003D0938 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5E37B616221F3D7D003D0938 /* libRNCamera.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		5E91572E1DD0AC6500FF2AA8 /* Products */ = {
@@ -4407,6 +4438,8 @@
 			isa = PBXGroup;
 			children = (
 				9A11B05FF04E4B1790C9E2C0 /* libRNGestureHandler.a */,
+				E69135D712C146DBACCE1D5C /* libRNCamera.a */,
+				FF0E1C615E674006B3E08A57 /* libReactNativePermissions.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -4577,6 +4610,14 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = 5E37B60D221F3D7D003D0938 /* Products */;
+					ProjectRef = 4C982488C0494CBA8A793F8B /* ReactNativePermissions.xcodeproj */;
+				},
+				{
+					ProductGroup = 5E37B612221F3D7D003D0938 /* Products */;
+					ProjectRef = C5D10A8C80484651A7B23BAC /* RNCamera.xcodeproj */;
 				},
 				{
 					ProductGroup = D39E40CE221CFD5600349A33 /* Products */;
@@ -4788,6 +4829,20 @@
 			fileType = archive.ar;
 			path = libcxxreact.a;
 			remoteRef = 3DAD3EAA1DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5E37B611221F3D7D003D0938 /* libReactNativePermissions.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReactNativePermissions.a;
+			remoteRef = 5E37B610221F3D7D003D0938 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5E37B616221F3D7D003D0938 /* libRNCamera.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNCamera.a;
+			remoteRef = 5E37B615221F3D7D003D0938 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */ = {
@@ -6255,8 +6310,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-permissions\ios/**",
+					"$(SRCROOT)..\node_modules\neact-native-cameraios/**",
+					"$(SRCROOT)..\node_modules\neact-native-permissionsios/**",
 				);
 				INFOPLIST_FILE = slsTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -6285,8 +6340,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-permissions\ios/**",
+					"$(SRCROOT)..\node_modules\neact-native-cameraios/**",
+					"$(SRCROOT)..\node_modules\neact-native-permissionsios/**",
 				);
 				INFOPLIST_FILE = slsTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -6316,8 +6371,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-permissions\ios/**",
+					"$(SRCROOT)..\node_modules\neact-native-cameraios/**",
+					"$(SRCROOT)..\node_modules\neact-native-permissionsios/**",
 				);
 				INFOPLIST_FILE = sls/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -6340,8 +6395,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-permissions\ios/**",
+					"$(SRCROOT)..\node_modules\neact-native-cameraios/**",
+					"$(SRCROOT)..\node_modules\neact-native-permissionsios/**",
 				);
 				INFOPLIST_FILE = sls/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -6371,8 +6426,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-permissions\ios/**",
+					"$(SRCROOT)..\node_modules\neact-native-cameraios/**",
+					"$(SRCROOT)..\node_modules\neact-native-permissionsios/**",
 				);
 				INFOPLIST_FILE = "sls-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -6409,8 +6464,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-permissions\ios/**",
+					"$(SRCROOT)..\node_modules\neact-native-cameraios/**",
+					"$(SRCROOT)..\node_modules\neact-native-permissionsios/**",
 				);
 				INFOPLIST_FILE = "sls-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -6446,8 +6501,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-permissions\ios/**",
+					"$(SRCROOT)..\node_modules\neact-native-cameraios/**",
+					"$(SRCROOT)..\node_modules\neact-native-permissionsios/**",
 				);
 				INFOPLIST_FILE = "sls-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -6483,8 +6538,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-permissions\ios/**",
+					"$(SRCROOT)..\node_modules\neact-native-cameraios/**",
+					"$(SRCROOT)..\node_modules\neact-native-permissionsios/**",
 				);
 				INFOPLIST_FILE = "sls-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
