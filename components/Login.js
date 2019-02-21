@@ -22,7 +22,6 @@ class LoginScreen extends React.Component {
         };
         return (
             <View>
-                <Header title='SLS'/>
                 <View style={styles.formContainer}>
                     <Text style={commonStyles.instructions}>Login to your account</Text>
                     <TextField

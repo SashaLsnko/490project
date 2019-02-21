@@ -1,8 +1,6 @@
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TextInput, Dimensions, TouchableOpacity} from 'react-native';
+import React from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import { Button } from 'react-native';
-import {HomeScreen, Fake, LoggedHome, PairedHome} from './components/Home';
+import { HomeScreen, Fake, LoggedHome, PairedHome } from './components/Home';
 import RegistrationScreen from './components/Registration';
 import LoginScreen from './components/Login';
 import PairingScreen from './components/Pairing';
@@ -10,46 +8,68 @@ import ManageDevice from './components/ManageDevice';
 import SettingsScreen from './components/Settings';
 import LoginInfoScreen from './components/LoginInfo';
 import DeviceSettingsScreen from "./components/DeviceSettings";
+import { colors } from "./components/common";
 
-const width = Dimensions.get('window').width; //full width
-const height = Dimensions.get('window').height; //full height
-
+let getHeader = (title) => {
+    return {
+        headerTitle: title,
+        headerStyle: {
+            backgroundColor: "white"
+        },
+        headerTitleStyle: {
+            fontWeight: "bold",
+            color: colors.darkDarkPurle,
+            zIndex: 1,
+            fontSize: 18,
+            lineHeight: 23
+        },
+        headerTintColor: colors.darkDarkPurle,
+        animationEnabled: true
+    }
+};
 
 const AppNavigator = createStackNavigator(
     {
         Home: {
             screen: HomeScreen,
             navigationOptions: {
-                headerTitle: "Tab 1 Screen",
-                headerStyle: {
-                    backgroundColor: "transparent"
-                },
-                headerTitleStyle: {
-                    fontWeight: "bold",
-                    color: "#fff",
-                    zIndex: 1,
-                    fontSize: 18,
-                    lineHeight: 23
-                },
-                headerTintColor: "#fff",
-                animationEnabled: true
+                header: null,
             }
         },
         Registration: {
             screen: RegistrationScreen,
-            navigationOptions: {
-                header: null,
-            }},
-        Login: LoginScreen,
-        Fake: Fake,
-        LoginInfo: LoginInfoScreen,
-        DeviceSettings: DeviceSettingsScreen,
+            navigationOptions: getHeader("Registration")
+        },
+        Login: {
+            screen:LoginScreen,
+            navigationOptions: getHeader("Login")
+        },
+        Fake: {
+            screen: Fake
+        },
+        LoginInfo: {
+            screen: LoginInfoScreen,
+            navigationOptions: getHeader("Login Info")
+        },
+        DeviceSettings: {
+            screen: DeviceSettingsScreen,
+            navigationOptions: getHeader("Device Settings")
+        },
+        PairingScreen: {
+            screen: PairingScreen,
+            navigationOptions: getHeader("Device Pairing")
+        },
+        ManageDevice: {
+            screen: ManageDevice,
+            navigationOptions: getHeader("Manage Device")
+        },
+        SettingsScreen: {
+            screen: SettingsScreen,
+            navigationOptions: getHeader("Settings")
+        },
 
         LoggedHome: LoggedHome,
         PairedHome: PairedHome,
-        PairingScreen: PairingScreen,
-        ManageDevice: ManageDevice,
-        SettingsScreen: SettingsScreen
     },
     {
       initialRouteName: "Fake"

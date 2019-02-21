@@ -10,7 +10,7 @@ class HomeScreen extends React.Component {
         return (
             <SafeAreaView>
                 <View style={{alignItems: 'center',}}>
-                    <View style={styles.logoContainerSmall}>
+                    <View style={styles.logoContainer}>
                         <Image
                             source={require("../assets/img/logo_home.png")}
                             style={styles.logo}/>
@@ -39,7 +39,7 @@ class LoggedHome extends React.Component {
     render() {
         return (
             <View style={{alignItems: 'center'}}>
-                <View style={styles.logoContainerSmall}>
+                <View style={styles.logoContainer}>
                     <Image
                         source={require("../assets/img/logo_home.png")}
                         style={styles.logo}/>
@@ -65,7 +65,7 @@ class PairedHome extends React.Component {
     render() {
         return (
             <View style={{alignItems: "center"}}>
-                <View style={styles.logoContainerSmall}>
+                <View style={styles.logoContainer}>
                     <Image
                         source={require("../assets/img/logo_home.png")}
                         style={styles.logo}/>
@@ -133,16 +133,7 @@ class Fake extends React.Component {
 
 const styles = StyleSheet.create({
     logoContainer: {
-        height: 500,
-        backgroundColor: colors.darkDarkPurle,
-        width: width,
-        justifyContent: 'center',
-        alignItems: 'center',
-        top: 0,
-        marginBottom: 20
-    },
-    logoContainerSmall: {
-        height: 400,
+        height: 450,
         backgroundColor: colors.darkDarkPurle,
         width: width,
         justifyContent: 'center',

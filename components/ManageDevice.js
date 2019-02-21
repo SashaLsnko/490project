@@ -10,7 +10,6 @@ class ManageDevice extends React.Component {
     render() {
         return (
             <View>
-                <Header title='Device'/>
                 <View style={styles.alignCenter}>
                     <Text  style={commonStyles.instructions}>You are connected to:</Text>
                     <PcInfo/>

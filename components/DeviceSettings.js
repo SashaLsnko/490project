@@ -10,7 +10,6 @@ class DeviceSettingsScreen extends React.Component {
     render() {
         return (
             <View>
-                <Header title='Device Settings'/>
                 <View style={styles.formContainer}>
                     <PcInfo/>
                     <TouchableOpacity

@@ -9,54 +9,47 @@ class SettingsScreen extends React.Component {
     state = {bluetoothVal : false};
     render() {
         return (
-            <View style={{
-                flex: 1
-            }}>
-                <Header title='Settings'/>
-                <View style={styles.pageView}>
-                    <View style={styles.settingOption}>
-                        <View style={styles.proximityTextContainer}>
-                            <Text style={styles.description}>
+            <View style={{ flex: 1 }}>
+                <View style={ styles.pageView }>
+                    <View style={ styles.settingOption }>
+                        <View style={ styles.proximityTextContainer }>
+                            <Text style={ styles.description }>
                                 Proximity authentication
                             </Text>
                             <Button
-                                style={styles.explanationBtn}
+                                style={ styles.explanationBtn }
                                 title='What is this?'
                             />
                         </View>
                         <Switch
-                            trackColor={{true : colors.lightPurple}}
-                            thumbColor={colors.darkDarkPurle}
-                            value={this.state.bluetoothVal}
+                            trackColor={{ true: colors.lightPurple }}
+                            thumbColor={ colors.darkDarkPurle }
+                            value={ this.state.bluetoothVal }
                             onValueChange={ (value) => this.setState({ bluetoothVal: value })} />
                     </View>
                     <TouchableOpacity
-                        style={styles.settingOption}
-                        onPress={() => this.props.navigation.navigate('LoginInfo')}>
+                        style={ styles.settingOption }
+                        onPress={ () => this.props.navigation.navigate('LoginInfo') }>
 
-                        <View style={styles.proximityTextContainer}>
-                            <Text style={styles.description}>
+                        <View style={ styles.proximityTextContainer }>
+                            <Text style={ styles.description }>
                                 Login Information
                             </Text>
                         </View>
                         <Button title='>'/>
                     </TouchableOpacity>
                     <TouchableOpacity
-                        style={styles.settingOption}
-                        onPress={() => this.props.navigation.navigate('DeviceSettings')}>
-                        <View style={styles.proximityTextContainer}>
-                            <Text style={styles.description}>
+                        style={ styles.settingOption }
+                        onPress={ () => this.props.navigation.navigate('DeviceSettings') }>
+                        <View style={ styles.proximityTextContainer }>
+                            <Text style={ styles.description }>
                                 Devices Information
                             </Text>
                         </View>
                         <Button title='>'/>
                     </TouchableOpacity>
                 </View>
-                <View style={{
-                    flex: 1,
-                    justifyContent: 'flex-end',
-                    marginBottom: 36,
-                }}>
+                <View style={ styles.logoutBtnContainer }>
                     <TouchableOpacity
                         style={styles.logOutButton}>
                         <Text style={commonStyles.buttonText}>Log out</Text>
@@ -104,6 +97,11 @@ const styles = StyleSheet.create({
         marginVertical: 20,
         width: width - 40,
         marginHorizontal: 20
+    },
+    logoutBtnContainer: {
+        flex: 1,
+        justifyContent: 'flex-end',
+        marginBottom: 36,
     }
 });
 

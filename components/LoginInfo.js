@@ -118,7 +118,6 @@ class LoginInfoScreen extends React.Component {
     render() {
         return (
             <ScrollView>
-                <Header title='Login Info'/>
                 <View style={styles.pageView}>
                     <TouchableWithoutFeedback
                         style={styles.settingOption}
@@ -190,7 +189,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 20
     },
     links: {
-        color: '#87ceeb',
+        color: colors.baseBlue,
         marginTop: 12
     },
     changeInfoContainer: {

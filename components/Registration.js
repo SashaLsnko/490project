@@ -8,11 +8,7 @@ const height = Dimensions.get('window').height; //full height
 class RegistrationScreen extends React.Component {
     render() {
         return (
-            <View style={{
-                flex: 1,
-                flexDirection: 'column'}}>
-                <Header title='SLS'/>
-
+            <View>
                 <View style={styles.formContainer}>
                     <Text style={{...commonStyles.instructions, lineHeight: 20, marginVertical: 15}}>
                         Create your account</Text>
@@ -23,12 +19,10 @@ class RegistrationScreen extends React.Component {
                     <TouchableOpacity style={commonStyles.submitButton}>
                         <Text style={commonStyles.buttonText}>Create Account</Text>
                     </TouchableOpacity>
-
                     <View style={{marginVertical: 20}}>
                         <NavigationLink text='Already have an Account?'
                                         navigate={ () => this.props.navigation.navigate('Login') }/>
                     </View>
-
                 </View>
             </View>
         );
