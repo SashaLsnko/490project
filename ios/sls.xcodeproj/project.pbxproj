@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		003E7962C8794CD89B32DCBA /* dog.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9387A35A2F7B4E0889C98121 /* dog.svg */; };
 		00475DEA544E49E8A7EE6003 /* firefox.svg in Resources */ = {isa = PBXBuildFile; fileRef = 776643313A114A5DB0B2248B /* firefox.svg */; };
@@ -1297,6 +1296,7 @@
 		FF547CB3A5D84FDA8BD085EF /* directions.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0306B9139C7449FC9DE729BD /* directions.svg */; };
 		FF9206BD8C134939AB7C3A8C /* archive.svg in Resources */ = {isa = PBXBuildFile; fileRef = 43A5F5FF028D46108F25C852 /* archive.svg */; };
 		FFF8FE15CD6947F3B8DF8B18 /* windows.svg in Resources */ = {isa = PBXBuildFile; fileRef = FC8D95EE532E4E41ADAD4E28 /* windows.svg */; };
+		74294B75E9E749CFAE94097A /* libBleClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29ADA704A4D84A0D91070644 /* libBleClient.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2885,6 +2885,8 @@
 		FF3A59C001934B31AFDD3606 /* users.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = users.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/users.svg"; sourceTree = "<group>"; };
 		FFC666B59C8B45569E1BFA01 /* long-arrow-alt-up.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "long-arrow-alt-up.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/long-arrow-alt-up.svg"; sourceTree = "<group>"; };
 		FFEDBAA8BC32437C91B0C10C /* hand-point-left.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "hand-point-left.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/regular/hand-point-left.svg"; sourceTree = "<group>"; };
+		A1B15A31673E4BB7B5AA7C57 /* BleClient.xcodeproj */ = {isa = PBXFileReference; name = "BleClient.xcodeproj"; path = "../node_modules/react-native-ble-plx/ios/BleClient.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		29ADA704A4D84A0D91070644 /* libBleClient.a */ = {isa = PBXFileReference; name = "libBleClient.a"; path = "libBleClient.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2916,6 +2918,7 @@
 				43AE22F94ABA41AF94EBB215 /* libRNGestureHandler.a in Frameworks */,
 				A9CAEB570F4D443C9BE2E74F /* libRNCamera.a in Frameworks */,
 				6A24FF987D2C4E39A7753479 /* libReactNativePermissions.a in Frameworks */,
+				74294B75E9E749CFAE94097A /* libBleClient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4385,6 +4388,7 @@
 				AC977A372BB7487C8BFD0ECF /* RNGestureHandler.xcodeproj */,
 				C5D10A8C80484651A7B23BAC /* RNCamera.xcodeproj */,
 				4C982488C0494CBA8A793F8B /* ReactNativePermissions.xcodeproj */,
+				A1B15A31673E4BB7B5AA7C57 /* BleClient.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -6312,12 +6316,14 @@
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)..\node_modules\neact-native-cameraios/**",
 					"$(SRCROOT)..\node_modules\neact-native-permissionsios/**",
+					"$(SRCROOT)\..\node_modules\react-native-ble-plx\ios/**",
 				);
 				INFOPLIST_FILE = slsTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -6342,12 +6348,14 @@
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)..\node_modules\neact-native-cameraios/**",
 					"$(SRCROOT)..\node_modules\neact-native-permissionsios/**",
+					"$(SRCROOT)\..\node_modules\react-native-ble-plx\ios/**",
 				);
 				INFOPLIST_FILE = slsTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -6373,6 +6381,7 @@
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)..\node_modules\neact-native-cameraios/**",
 					"$(SRCROOT)..\node_modules\neact-native-permissionsios/**",
+					"$(SRCROOT)\..\node_modules\react-native-ble-plx\ios/**",
 				);
 				INFOPLIST_FILE = sls/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -6397,6 +6406,7 @@
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)..\node_modules\neact-native-cameraios/**",
 					"$(SRCROOT)..\node_modules\neact-native-permissionsios/**",
+					"$(SRCROOT)\..\node_modules\react-native-ble-plx\ios/**",
 				);
 				INFOPLIST_FILE = sls/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -6428,11 +6438,13 @@
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)..\node_modules\neact-native-cameraios/**",
 					"$(SRCROOT)..\node_modules\neact-native-permissionsios/**",
+					"$(SRCROOT)\..\node_modules\react-native-ble-plx\ios/**",
 				);
 				INFOPLIST_FILE = "sls-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -6466,11 +6478,13 @@
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)..\node_modules\neact-native-cameraios/**",
 					"$(SRCROOT)..\node_modules\neact-native-permissionsios/**",
+					"$(SRCROOT)\..\node_modules\react-native-ble-plx\ios/**",
 				);
 				INFOPLIST_FILE = "sls-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -6503,11 +6517,13 @@
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)..\node_modules\neact-native-cameraios/**",
 					"$(SRCROOT)..\node_modules\neact-native-permissionsios/**",
+					"$(SRCROOT)\..\node_modules\react-native-ble-plx\ios/**",
 				);
 				INFOPLIST_FILE = "sls-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -6540,11 +6556,13 @@
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)..\node_modules\neact-native-cameraios/**",
 					"$(SRCROOT)..\node_modules\neact-native-permissionsios/**",
+					"$(SRCROOT)\..\node_modules\react-native-ble-plx\ios/**",
 				);
 				INFOPLIST_FILE = "sls-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
