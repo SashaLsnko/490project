@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>microphone requested</string>
-	<key>NSCameraUsageDescription</key>
-	<string>First access</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -28,8 +24,38 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>localhost</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>First access</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string/>
+	<string></string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>microphone requested</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Dosis.otf</string>
+		<string>fa-brands-400.ttf</string>
+		<string>fa-brands-400.woff</string>
+		<string>fa-brands-400.woff2</string>
+		<string>fa-regular-400.ttf</string>
+		<string>fa-regular-400.woff</string>
+		<string>fa-regular-400.woff2</string>
+		<string>fa-solid-900.ttf</string>
+		<string>fa-solid-900.woff</string>
+		<string>fa-solid-900.woff2</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -44,31 +70,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-		<key>NSExceptionDomains</key>
-		<dict>
-			<key>localhost</key>
-			<dict>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-			</dict>
-		</dict>
-	</dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Dosis.otf</string>
-		<string>fa-brands-400.ttf</string>
-		<string>fa-brands-400.woff</string>
-		<string>fa-brands-400.woff2</string>
-		<string>fa-regular-400.ttf</string>
-		<string>fa-regular-400.woff</string>
-		<string>fa-regular-400.woff2</string>
-		<string>fa-solid-900.ttf</string>
-		<string>fa-solid-900.woff</string>
-		<string>fa-solid-900.woff2</string>
-	</array>
 </dict>
 </plist>
