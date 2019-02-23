@@ -44,9 +44,9 @@ export default class App extends Component<{}> {
     if (status === PermissionsAndroid.RESULTS.GRANTED) return true;
 
     if (status === PermissionsAndroid.RESULTS.DENIED) {
-      ToastAndroid.show('Location permission denied by user.', ToastAndroid.LONG);
+      alert('Location permission denied by user.');
     } else if (status === PermissionsAndroid.RESULTS.NEVER_ASK_AGAIN) {
-      ToastAndroid.show('Location permission revoked by user.', ToastAndroid.LONG);
+      alert('Location permission revoked by user.');
     }
 
     return false;
@@ -87,7 +87,7 @@ export default class App extends Component<{}> {
           this.setState({ location: error });
           console.log(error);
         },
-        { enableHighAccuracy: true, distanceFilter: 0, interval: 5000, fastestInterval: 2000 }
+        { enableHighAccuracy: true, distanceFilter: 0, interval: 1000, fastestInterval: 500 }
       );
     });
   }
