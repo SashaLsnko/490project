@@ -10,6 +10,7 @@ import LoginInfoScreen from './components/LoginInfo';
 import DeviceSettingsScreen from "./components/DeviceSettings";
 import QRexample from "./components/QRexample.js";
 import HTTPexample from "./components/HTTPexample.js";
+import BLEexample from "./components/BluetoothExample.js";
 import { colors } from "./components/common";
 
 let getHeader = (title) => {
@@ -76,6 +77,10 @@ const AppNavigator = createStackNavigator(
         HTTPRequestScreen: {
             screen: HTTPexample,
             navigationOptions: getHeader("HTTP example")
+        },
+        BluetoothScreen: {
+          screen: BLEexample,
+          navigationOptions: getHeader("Bluetooth example")
         },
 
         LoggedHome: LoggedHome,

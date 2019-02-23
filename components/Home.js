@@ -134,6 +134,10 @@ class Fake extends React.Component {
                     title="HTTP request example"
                     onPress={() => navigate('HTTPRequestScreen')}
                 />
+                <Button
+                    title="Bluetooth example"
+                    onPress={() => navigate('BluetoothScreen')}
+                />
             </View>
         );
     }
