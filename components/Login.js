@@ -1,21 +1,23 @@
 import React from "react";
-import {Button, Dimensions, StyleSheet, Text, TouchableOpacity, View, Alert} from "react-native";
-import {NavigationLink, Header, TextField, HorizontalSeparator, commonStyles} from "./common";
+import {Button, Dimensions, StyleSheet, Text, TouchableOpacity, View,
+    Alert } from "react-native";
+import {NavigationLink, TextField, HorizontalSeparator, commonStyles} from "./common";
+import {setUserInfo} from "../utils";
 
-
-const width = Dimensions.get('window').width; //full width
 const height = Dimensions.get('window').height; //full height
 
 class LoginScreen extends React.Component {
-    state= {username : "",
+    state= {email : "",
             password: ""};
     render() {
         const showAlert = (message) =>{
             Alert.alert( message )
         };
         const login = () =>{
-            if (this.state.username && this.state.password) {
-                this.props.navigation.navigate('Home')
+            if (this.state.email && this.state.password) {
+                setUserInfo(this.state.email, this.state.password, 'true');
+                this.props.navigation.state.params.refreshFunction();
+                this.props.navigation.navigate('Home');
             } else {
                 showAlert("please fill in username and password fields")
             }
@@ -26,7 +28,7 @@ class LoginScreen extends React.Component {
                     <Text style={commonStyles.instructions}>Login to your account</Text>
                     <TextField
                         placeholder="Email"
-                        onChangeFn={ (username) => this.setState({username: username})}/>
+                        onChangeFn={ (email) => this.setState({email: email})}/>
                     <TextField
                         placeholder="Password"
                         onChangeFn={ (password) => this.setState({password: password})}/>
@@ -39,7 +41,8 @@ class LoginScreen extends React.Component {
                         <Button title='Forgot your passowrd?'/>
                         <HorizontalSeparator/>
                         <NavigationLink text="Don't have an Account?"
-                                        navigate={ () => this.props.navigation.navigate('Registration') }/>
+                                        navigate={ () => this.props.navigation.navigate('Registration',
+                                            {refreshFunction: this.props.navigation.state.params.refreshFunction}) }/>
                     </View>
                 </View>
             </View>

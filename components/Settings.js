@@ -1,13 +1,21 @@
 import React from "react";
 import {Button, Dimensions, StyleSheet, Text, TouchableOpacity, View, Switch} from "react-native";
 import {colors, Header, HorizontalSeparator, NavigationLink, TextField, commonStyles} from "./common";
+import {setUserInfo} from "../utils";
 
 const width = Dimensions.get('window').width; //full width
 const height = Dimensions.get('window').height; //full height
 
 class SettingsScreen extends React.Component {
     state = {bluetoothVal : false};
+
     render() {
+        const logOut = () => {
+            setUserInfo("", "", 'false');
+            this.props.navigation.state.params.refreshFunction();
+            this.props.navigation.goBack();
+        };
+
         return (
             <View style={{ flex: 1 }}>
                 <View style={ styles.pageView }>
@@ -51,7 +59,8 @@ class SettingsScreen extends React.Component {
                 </View>
                 <View style={ styles.logoutBtnContainer }>
                     <TouchableOpacity
-                        style={styles.logOutButton}>
+                        style={styles.logOutButton}
+                        onPress={ () => logOut() }>
                         <Text style={commonStyles.buttonText}>Log out</Text>
                     </TouchableOpacity>
                 </View>

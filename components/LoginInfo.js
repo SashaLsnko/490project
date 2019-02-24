@@ -1,11 +1,10 @@
 import React from "react";
-import {Button, Dimensions, StyleSheet, Text, TouchableOpacity, View,
-    TouchableWithoutFeedback, ScrollView} from "react-native";
-import {colors, Header, HorizontalSeparator, NavigationLink, TextField, commonStyles} from "./common";
+import {Dimensions, StyleSheet, Text, TouchableOpacity, View,
+    TouchableWithoutFeedback, ScrollView } from "react-native";
+import {colors, TextField, commonStyles} from "./common";
 import FontAwesome, { Icons } from 'react-native-fontawesome';
 
 const width = Dimensions.get('window').width; //full width
-const height = Dimensions.get('window').height; //full height
 
 class ChangeEmailView extends React.Component {
     state= {username : ""};
@@ -38,10 +37,10 @@ class ChangePasswordlView extends React.Component {
             <View style={styles.changeInfoContainer}>
                 <TextField
                     placeholder="Current Password"
-                    onChangeFn={ (password) => this.setState({oldPassword: password})}/>
+                    onChangeFn={ (oldPassword) => this.setState({oldPassword: oldPassword})}/>
                 <TextField
                     placeholder="New Password"
-                    onChangeFn={ (password) => this.setState({newPassword: password})}/>
+                    onChangeFn={ (newPassword) => this.setState({newPassword: newPassword})}/>
                 <TextField
                     placeholder="Confirm New Password"
                     onChangeFn={ (password) => this.setState({confirmNewPassword: password})}/>

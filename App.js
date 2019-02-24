@@ -83,7 +83,6 @@ const AppNavigator = createStackNavigator(
           navigationOptions: getHeader("Bluetooth example")
         },
 
-        LoggedHome: LoggedHome,
         PairedHome: PairedHome,
     },
     {

@@ -1,63 +1,83 @@
 import React from "react";
 import {Button, Dimensions, StyleSheet, Text, TouchableOpacity, View, Image} from "react-native";
-import {colors, commonStyles} from "./common";
-import {SafeAreaView} from 'react-navigation';
+import { colors, commonStyles } from "./common";
+import { SafeAreaView } from 'react-navigation';
+import { isLoggedIn } from '../utils';
+
 const width = Dimensions.get('window').width; //full width
-const height = Dimensions.get('window').height; //full height
 
 class HomeScreen extends React.Component {
-    render() {
-        return (
-            <SafeAreaView>
-                <View style={{alignItems: 'center',}}>
-                    <View style={styles.logoContainer}>
-                        <Image
-                            source={require("../assets/img/logo_home.png")}
-                            style={styles.logo}/>
-                    </View>
-                    <TouchableOpacity
-                        style={commonStyles.submitButton}
-                        onPress={() => this.props.navigation.navigate('Login')}>
-                        <Text style={commonStyles.buttonText}>Login</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        style={commonStyles.submitButton}
-                        onPress={() => this.props.navigation.navigate('Registration')}>
-                        <Text style={commonStyles.buttonText}>Register</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        style={commonStyles.submitButton}>
-                        <Text style={commonStyles.buttonText}>About</Text>
-                    </TouchableOpacity>
-                </View>
-            </SafeAreaView>
-        );
-    }
-}
+    state = {
+        loggedIn: false
+    };
 
-class LoggedHome extends React.Component {
+    refreshLoggedIn () {
+        isLoggedIn().then(response => {
+            this.setState({ loggedIn: response === 'true' })
+        })
+    }
+
+    componentDidMount() {
+        this.refreshLoggedIn();
+    }
+
     render() {
-        return (
-            <View style={{alignItems: 'center'}}>
-                <View style={styles.logoContainer}>
-                    <Image
-                        source={require("../assets/img/logo_home.png")}
-                        style={styles.logo}/>
-                </View>
-                <TouchableOpacity
-                    style={commonStyles.submitButton}>
-                    <Text style={commonStyles.buttonText}>Pair Device</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    style={commonStyles.submitButton}>
-                    <Text style={commonStyles.buttonText}>Settings</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    style={commonStyles.submitButton}>
-                    <Text style={commonStyles.buttonText}>About</Text>
-                </TouchableOpacity>
-            </View>
-        );
+        if (this.state.loggedIn) {
+            return (
+                <SafeAreaView>
+                    <View style={{alignItems: 'center',}}>
+                        <View style={styles.logoContainer}>
+                            <Image
+                                source={require("../assets/img/logo_home.png")}
+                                style={styles.logo}/>
+                        </View>
+                        <TouchableOpacity
+                            style={commonStyles.submitButton}
+                            onPress={() => this.props.navigation.navigate('DeviceSettings')}>
+                            <Text style={commonStyles.buttonText}>Pair Device</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={commonStyles.submitButton}
+                            onPress={() => this.props.navigation.navigate('SettingsScreen',
+                                {refreshFunction: this.refreshLoggedIn.bind(this)})}>
+                            <Text style={commonStyles.buttonText}>Settings</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={commonStyles.submitButton}>
+                            <Text style={commonStyles.buttonText}>About</Text>
+                        </TouchableOpacity>
+                    </View>
+                </SafeAreaView>
+            );
+        } else {
+            return (
+                <SafeAreaView>
+                    <View style={{alignItems: 'center',}}>
+                        <View style={styles.logoContainer}>
+                            <Image
+                                source={require("../assets/img/logo_home.png")}
+                                style={styles.logo}/>
+                        </View>
+                        <TouchableOpacity
+                            style={commonStyles.submitButton}
+                            onPress={() => this.props.navigation.navigate('Login',
+                                {refreshFunction: this.refreshLoggedIn.bind(this)})}>
+                            <Text style={commonStyles.buttonText}>Login</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={commonStyles.submitButton}
+                            onPress={() => this.props.navigation.navigate('Registration',
+                                {refreshFunction: this.refreshLoggedIn.bind(this)})}>
+                            <Text style={commonStyles.buttonText}>Register</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={commonStyles.submitButton}>
+                            <Text style={commonStyles.buttonText}>About</Text>
+                        </TouchableOpacity>
+                    </View>
+                </SafeAreaView>
+            );
+        }
     }
 }
 
@@ -163,6 +183,5 @@ const styles = StyleSheet.create({
 export {
     HomeScreen,
     Fake,
-    LoggedHome,
     PairedHome
 };
