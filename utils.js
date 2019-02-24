@@ -1,8 +1,7 @@
 import {AsyncStorage} from "react-native";
 
-const setUserInfo = (userEmail, userPassword, loggingIn) => {
+const setUserInfo = (userEmail, loggingIn) => {
     AsyncStorage.setItem('userEmail', userEmail);
-    AsyncStorage.setItem('userPassword', userPassword);
     AsyncStorage.setItem('isloggedIn', loggingIn);
 };
 

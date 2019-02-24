@@ -1,23 +1,45 @@
 import React from "react";
-import {Button, Dimensions, StyleSheet, Text, TouchableOpacity, View,
-    Alert } from "react-native";
-import {NavigationLink, TextField, HorizontalSeparator, commonStyles} from "./common";
-import {setUserInfo} from "../utils";
+import { Button, Dimensions, StyleSheet, Text, TouchableOpacity, View, Alert } from "react-native";
+import { NavigationLink, TextField, HorizontalSeparator, commonStyles } from "./common";
+import { setUserInfo } from "../utils";
 
 const height = Dimensions.get('window').height; //full height
 
 class LoginScreen extends React.Component {
     state= {email : "",
             password: ""};
+
+    sendUserInformation() {
+        fetch('http://sls.alaca.ca/login', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                uname: this.state.email,
+                pass: this.state.password,
+            }),
+        })
+            .then((response) => {
+                if (response.status === 200) {
+                    setUserInfo(this.state.email, 'true');
+                    this.props.navigation.state.params.refreshFunction();
+                    this.props.navigation.navigate('Home');
+                } else
+                    alert(response._bodyText);
+            })
+            .catch(function(error) { alert(error) });
+    }
+
     render() {
         const showAlert = (message) =>{
             Alert.alert( message )
         };
         const login = () =>{
             if (this.state.email && this.state.password) {
-                setUserInfo(this.state.email, this.state.password, 'true');
-                this.props.navigation.state.params.refreshFunction();
-                this.props.navigation.navigate('Home');
+                this.sendUserInformation();
+                this.state.password = "";
             } else {
                 showAlert("please fill in username and password fields")
             }
@@ -27,9 +49,11 @@ class LoginScreen extends React.Component {
                 <View style={styles.formContainer}>
                     <Text style={commonStyles.instructions}>Login to your account</Text>
                     <TextField
+                        secure = {false}
                         placeholder="Email"
                         onChangeFn={ (email) => this.setState({email: email})}/>
                     <TextField
+                        secure = {true}
                         placeholder="Password"
                         onChangeFn={ (password) => this.setState({password: password})}/>
                     <TouchableOpacity

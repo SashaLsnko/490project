@@ -1,6 +1,6 @@
 import React from "react";
-import {Dimensions, StyleSheet, Text, TouchableOpacity, View, Alert} from "react-native";
-import {TextField, NavigationLink, commonStyles} from './common';
+import { Dimensions, StyleSheet, Text, TouchableOpacity, View, Alert } from "react-native";
+import { TextField, NavigationLink, commonStyles } from './common';
 import { setUserInfo } from '../utils'
 
 const height = Dimensions.get('window').height; //full height
@@ -12,6 +12,30 @@ class RegistrationScreen extends React.Component {
         password: "",
         confirmPassword: ""
     };
+
+    sendUserInformation() {
+        fetch('http://sls.alaca.ca/register', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                uname: this.state.email,
+                pass: this.state.password,
+            }),
+        })
+            .then((response) => {
+                if (response.status === 200) {
+                    setUserInfo(this.state.email, 'true');
+                    this.props.navigation.state.params.refreshFunction();
+                    this.props.navigation.navigate('Home');
+                } else
+                    alert(JSON.stringify(response));
+            })
+            .catch(function(error) { alert(error) });
+    }
+
     render() {
         const showAlert = (message) =>{
             Alert.alert( message )
@@ -20,10 +44,7 @@ class RegistrationScreen extends React.Component {
             if (this.state.username && this.state.email && this.state.password
                 && this.state.confirmPassword) {
                 if (this.state.password === this.state.confirmPassword) {
-                    setUserInfo(this.state.email, this.state.password, 'true');
-                    this.props.navigation.state.params.refreshFunction();
-                    this.props.navigation.goBack();
-
+                    this.sendUserInformation(this.state.email, this.state.password);
                 } else {
                     showAlert("The password in two fields should match")
                 }
@@ -37,14 +58,21 @@ class RegistrationScreen extends React.Component {
                     <Text style={{...commonStyles.instructions, lineHeight: 20, marginVertical: 15}}>
                         Create your account</Text>
                     <TextField
+                        secure = {false}
                         placeholder="Full Name"
                         onChangeFn={ (username) => this.setState({username: username})}/>
-                    <TextField placeholder="Email"
-                               onChangeFn={ (email) => this.setState({email: email})}/>
-                    <TextField placeholder="Password"
-                               onChangeFn={ (password) => this.setState({password: password})}/>
-                    <TextField placeholder="Confirm Password"
-                               onChangeFn={ (confirmPassword) => this.setState({confirmPassword: confirmPassword})}/>
+                    <TextField
+                        secure = {false}
+                        placeholder="Email"
+                        onChangeFn={ (email) => this.setState({email: email})}/>
+                    <TextField
+                        secure = {true}
+                        placeholder="Password"
+                        onChangeFn={ (password) => this.setState({password: password})}/>
+                    <TextField
+                        secure = {true}
+                        placeholder="Confirm Password"
+                        onChangeFn={ (confirmPassword) => this.setState({confirmPassword: confirmPassword})}/>
                     <TouchableOpacity
                         style={commonStyles.submitButton}
                         onPress={ () => register() }>

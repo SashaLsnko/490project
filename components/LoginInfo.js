@@ -12,6 +12,7 @@ class ChangeEmailView extends React.Component {
         return (
             <View style={styles.changeInfoContainer}>
                 <TextField
+                    secure = {false}
                     placeholder="New Email"
                     onChangeFn={ (username) => this.setState({username: username})}/>
                 <TouchableOpacity
@@ -36,12 +37,15 @@ class ChangePasswordlView extends React.Component {
         return (
             <View style={styles.changeInfoContainer}>
                 <TextField
+                    secure = {true}
                     placeholder="Current Password"
                     onChangeFn={ (oldPassword) => this.setState({oldPassword: oldPassword})}/>
                 <TextField
+                    secure = {true}
                     placeholder="New Password"
                     onChangeFn={ (newPassword) => this.setState({newPassword: newPassword})}/>
                 <TextField
+                    secure = {true}
                     placeholder="Confirm New Password"
                     onChangeFn={ (password) => this.setState({confirmNewPassword: password})}/>
                 <TouchableOpacity
@@ -107,7 +111,7 @@ function ExpandCollapseIcon(props) {
         return <CollapseIcon/>;
     } else {
         return <ExpandIcon/>;
-    };
+    }
 }
 
 class LoginInfoScreen extends React.Component {

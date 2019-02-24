@@ -1,9 +1,6 @@
 import React from "react";
-import { Dimensions, Text, TouchableOpacity, View} from "react-native";
-import { Header, commonStyles} from "./common";
-
-const width = Dimensions.get('window').width; //full width
-const height = Dimensions.get('window').height; //full height
+import { Text, TouchableOpacity, View} from "react-native";
+import { commonStyles} from "./common";
 
 class PairingScreen extends React.Component {
     render() {

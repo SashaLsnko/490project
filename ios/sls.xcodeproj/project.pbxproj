@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		003E7962C8794CD89B32DCBA /* dog.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9387A35A2F7B4E0889C98121 /* dog.svg */; };
 		00475DEA544E49E8A7EE6003 /* firefox.svg in Resources */ = {isa = PBXBuildFile; fileRef = 776643313A114A5DB0B2248B /* firefox.svg */; };

@@ -1,9 +1,7 @@
 import React from "react";
-import {Button, Dimensions, StyleSheet, Text, TouchableOpacity, View, Switch, Image} from "react-native";
-import {colors, Header, HorizontalSeparator, NavigationLink, TextField, commonStyles, PcInfo} from "./common";
-import LoginScreen from "./Login";
+import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { commonStyles, PcInfo} from "./common";
 
-const width = Dimensions.get('window').width; //full width
 const height = Dimensions.get('window').height; //full height
 
 class DeviceSettingsScreen extends React.Component {

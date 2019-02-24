@@ -1,17 +1,16 @@
 import React from "react";
-import {Button, Dimensions, StyleSheet, Text, TouchableOpacity, View, Switch} from "react-native";
-import {colors, Header, HorizontalSeparator, NavigationLink, TextField, commonStyles} from "./common";
-import {setUserInfo} from "../utils";
+import { Button, Dimensions, StyleSheet, Text, TouchableOpacity, View, Switch } from "react-native";
+import { colors, commonStyles } from "./common";
+import { setUserInfo } from "../utils";
 
 const width = Dimensions.get('window').width; //full width
-const height = Dimensions.get('window').height; //full height
 
 class SettingsScreen extends React.Component {
     state = {bluetoothVal : false};
 
     render() {
         const logOut = () => {
-            setUserInfo("", "", 'false');
+            setUserInfo("", 'false');
             this.props.navigation.state.params.refreshFunction();
             this.props.navigation.goBack();
         };

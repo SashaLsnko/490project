@@ -2,27 +2,16 @@ import React from "react";
 import {Button, Dimensions, Image, StyleSheet, Text, TextInput, View} from "react-native";
 
 const width = Dimensions.get('window').width; //full width
-const height = Dimensions.get('window').height; //full height
-
-class Header extends React.Component {
-    render() {
-        const {title} = this.props;
-        return (
-            <View style={styles.headerContainer}>
-                <Text style={styles.headerText}>{title}</Text>
-            </View>
-        );
-    }
-}
 
 class TextField extends React.Component {
     render() {
-        const {placeholder, onChangeFn} = this.props;
+        const {placeholder, onChangeFn, secure} = this.props;
         return (
             <TextInput
                 style={styles.textInput}
                 placeholder={placeholder}
                 placeholderTextColor={colors.darkGrey}
+                secureTextEntry = {secure}
                 onChangeText={(text) => onChangeFn(text)}/>
         );
     }
@@ -77,18 +66,6 @@ const colors = {
 };
 
 const styles = StyleSheet.create({
-    headerContainer: {
-        backgroundColor: colors.white,
-        borderBottomWidth: 3,
-        borderBottomColor: colors.darkDarkPurle,
-        height: 80,
-        justifyContent: 'center'
-    },
-    headerText: {
-        textAlign: 'center',
-        fontSize: 40,
-        color: colors.darkDarkPurle
-    },
     textInput : {
         height: 50,
         backgroundColor: colors.lightPurple,
@@ -154,7 +131,6 @@ const commonStyles = StyleSheet.create({
 });
 
 export {
-    Header,
     TextField,
     colors,
     NavigationLink,

@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Dimensions, StyleSheet, Text, TouchableOpacity, View, Image} from "react-native";
+import { Button, Dimensions, StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
 import { colors, commonStyles } from "./common";
 import { SafeAreaView } from 'react-navigation';
 import { isLoggedIn } from '../utils';

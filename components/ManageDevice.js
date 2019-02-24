@@ -1,10 +1,6 @@
 import React from "react";
-import {Dimensions, Image, StyleSheet, Text, TouchableOpacity, View} from "react-native";
-import {colors, Header, commonStyles, PcInfo} from "./common";
-
-
-const width = Dimensions.get('window').width; //full width
-const height = Dimensions.get('window').height; //full height
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { commonStyles, PcInfo } from "./common";
 
 class ManageDevice extends React.Component {
     render() {
