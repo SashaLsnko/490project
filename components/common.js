@@ -1,5 +1,6 @@
 import React from "react";
-import {Button, Dimensions, Image, StyleSheet, Text, TextInput, View} from "react-native";
+import { Button, Dimensions, Image, StyleSheet, Text, TextInput, View } from "react-native";
+import { pcName } from "../utils";
 
 const width = Dimensions.get('window').width; //full width
 
@@ -12,7 +13,8 @@ class TextField extends React.Component {
                 placeholder={placeholder}
                 placeholderTextColor={colors.darkGrey}
                 secureTextEntry = {secure}
-                onChangeText={(text) => onChangeFn(text)}/>
+                onChangeText={(text) => onChangeFn(text)}
+                textContentType={'password'}/>
         );
     }
 }
@@ -45,7 +47,7 @@ class PcInfo extends React.Component {
                     source={require("../assets/img/computer_icon.png")}
                     style={styles.computerImage}/>
                 <Text style={styles.pcText}>
-                    <Text style={styles.pcTextBold}>PC Name {"\n"}</Text>
+                    <Text style={styles.pcTextBold}>{this.props.pcName} {"\n"}</Text>
                     <Text style={styles.pcTextBold}>IP:</Text> 123.456.78.910 {"\n"}
                     <Text style={styles.pcTextBold}>Bluetooth:</Text> off {"\n"}
                 </Text>

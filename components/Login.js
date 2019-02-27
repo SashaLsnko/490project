@@ -27,7 +27,10 @@ class LoginScreen extends React.Component {
                     this.props.navigation.state.params.refreshFunction();
                     this.props.navigation.navigate('Home');
                 } else
-                    alert(response._bodyText);
+                    if (response.status === 400) {
+                        alert("Your Username or Password is incorrect");
+                    } else
+                        alert("Oops, something went wrong. Check your Username and Password!")
             })
             .catch(function(error) { alert(error) });
     }

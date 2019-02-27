@@ -2,27 +2,63 @@ import React from "react";
 import { Button, Dimensions, StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
 import { colors, commonStyles } from "./common";
 import { SafeAreaView } from 'react-navigation';
-import { isLoggedIn } from '../utils';
+import { isLoggedIn, isPaired } from '../utils';
 
 const width = Dimensions.get('window').width; //full width
 
 class HomeScreen extends React.Component {
     state = {
-        loggedIn: false
+        loggedIn: true,
+        paired: true
     };
 
-    refreshLoggedIn () {
+    refreshUserInfo () {
         isLoggedIn().then(response => {
             this.setState({ loggedIn: response === 'true' })
-        })
+        });
+        isPaired().then(response => {
+            this.setState({ paired: response === 'true' })
+        });
     }
 
     componentDidMount() {
-        this.refreshLoggedIn();
+        this.refreshUserInfo();
+    }
+
+    componentWillUnmount() {
+        alert("unmounted home");
     }
 
     render() {
-        if (this.state.loggedIn) {
+        if (this.state.loggedIn && this.state.paired) {
+            return (
+                <SafeAreaView>
+                    <View style={{alignItems: "center"}}>
+                        <View style={styles.logoContainer}>
+                            <Image
+                                source={require("../assets/img/logo_home.png")}
+                                style={styles.logo}/>
+                        </View>
+                        <TouchableOpacity
+                            style={commonStyles.submitButton}
+                            onPress={() => this.props.navigation.navigate('DeviceSettings',
+                                {refreshFunction: this.refreshUserInfo.bind(this)})}>
+                            <Text style={commonStyles.buttonText}>Manage Device</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={commonStyles.submitButton}
+                            onPress={() => this.props.navigation.navigate('SettingsScreen',
+                                {refreshFunction: this.refreshUserInfo.bind(this)})}>
+                            <Text style={commonStyles.buttonText}>Settings</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={commonStyles.submitButton}>
+                            <Text style={commonStyles.buttonText}>About</Text>
+                        </TouchableOpacity>
+                    </View>
+                </SafeAreaView>
+            )
+        } else if (this.state.loggedIn) {
             return (
                 <SafeAreaView>
                     <View style={{alignItems: 'center',}}>
@@ -33,13 +69,14 @@ class HomeScreen extends React.Component {
                         </View>
                         <TouchableOpacity
                             style={commonStyles.submitButton}
-                            onPress={() => this.props.navigation.navigate('DeviceSettings')}>
+                            onPress={() => this.props.navigation.navigate('PairingScreen',
+                                {refreshFunction: this.refreshUserInfo.bind(this)})}>
                             <Text style={commonStyles.buttonText}>Pair Device</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
                             style={commonStyles.submitButton}
                             onPress={() => this.props.navigation.navigate('SettingsScreen',
-                                {refreshFunction: this.refreshLoggedIn.bind(this)})}>
+                                {refreshFunction: this.refreshUserInfo.bind(this)})}>
                             <Text style={commonStyles.buttonText}>Settings</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
@@ -61,13 +98,13 @@ class HomeScreen extends React.Component {
                         <TouchableOpacity
                             style={commonStyles.submitButton}
                             onPress={() => this.props.navigation.navigate('Login',
-                                {refreshFunction: this.refreshLoggedIn.bind(this)})}>
+                                {refreshFunction: this.refreshUserInfo.bind(this)})}>
                             <Text style={commonStyles.buttonText}>Login</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
                             style={commonStyles.submitButton}
                             onPress={() => this.props.navigation.navigate('Registration',
-                                {refreshFunction: this.refreshLoggedIn.bind(this)})}>
+                                {refreshFunction: this.refreshUserInfo.bind(this)})}>
                             <Text style={commonStyles.buttonText}>Register</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
@@ -80,33 +117,6 @@ class HomeScreen extends React.Component {
         }
     }
 }
-
-class PairedHome extends React.Component {
-    render() {
-        return (
-            <View style={{alignItems: "center"}}>
-                <View style={styles.logoContainer}>
-                    <Image
-                        source={require("../assets/img/logo_home.png")}
-                        style={styles.logo}/>
-                </View>
-                <TouchableOpacity
-                    style={commonStyles.submitButton}>
-                    <Text style={commonStyles.buttonText}>Manage Device</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    style={commonStyles.submitButton}>
-                    <Text style={commonStyles.buttonText}>Settings</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    style={commonStyles.submitButton}>
-                    <Text style={commonStyles.buttonText}>About</Text>
-                </TouchableOpacity>
-            </View>
-        );
-    }
-}
-
 
 class Fake extends React.Component {
     render() {
@@ -182,6 +192,5 @@ const styles = StyleSheet.create({
 
 export {
     HomeScreen,
-    Fake,
-    PairedHome
+    Fake
 };

@@ -12,7 +12,7 @@ class SettingsScreen extends React.Component {
         const logOut = () => {
             setUserInfo("", 'false');
             this.props.navigation.state.params.refreshFunction();
-            this.props.navigation.goBack();
+            this.props.navigation.navigate('Home');
         };
 
         return (

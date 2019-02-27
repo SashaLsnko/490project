@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import { HomeScreen, Fake, LoggedHome, PairedHome } from './components/Home';
+import { HomeScreen, Fake, LoggedHome } from './components/Home';
 import RegistrationScreen from './components/Registration';
 import LoginScreen from './components/Login';
 import PairingScreen from './components/Pairing';
@@ -81,9 +81,7 @@ const AppNavigator = createStackNavigator(
         BluetoothScreen: {
           screen: BLEexample,
           navigationOptions: getHeader("Bluetooth example")
-        },
-
-        PairedHome: PairedHome,
+        }
     },
     {
       initialRouteName: "Fake"

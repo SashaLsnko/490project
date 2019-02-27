@@ -344,7 +344,6 @@ const styles = StyleSheet.create({
         paddingHorizontal:10,
         borderRadius:5,
         justifyContent:"center",
-        alignItems:'center',
         alignItems:'flex-start',
         marginTop:10
     },

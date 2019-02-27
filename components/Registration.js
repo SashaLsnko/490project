@@ -31,7 +31,16 @@ class RegistrationScreen extends React.Component {
                     this.props.navigation.state.params.refreshFunction();
                     this.props.navigation.navigate('Home');
                 } else
-                    alert(JSON.stringify(response));
+                    if (response.status === 400) {
+                        Alert.alert("Your Username already exists. Perhaps you would like to log in?", "",
+                            [
+                                {text: "Try Again"},
+                                {text: "Login",
+                                onPress : () => this.props.navigation.navigate('Login',
+                                {refreshFunction: this.props.navigation.state.params.refreshFunction})},
+                            ]);
+                    } else
+                        alert("Oops, something went wrong. Check your Username and Password!")
             })
             .catch(function(error) { alert(error) });
     }
