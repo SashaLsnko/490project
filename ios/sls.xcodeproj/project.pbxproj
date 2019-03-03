@@ -61,7 +61,7 @@
 		0AEDC2F57E0C4CC5B5A16D43 /* pushed.svg in Resources */ = {isa = PBXBuildFile; fileRef = 683C1687FB0C4D75AE936093 /* pushed.svg */; };
 		0AFA25D393E243A9909EF457 /* ns8.svg in Resources */ = {isa = PBXBuildFile; fileRef = A850DB5BE0974ABDB4E6C236 /* ns8.svg */; };
 		0B07753B18AC43FBB3B00986 /* caret-square-right.svg in Resources */ = {isa = PBXBuildFile; fileRef = F811F6B89CC94B97967D272A /* caret-square-right.svg */; };
-		0B1537AF200047509C0BEB98 /* fa-regular-400.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = 1EA5896A59FC4A1E91530CEC /* fa-regular-400.woff2 */; };
+		0B1537AF200047509C0BEB98 /* fa_regular_400.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = 1EA5896A59FC4A1E91530CEC /* fa_regular_400.woff2 */; };
 		0B4806A1598E431F8CCB15F6 /* cloudsmith.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6890F33416984A8FA3104C4F /* cloudsmith.svg */; };
 		0B81E08FF8A94556977F74BC /* wine-bottle.svg in Resources */ = {isa = PBXBuildFile; fileRef = B06DBEFC037546D499955437 /* wine-bottle.svg */; };
 		0B8E3C7EC51949FE85D33CF4 /* staylinked.svg in Resources */ = {isa = PBXBuildFile; fileRef = 018FDA4C82F54184A761604D /* staylinked.svg */; };
@@ -74,7 +74,7 @@
 		0D5B84E4F9B44881A541C5A0 /* drumstick-bite.svg in Resources */ = {isa = PBXBuildFile; fileRef = 92024A203163492D9A5A2231 /* drumstick-bite.svg */; };
 		0D8D5DD7816F4228AF40D7CE /* medium.svg in Resources */ = {isa = PBXBuildFile; fileRef = F3A95A3C94554205B192B13A /* medium.svg */; };
 		0DA9CF31C894499F9219B801 /* vial.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0F64F06C437346508DE46848 /* vial.svg */; };
-		0DB0289F031D47689BBA63E9 /* fa-regular-400.svg in Resources */ = {isa = PBXBuildFile; fileRef = 7578A0D8E54E43EF9F025E0C /* fa-regular-400.svg */; };
+		0DB0289F031D47689BBA63E9 /* fa_regular_400.svg in Resources */ = {isa = PBXBuildFile; fileRef = 7578A0D8E54E43EF9F025E0C /* fa_regular_400.svg */; };
 		0E152F1B4F33462886B5EEF8 /* grin-tongue-squint.svg in Resources */ = {isa = PBXBuildFile; fileRef = 82180F580FB549C687BFDDFB /* grin-tongue-squint.svg */; };
 		0E67FCBB9DA2472180D1E37D /* hand-point-left.svg in Resources */ = {isa = PBXBuildFile; fileRef = FFEDBAA8BC32437C91B0C10C /* hand-point-left.svg */; };
 		0E6A59DEB666438BA8914325 /* btc.svg in Resources */ = {isa = PBXBuildFile; fileRef = 055CC43C820E4B1294F41EFA /* btc.svg */; };
@@ -151,7 +151,7 @@
 		19FEF1FD48834C808C59768B /* hospital-symbol.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9EABC00A01BC438BBBEB4F4A /* hospital-symbol.svg */; };
 		1A1A15B2EA5C4A21BADC82DC /* thermometer-half.svg in Resources */ = {isa = PBXBuildFile; fileRef = A3208442D47249588DC8FE18 /* thermometer-half.svg */; };
 		1AF8EA9B0BA34EC0879D7E0D /* shipping-fast.svg in Resources */ = {isa = PBXBuildFile; fileRef = B683EF16BB2D4BB8BBB2E42F /* shipping-fast.svg */; };
-		1B8ADF4479D844239E016441 /* fa-solid-900.woff in Resources */ = {isa = PBXBuildFile; fileRef = 64D63B5A33DC4E638BAC8148 /* fa-solid-900.woff */; };
+		1B8ADF4479D844239E016441 /* fa_solid_900.woff in Resources */ = {isa = PBXBuildFile; fileRef = 64D63B5A33DC4E638BAC8148 /* fa_solid_900.woff */; };
 		1BF2D49ED5734AFD9A05CC26 /* quran.svg in Resources */ = {isa = PBXBuildFile; fileRef = A22965C6463A49D6A6F40B93 /* quran.svg */; };
 		1BFCF566D02A4E72B2E127B0 /* magic.svg in Resources */ = {isa = PBXBuildFile; fileRef = 00EB1098AAD945F9BB41E969 /* magic.svg */; };
 		1C10AB3BEDD94C41A66334D9 /* pied-piper-hat.svg in Resources */ = {isa = PBXBuildFile; fileRef = 93E6B38107604C45A638D42B /* pied-piper-hat.svg */; };
@@ -228,7 +228,7 @@
 		2853695FBF994728A97B956C /* hands-helping.svg in Resources */ = {isa = PBXBuildFile; fileRef = 01676EDBBE5D4FE788BC7595 /* hands-helping.svg */; };
 		28AB763DD234409382405CED /* lira-sign.svg in Resources */ = {isa = PBXBuildFile; fileRef = DE0F24C030F5445583F41B49 /* lira-sign.svg */; };
 		28AEA67388244392B185CA77 /* yoast.svg in Resources */ = {isa = PBXBuildFile; fileRef = D23B620929A34A6AA901C985 /* yoast.svg */; };
-		28B83A68E6C742EEB8FA46E9 /* fa-solid-900.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71FADC3B03AE44A6B6A94E56 /* fa-solid-900.ttf */; };
+		28B83A68E6C742EEB8FA46E9 /* fa_solid_900.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71FADC3B03AE44A6B6A94E56 /* fa_solid_900.ttf */; };
 		28C631FA399245EFBC696332 /* vihara.svg in Resources */ = {isa = PBXBuildFile; fileRef = 2863F78861C44C3382206BC7 /* vihara.svg */; };
 		2938E63DDB7348D3B26E440F /* book-reader.svg in Resources */ = {isa = PBXBuildFile; fileRef = 1E3AAD09D1494A26B6334CE5 /* book-reader.svg */; };
 		296C0213D4744C1BAA265A25 /* pen.svg in Resources */ = {isa = PBXBuildFile; fileRef = DEB988D5E198465A80F3897C /* pen.svg */; };
@@ -588,7 +588,7 @@
 		7104318BB55C4DD3A87CB540 /* smile.svg in Resources */ = {isa = PBXBuildFile; fileRef = 900731C8F8344C1990BC675D /* smile.svg */; };
 		71997435C8E1454599896FC4 /* file-excel.svg in Resources */ = {isa = PBXBuildFile; fileRef = 56F2D0F34D9C43E1A969B007 /* file-excel.svg */; };
 		71A118CDDFD54AB784AE625D /* hamsa.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3C3668813CE546A28398A5A1 /* hamsa.svg */; };
-		71A223558DCF45D8ABD45725 /* fa-brands-400.woff in Resources */ = {isa = PBXBuildFile; fileRef = 7D98AE8C798B4D0FA9495CD4 /* fa-brands-400.woff */; };
+		71A223558DCF45D8ABD45725 /* fa_brands_400.woff in Resources */ = {isa = PBXBuildFile; fileRef = 7D98AE8C798B4D0FA9495CD4 /* fa_brands_400.woff */; };
 		71AD13B625094E07BDA4C1E9 /* chess-king.svg in Resources */ = {isa = PBXBuildFile; fileRef = 90DF3AC4177C425585BC3D52 /* chess-king.svg */; };
 		71E01162EE7B4ED7A4A76E17 /* vials.svg in Resources */ = {isa = PBXBuildFile; fileRef = 213CACCF00FA40F5A33EDBC8 /* vials.svg */; };
 		720BAD3E58214F4F97932F18 /* twitch.svg in Resources */ = {isa = PBXBuildFile; fileRef = C68FFE9FCF774154B1061A5E /* twitch.svg */; };
@@ -701,7 +701,7 @@
 		8957DA1271974E0E8B99CF47 /* camera-retro.svg in Resources */ = {isa = PBXBuildFile; fileRef = BDD4EC6D321C4759A23D2AB5 /* camera-retro.svg */; };
 		89DD383761FA41419BC80E2B /* motorcycle.svg in Resources */ = {isa = PBXBuildFile; fileRef = FA2CC57773234ADD98674638 /* motorcycle.svg */; };
 		89F4F3E1B48F45859C750DB6 /* warehouse.svg in Resources */ = {isa = PBXBuildFile; fileRef = 1C3FC53E358C40D89E1EE28C /* warehouse.svg */; };
-		8A2BCC18EB8D4DCEAA990066 /* fa-brands-400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D26C3C28A48E4C82A3AB59BE /* fa-brands-400.ttf */; };
+		8A2BCC18EB8D4DCEAA990066 /* fa_brands_400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D26C3C28A48E4C82A3AB59BE /* fa_brands_400.ttf */; };
 		8A2CBD6161D3408AA6B446D4 /* fax.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8C061A246C1249DE99CC5978 /* fax.svg */; };
 		8A566359E2ED4EEDBCA8A82A /* caret-square-down.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0FF678D0E0F04CEA8DE36DBE /* caret-square-down.svg */; };
 		8AA4893F5591498EA0249C51 /* user-minus.svg in Resources */ = {isa = PBXBuildFile; fileRef = 5A13247BBE784B428712E8C3 /* user-minus.svg */; };
@@ -775,7 +775,7 @@
 		95EA2F98B366409ABB9C7CA0 /* folder-minus.svg in Resources */ = {isa = PBXBuildFile; fileRef = 92C72FD57EAF41F7887CB2B2 /* folder-minus.svg */; };
 		9616110A38FD4CE5B679BB38 /* avianex.svg in Resources */ = {isa = PBXBuildFile; fileRef = 7BDCB8DBFB0E4AB19582FDAC /* avianex.svg */; };
 		96352B57529F417EB071512F /* share-alt.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8CF748F5AC8947DA8378E3EE /* share-alt.svg */; };
-		9659435C48CE43C3970809E8 /* fa-solid-900.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = EF39E80994AE4D83BAC5DEA8 /* fa-solid-900.woff2 */; };
+		9659435C48CE43C3970809E8 /* fa_solid_900.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = EF39E80994AE4D83BAC5DEA8 /* fa_solid_900.woff2 */; };
 		965C6FDD74A644ABB8EB8FD1 /* twitter-square.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3E6F43D3397448A8ABE9CB1B /* twitter-square.svg */; };
 		966928E1BAF74ADCAD639105 /* gitkraken.svg in Resources */ = {isa = PBXBuildFile; fileRef = 40789FD34E3B48258C2EF12E /* gitkraken.svg */; };
 		9676FC4C073D43C5B56B6FB3 /* box-open.svg in Resources */ = {isa = PBXBuildFile; fileRef = E49FB6EB7C1E42E7A6ABFE4F /* box-open.svg */; };
@@ -795,7 +795,7 @@
 		98E79F0BE3D242F59B8890F5 /* stumbleupon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 71AD994504E0440D911B3A52 /* stumbleupon.svg */; };
 		9907B2AB71DB4E8395C54D7E /* power-off.svg in Resources */ = {isa = PBXBuildFile; fileRef = F6C57D25115E4B48B9D08440 /* power-off.svg */; };
 		996786141BED441EAFA249BB /* broadcast-tower.svg in Resources */ = {isa = PBXBuildFile; fileRef = 277CB7EDAC1E478C929D88C3 /* broadcast-tower.svg */; };
-		996FA9D7F11044C68A814842 /* fa-regular-400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 760F8258203841EA83D78788 /* fa-regular-400.ttf */; };
+		996FA9D7F11044C68A814842 /* fa_regular_400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 760F8258203841EA83D78788 /* fa_regular_400.ttf */; };
 		997F0C84D9FA41168A0038C6 /* hand-point-down.svg in Resources */ = {isa = PBXBuildFile; fileRef = 917BF8A799014FEF8A865A84 /* hand-point-down.svg */; };
 		99BC7000354547CCBAC38BD4 /* servicestack.svg in Resources */ = {isa = PBXBuildFile; fileRef = 055CC7E4DDBA47BEB7EDABBD /* servicestack.svg */; };
 		99C56169961847789227E380 /* chess-queen.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0BC259A0BC734B5D8B549117 /* chess-queen.svg */; };
@@ -857,7 +857,7 @@
 		A60B5EDD78EE43EAB19403E3 /* sticky-note.svg in Resources */ = {isa = PBXBuildFile; fileRef = DCB7B6F8AA32487E9424926A /* sticky-note.svg */; };
 		A6158D3E65504E8399F00FC4 /* venus-mars.svg in Resources */ = {isa = PBXBuildFile; fileRef = 462249633B9A4C3DB24CD812 /* venus-mars.svg */; };
 		A65B729F364A4362A335745E /* youtube-square.svg in Resources */ = {isa = PBXBuildFile; fileRef = E32943A9255A493AA15D15D9 /* youtube-square.svg */; };
-		A6A3E61F81AB4C9FAB1E05FD /* fa-regular-400.woff in Resources */ = {isa = PBXBuildFile; fileRef = 0EB57AD45E564F9891C67739 /* fa-regular-400.woff */; };
+		A6A3E61F81AB4C9FAB1E05FD /* fa_regular_400.woff in Resources */ = {isa = PBXBuildFile; fileRef = 0EB57AD45E564F9891C67739 /* fa_regular_400.woff */; };
 		A6E01F20356E4519AB5F815C /* hospital.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9C3A0D44E4534C2B982666D3 /* hospital.svg */; };
 		A6F02F2E142746F3BB1EA411 /* arrow-alt-circle-left.svg in Resources */ = {isa = PBXBuildFile; fileRef = FDBBF6E617B247C2A626F411 /* arrow-alt-circle-left.svg */; };
 		A7050B4F679446F7921B25A9 /* plane.svg in Resources */ = {isa = PBXBuildFile; fileRef = BFB3FFF615324CBEA77997E3 /* plane.svg */; };
@@ -873,7 +873,7 @@
 		A9BF3864F5654E6D8F608F45 /* amilia.svg in Resources */ = {isa = PBXBuildFile; fileRef = 1AF83013B59A4D579BA44672 /* amilia.svg */; };
 		A9CAEB570F4D443C9BE2E74F /* libRNCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E69135D712C146DBACCE1D5C /* libRNCamera.a */; };
 		AA146A11C94E491BBD9FADD1 /* edge.svg in Resources */ = {isa = PBXBuildFile; fileRef = F2FABB05D8EE4FA5A706751E /* edge.svg */; };
-		AA3AD101A95B41B5A9E024B7 /* fa-brands-400.svg in Resources */ = {isa = PBXBuildFile; fileRef = BB68D7D8427A4F2499097B74 /* fa-brands-400.svg */; };
+		AA3AD101A95B41B5A9E024B7 /* fa_brands_400.svg in Resources */ = {isa = PBXBuildFile; fileRef = BB68D7D8427A4F2499097B74 /* fa_brands_400.svg */; };
 		AA40E6784F4B4FBA86B47164 /* compress.svg in Resources */ = {isa = PBXBuildFile; fileRef = 214C468D22954685B96AE266 /* compress.svg */; };
 		AA6535C13F6541B4BD4A24FF /* grav.svg in Resources */ = {isa = PBXBuildFile; fileRef = 1AE3EF99BA62418B94A899A5 /* grav.svg */; };
 		AAEF24A902C04402BD2168AE /* lightbulb.svg in Resources */ = {isa = PBXBuildFile; fileRef = D0D207BC09794585A2838CA3 /* lightbulb.svg */; };
@@ -951,7 +951,7 @@
 		B9AAFEF6590E44B6AB07D5F3 /* tag.svg in Resources */ = {isa = PBXBuildFile; fileRef = BF02EBE1B1044C0EA432C3D1 /* tag.svg */; };
 		B9D990F7B15C4187B9DB7B29 /* fulcrum.svg in Resources */ = {isa = PBXBuildFile; fileRef = 44F015EAED9448938CEFA5E6 /* fulcrum.svg */; };
 		B9E0B0F3E0D84CD28CA4321A /* exchange-alt.svg in Resources */ = {isa = PBXBuildFile; fileRef = B13CB391D4F046C7A09F4A6A /* exchange-alt.svg */; };
-		BA046267DC424259B7FDF301 /* fa-brands-400.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = B7525704D089452BAF4E4891 /* fa-brands-400.woff2 */; };
+		BA046267DC424259B7FDF301 /* fa_brands_400.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = B7525704D089452BAF4E4891 /* fa_brands_400.woff2 */; };
 		BA299B15D45044048A62B910 /* lock-open.svg in Resources */ = {isa = PBXBuildFile; fileRef = 1FA40900E7B6451894CEA165 /* lock-open.svg */; };
 		BA75C6A6876E43BC8B44B438 /* laravel.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8633A85D9703411BBE6693E7 /* laravel.svg */; };
 		BA9744CBCABA4542BE6103BF /* mars-stroke.svg in Resources */ = {isa = PBXBuildFile; fileRef = 295A5C62C520497E8DD7690F /* mars-stroke.svg */; };
@@ -1083,7 +1083,7 @@
 		D35971B839984BB6843BC825 /* calendar-minus.svg in Resources */ = {isa = PBXBuildFile; fileRef = FA022299CFDA4B468160BBA5 /* calendar-minus.svg */; };
 		D35FF31EA7574A6DBA2FE3EE /* sign.svg in Resources */ = {isa = PBXBuildFile; fileRef = D57A940059234FE18CE35CFF /* sign.svg */; };
 		D3A238A5E5C54225B2B612B2 /* network-wired.svg in Resources */ = {isa = PBXBuildFile; fileRef = 124518A3FD5144EEA1CB4C8F /* network-wired.svg */; };
-		D3A935C1B7AD4667B2C28B4E /* fa-solid-900.svg in Resources */ = {isa = PBXBuildFile; fileRef = 05CC1E82348B44E5BF3CEC79 /* fa-solid-900.svg */; };
+		D3A935C1B7AD4667B2C28B4E /* fa_solid_900.svg in Resources */ = {isa = PBXBuildFile; fileRef = 05CC1E82348B44E5BF3CEC79 /* fa_solid_900.svg */; };
 		D3FBEC8E00C1470FA28A9E49 /* store.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3FE349E44E0D4F4ABB435C59 /* store.svg */; };
 		D4151C3D5CA844B19F47624D /* quidditch.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6933374929984DDCBE7A8778 /* quidditch.svg */; };
 		D46FB737A3404C5988BA8944 /* mortar-pestle.svg in Resources */ = {isa = PBXBuildFile; fileRef = 11442EB645A5425D8D658938 /* mortar-pestle.svg */; };
@@ -1298,6 +1298,18 @@
 		FF547CB3A5D84FDA8BD085EF /* directions.svg in Resources */ = {isa = PBXBuildFile; fileRef = 0306B9139C7449FC9DE729BD /* directions.svg */; };
 		FF9206BD8C134939AB7C3A8C /* archive.svg in Resources */ = {isa = PBXBuildFile; fileRef = 43A5F5FF028D46108F25C852 /* archive.svg */; };
 		FFF8FE15CD6947F3B8DF8B18 /* windows.svg in Resources */ = {isa = PBXBuildFile; fileRef = FC8D95EE532E4E41ADAD4E28 /* windows.svg */; };
+		00CDC478C470495E92D93888 /* fa_brands_400.svg in Resources */ = {isa = PBXBuildFile; fileRef = 604047A79F354339AF04C454 /* fa_brands_400.svg */; };
+		F78C5C6919694AE7BE910D10 /* fa_regular_400.svg in Resources */ = {isa = PBXBuildFile; fileRef = 31200DCE57E142D8AEA274D7 /* fa_regular_400.svg */; };
+		0100C3614F184C07910A3E00 /* fa_solid_900.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3A255965BA68404096134538 /* fa_solid_900.svg */; };
+		37A5F1E4E63242C3A3A64CB3 /* fa_brands_400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26390D5D7C764D058DF0B524 /* fa_brands_400.ttf */; };
+		A3E2616DD44B4947B4CFA961 /* fa_brands_400.woff in Resources */ = {isa = PBXBuildFile; fileRef = A198134F13534921B2A3F85A /* fa_brands_400.woff */; };
+		419274EBD9C54660A029B7FF /* fa_brands_400.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = 8FAB36622F554EEEAE91D469 /* fa_brands_400.woff2 */; };
+		D06A45BFFC7444EA83AB187B /* fa_regular_400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92F83D13BC8E4F128673E1AD /* fa_regular_400.ttf */; };
+		FCFC24ADEC4745969494EAE7 /* fa_regular_400.woff in Resources */ = {isa = PBXBuildFile; fileRef = C0266605AACA431FA89F6416 /* fa_regular_400.woff */; };
+		9BB447BED64149C68B42CD04 /* fa_regular_400.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = B5407F83AA4B4F1B9E89A91C /* fa_regular_400.woff2 */; };
+		2064E72D54AD4283BB369D13 /* fa_solid_900.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A10582223C04398AB598145 /* fa_solid_900.ttf */; };
+		B8EB625130764C64A9B57DE2 /* fa_solid_900.woff in Resources */ = {isa = PBXBuildFile; fileRef = F10BE7565E39406285782343 /* fa_solid_900.woff */; };
+		5A6C86287DCB43F09FC9E171 /* fa_solid_900.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = 1C2C259923E44DD792AE7E6D /* fa_solid_900.woff2 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1641,7 +1653,7 @@
 		055CC43C820E4B1294F41EFA /* btc.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = btc.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/btc.svg"; sourceTree = "<group>"; };
 		055CC7E4DDBA47BEB7EDABBD /* servicestack.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = servicestack.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/servicestack.svg"; sourceTree = "<group>"; };
 		05C811B078A443D48B24D8B1 /* dyalog.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = dyalog.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/dyalog.svg"; sourceTree = "<group>"; };
-		05CC1E82348B44E5BF3CEC79 /* fa-solid-900.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "fa-solid-900.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa-solid-900.svg"; sourceTree = "<group>"; };
+		05CC1E82348B44E5BF3CEC79 /* fa_solid_900.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "fa_solid_900.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa_solid_900.svg"; sourceTree = "<group>"; };
 		062C72A3982F47AD971DE7A0 /* clock.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = clock.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/regular/clock.svg"; sourceTree = "<group>"; };
 		06A242E3DFE04F21BF8B5BA3 /* transgender-alt.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "transgender-alt.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/transgender-alt.svg"; sourceTree = "<group>"; };
 		06C1701CEF5C49F79C220192 /* haykal.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = haykal.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/haykal.svg"; sourceTree = "<group>"; };
@@ -1696,7 +1708,7 @@
 		0E9051BD2D7649428C6F4CEF /* youtube.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = youtube.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/youtube.svg"; sourceTree = "<group>"; };
 		0EA38E89EE8C40F18480A281 /* mask.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = mask.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/mask.svg"; sourceTree = "<group>"; };
 		0EA96A8D563A4D768BA388BE /* broom.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = broom.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/broom.svg"; sourceTree = "<group>"; };
-		0EB57AD45E564F9891C67739 /* fa-regular-400.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "fa-regular-400.woff"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa-regular-400.woff"; sourceTree = "<group>"; };
+		0EB57AD45E564F9891C67739 /* fa_regular_400.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "fa_regular_400.woff"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa_regular_400.woff"; sourceTree = "<group>"; };
 		0F1D2AF327FB409ABAF5B92D /* crop-alt.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "crop-alt.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/crop-alt.svg"; sourceTree = "<group>"; };
 		0F64F06C437346508DE46848 /* vial.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = vial.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/vial.svg"; sourceTree = "<group>"; };
 		0FF678D0E0F04CEA8DE36DBE /* caret-square-down.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "caret-square-down.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/regular/caret-square-down.svg"; sourceTree = "<group>"; };
@@ -1782,7 +1794,7 @@
 		1E545A8AD4EF481EB55FDD29 /* less-than.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "less-than.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/less-than.svg"; sourceTree = "<group>"; };
 		1E6882C619784410888249D5 /* markdown.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = markdown.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/markdown.svg"; sourceTree = "<group>"; };
 		1E7315E15BAD4E20BF913708 /* bong.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = bong.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/bong.svg"; sourceTree = "<group>"; };
-		1EA5896A59FC4A1E91530CEC /* fa-regular-400.woff2 */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "fa-regular-400.woff2"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa-regular-400.woff2"; sourceTree = "<group>"; };
+		1EA5896A59FC4A1E91530CEC /* fa_regular_400.woff2 */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "fa_regular_400.woff2"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa_regular_400.woff2"; sourceTree = "<group>"; };
 		1ECFAF4A68B848CFBACA995A /* angle-up.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "angle-up.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/angle-up.svg"; sourceTree = "<group>"; };
 		1F2D7A6FE96748D99ACD8891 /* briefcase.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = briefcase.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/briefcase.svg"; sourceTree = "<group>"; };
 		1F6CB8DD9E344907B2581EEE /* rocket.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = rocket.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/rocket.svg"; sourceTree = "<group>"; };
@@ -2109,7 +2121,7 @@
 		63DC302C21F142029BD07B21 /* folder-open.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "folder-open.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/regular/folder-open.svg"; sourceTree = "<group>"; };
 		63FCAFD7074A41049BF74E98 /* instagram.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = instagram.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/instagram.svg"; sourceTree = "<group>"; };
 		64C91244E135463A82D7C37F /* minus-circle.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "minus-circle.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/minus-circle.svg"; sourceTree = "<group>"; };
-		64D63B5A33DC4E638BAC8148 /* fa-solid-900.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "fa-solid-900.woff"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa-solid-900.woff"; sourceTree = "<group>"; };
+		64D63B5A33DC4E638BAC8148 /* fa_solid_900.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "fa_solid_900.woff"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa_solid_900.woff"; sourceTree = "<group>"; };
 		64E303406B5341C2A7D467B4 /* closed-captioning.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "closed-captioning.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/regular/closed-captioning.svg"; sourceTree = "<group>"; };
 		64F1AD9E603D4F5AAB6FB2D9 /* outdent.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = outdent.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/outdent.svg"; sourceTree = "<group>"; };
 		64F66FC269B04D7A8D75A879 /* grin-beam-sweat.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "grin-beam-sweat.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/regular/grin-beam-sweat.svg"; sourceTree = "<group>"; };
@@ -2175,7 +2187,7 @@
 		713D928BB127414A9059F98A /* superpowers.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = superpowers.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/superpowers.svg"; sourceTree = "<group>"; };
 		71AD994504E0440D911B3A52 /* stumbleupon.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = stumbleupon.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/stumbleupon.svg"; sourceTree = "<group>"; };
 		71B2FE44A7AF491BBB70CC78 /* mars-stroke-v.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "mars-stroke-v.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/mars-stroke-v.svg"; sourceTree = "<group>"; };
-		71FADC3B03AE44A6B6A94E56 /* fa-solid-900.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "fa-solid-900.ttf"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa-solid-900.ttf"; sourceTree = "<group>"; };
+		71FADC3B03AE44A6B6A94E56 /* fa_solid_900.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "fa_solid_900.ttf"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa_solid_900.ttf"; sourceTree = "<group>"; };
 		721EA8C224A94018AE963C55 /* image.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = image.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/regular/image.svg"; sourceTree = "<group>"; };
 		725D8B30534145EB85FC384E /* kickstarter-k.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "kickstarter-k.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/kickstarter-k.svg"; sourceTree = "<group>"; };
 		72DC7F5464DF4100A5E33F72 /* cannabis.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = cannabis.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/cannabis.svg"; sourceTree = "<group>"; };
@@ -2194,13 +2206,13 @@
 		753AFAAFF7F34FA6A957E79F /* steam.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = steam.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/steam.svg"; sourceTree = "<group>"; };
 		755209BD1939488DBAC7D7C8 /* clipboard.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = clipboard.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/regular/clipboard.svg"; sourceTree = "<group>"; };
 		7558D8818A2E4DCA848009AD /* readme.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = readme.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/readme.svg"; sourceTree = "<group>"; };
-		7578A0D8E54E43EF9F025E0C /* fa-regular-400.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "fa-regular-400.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa-regular-400.svg"; sourceTree = "<group>"; };
+		7578A0D8E54E43EF9F025E0C /* fa_regular_400.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "fa_regular_400.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa_regular_400.svg"; sourceTree = "<group>"; };
 		75B4A8ED9AAE4E62A4310924 /* mandalorian.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = mandalorian.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/mandalorian.svg"; sourceTree = "<group>"; };
 		75C3578A345942098BB7C6D2 /* calendar-check.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "calendar-check.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/regular/calendar-check.svg"; sourceTree = "<group>"; };
 		75D01D59D1FF49328817F970 /* contao.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = contao.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/contao.svg"; sourceTree = "<group>"; };
 		75D1ED1A4AA44ABA85ACA4E3 /* piggy-bank.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "piggy-bank.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/piggy-bank.svg"; sourceTree = "<group>"; };
 		760A8FB342854E439361BD11 /* won-sign.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "won-sign.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/won-sign.svg"; sourceTree = "<group>"; };
-		760F8258203841EA83D78788 /* fa-regular-400.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "fa-regular-400.ttf"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa-regular-400.ttf"; sourceTree = "<group>"; };
+		760F8258203841EA83D78788 /* fa_regular_400.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "fa_regular_400.ttf"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa_regular_400.ttf"; sourceTree = "<group>"; };
 		76B37A8F66CD4103A1D6DFD8 /* drum-steelpan.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "drum-steelpan.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/drum-steelpan.svg"; sourceTree = "<group>"; };
 		76D54807589840379B89A09D /* credit-card.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "credit-card.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/regular/credit-card.svg"; sourceTree = "<group>"; };
 		76DD5BBF042240ED9322CE28 /* coins.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = coins.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/coins.svg"; sourceTree = "<group>"; };
@@ -2244,7 +2256,7 @@
 		7CF7F1E6768C49C08407A036 /* apple-alt.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "apple-alt.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/apple-alt.svg"; sourceTree = "<group>"; };
 		7D2BC996A92547DEBD3ED3E6 /* peace.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = peace.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/peace.svg"; sourceTree = "<group>"; };
 		7D6D0FEA6AF846429063792A /* paypal.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = paypal.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/paypal.svg"; sourceTree = "<group>"; };
-		7D98AE8C798B4D0FA9495CD4 /* fa-brands-400.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "fa-brands-400.woff"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa-brands-400.woff"; sourceTree = "<group>"; };
+		7D98AE8C798B4D0FA9495CD4 /* fa_brands_400.woff */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "fa_brands_400.woff"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa_brands_400.woff"; sourceTree = "<group>"; };
 		7E582FCC3F6C4A7EA5C1E2F3 /* question.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = question.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/question.svg"; sourceTree = "<group>"; };
 		7EB6F9EE5D3C4D94BC47C257 /* place-of-worship.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "place-of-worship.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/place-of-worship.svg"; sourceTree = "<group>"; };
 		7F1E0F7D90C543F286450A8F /* star-half.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "star-half.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/regular/star-half.svg"; sourceTree = "<group>"; };
@@ -2542,7 +2554,7 @@
 		B6F9836024EB4A1A810AFB46 /* font-awesome.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "font-awesome.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/font-awesome.svg"; sourceTree = "<group>"; };
 		B6FFB869DC2F45ACACC7C60A /* map-marker.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "map-marker.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/map-marker.svg"; sourceTree = "<group>"; };
 		B73205E74A1B45E99C2A1BAF /* xbox.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = xbox.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/xbox.svg"; sourceTree = "<group>"; };
-		B7525704D089452BAF4E4891 /* fa-brands-400.woff2 */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "fa-brands-400.woff2"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa-brands-400.woff2"; sourceTree = "<group>"; };
+		B7525704D089452BAF4E4891 /* fa_brands_400.woff2 */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "fa_brands_400.woff2"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa_brands_400.woff2"; sourceTree = "<group>"; };
 		B77FFDF541784B4393E505FB /* behance-square.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "behance-square.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/behance-square.svg"; sourceTree = "<group>"; };
 		B7C7465030D1444B804AC003 /* grin-tongue-wink.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "grin-tongue-wink.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/regular/grin-tongue-wink.svg"; sourceTree = "<group>"; };
 		B7CBE61986BC4599A85327FF /* medkit.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = medkit.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/medkit.svg"; sourceTree = "<group>"; };
@@ -2564,7 +2576,7 @@
 		BB007FD7AAAA45448333F131 /* weixin.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = weixin.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/weixin.svg"; sourceTree = "<group>"; };
 		BB315F59B90C43D4B4BCEDDD /* video.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = video.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/video.svg"; sourceTree = "<group>"; };
 		BB5E4C21D3504885B3EAA86B /* keyboard.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = keyboard.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/regular/keyboard.svg"; sourceTree = "<group>"; };
-		BB68D7D8427A4F2499097B74 /* fa-brands-400.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "fa-brands-400.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa-brands-400.svg"; sourceTree = "<group>"; };
+		BB68D7D8427A4F2499097B74 /* fa_brands_400.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "fa_brands_400.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa_brands_400.svg"; sourceTree = "<group>"; };
 		BB6C57C922004935BFAFCB46 /* deploydog.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = deploydog.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/deploydog.svg"; sourceTree = "<group>"; };
 		BC0F40E19DE44B149CA36871 /* fort-awesome-alt.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "fort-awesome-alt.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/fort-awesome-alt.svg"; sourceTree = "<group>"; };
 		BC57CCA404044C109478764C /* medal.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = medal.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/medal.svg"; sourceTree = "<group>"; };
@@ -2666,7 +2678,7 @@
 		D23EDDD8176941769147A2D2 /* file-archive.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "file-archive.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/regular/file-archive.svg"; sourceTree = "<group>"; };
 		D25BD481D3EB449AA5A02E66 /* mobile-alt.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "mobile-alt.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/mobile-alt.svg"; sourceTree = "<group>"; };
 		D263A05005744863A6D26120 /* campground.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = campground.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/campground.svg"; sourceTree = "<group>"; };
-		D26C3C28A48E4C82A3AB59BE /* fa-brands-400.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "fa-brands-400.ttf"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa-brands-400.ttf"; sourceTree = "<group>"; };
+		D26C3C28A48E4C82A3AB59BE /* fa_brands_400.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "fa_brands_400.ttf"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa_brands_400.ttf"; sourceTree = "<group>"; };
 		D27F67166D84414E90B247AE /* external-link-alt.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "external-link-alt.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/external-link-alt.svg"; sourceTree = "<group>"; };
 		D2A7EB1B65BB4D8F96FAAE03 /* times-circle.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "times-circle.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/regular/times-circle.svg"; sourceTree = "<group>"; };
 		D36C217F1B6A4B55AF3207D8 /* unlock-alt.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "unlock-alt.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/unlock-alt.svg"; sourceTree = "<group>"; };
@@ -2818,7 +2830,7 @@
 		EDE2233D9CCE49D7A85F9D60 /* internet-explorer.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "internet-explorer.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/internet-explorer.svg"; sourceTree = "<group>"; };
 		EE5A469FC27F4283B1558C0E /* strava.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = strava.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/strava.svg"; sourceTree = "<group>"; };
 		EF393ED1B49A4B899E14816F /* database.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = database.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/database.svg"; sourceTree = "<group>"; };
-		EF39E80994AE4D83BAC5DEA8 /* fa-solid-900.woff2 */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "fa-solid-900.woff2"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa-solid-900.woff2"; sourceTree = "<group>"; };
+		EF39E80994AE4D83BAC5DEA8 /* fa_solid_900.woff2 */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "fa_solid_900.woff2"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa_solid_900.woff2"; sourceTree = "<group>"; };
 		EF53FCA23E5C47CD8FACD0A1 /* id-card-alt.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "id-card-alt.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/id-card-alt.svg"; sourceTree = "<group>"; };
 		EFEA844B308C448298367472 /* toolbox.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = toolbox.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/toolbox.svg"; sourceTree = "<group>"; };
 		EFF37812567646CC98E6296F /* snapchat-ghost.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "snapchat-ghost.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/snapchat-ghost.svg"; sourceTree = "<group>"; };
@@ -2897,6 +2909,18 @@
 		FF3A59C001934B31AFDD3606 /* users.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = users.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/users.svg"; sourceTree = "<group>"; };
 		FFC666B59C8B45569E1BFA01 /* long-arrow-alt-up.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "long-arrow-alt-up.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/long-arrow-alt-up.svg"; sourceTree = "<group>"; };
 		FFEDBAA8BC32437C91B0C10C /* hand-point-left.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "hand-point-left.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/regular/hand-point-left.svg"; sourceTree = "<group>"; };
+		604047A79F354339AF04C454 /* fa_brands_400.svg */ = {isa = PBXFileReference; name = "fa_brands_400.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa_brands_400.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		31200DCE57E142D8AEA274D7 /* fa_regular_400.svg */ = {isa = PBXFileReference; name = "fa_regular_400.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa_regular_400.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3A255965BA68404096134538 /* fa_solid_900.svg */ = {isa = PBXFileReference; name = "fa_solid_900.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa_solid_900.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		26390D5D7C764D058DF0B524 /* fa_brands_400.ttf */ = {isa = PBXFileReference; name = "fa_brands_400.ttf"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa_brands_400.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A198134F13534921B2A3F85A /* fa_brands_400.woff */ = {isa = PBXFileReference; name = "fa_brands_400.woff"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa_brands_400.woff"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8FAB36622F554EEEAE91D469 /* fa_brands_400.woff2 */ = {isa = PBXFileReference; name = "fa_brands_400.woff2"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa_brands_400.woff2"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		92F83D13BC8E4F128673E1AD /* fa_regular_400.ttf */ = {isa = PBXFileReference; name = "fa_regular_400.ttf"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa_regular_400.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C0266605AACA431FA89F6416 /* fa_regular_400.woff */ = {isa = PBXFileReference; name = "fa_regular_400.woff"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa_regular_400.woff"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B5407F83AA4B4F1B9E89A91C /* fa_regular_400.woff2 */ = {isa = PBXFileReference; name = "fa_regular_400.woff2"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa_regular_400.woff2"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4A10582223C04398AB598145 /* fa_solid_900.ttf */ = {isa = PBXFileReference; name = "fa_solid_900.ttf"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa_solid_900.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F10BE7565E39406285782343 /* fa_solid_900.woff */ = {isa = PBXFileReference; name = "fa_solid_900.woff"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa_solid_900.woff"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1C2C259923E44DD792AE7E6D /* fa_solid_900.woff2 */ = {isa = PBXFileReference; name = "fa_solid_900.woff2"; path = "../assets/fonts/fontawesome-free-5.4.1-web/webfonts/fa_solid_900.woff2"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -4362,19 +4386,31 @@
 				007879981F4E4EDAA11C56C1 /* x-ray.svg */,
 				2462B90458414F1D9412AEF0 /* yen-sign.svg */,
 				4830D9770C614FC9B4B1AD20 /* yin-yang.svg */,
-				BB68D7D8427A4F2499097B74 /* fa-brands-400.svg */,
-				7578A0D8E54E43EF9F025E0C /* fa-regular-400.svg */,
-				05CC1E82348B44E5BF3CEC79 /* fa-solid-900.svg */,
+				BB68D7D8427A4F2499097B74 /* fa_brands_400.svg */,
+				7578A0D8E54E43EF9F025E0C /* fa_regular_400.svg */,
+				05CC1E82348B44E5BF3CEC79 /* fa_solid_900.svg */,
 				D4F5D9CC1CA84CF293C45F57 /* Dosis.otf */,
-				D26C3C28A48E4C82A3AB59BE /* fa-brands-400.ttf */,
-				7D98AE8C798B4D0FA9495CD4 /* fa-brands-400.woff */,
-				B7525704D089452BAF4E4891 /* fa-brands-400.woff2 */,
-				760F8258203841EA83D78788 /* fa-regular-400.ttf */,
-				0EB57AD45E564F9891C67739 /* fa-regular-400.woff */,
-				1EA5896A59FC4A1E91530CEC /* fa-regular-400.woff2 */,
-				71FADC3B03AE44A6B6A94E56 /* fa-solid-900.ttf */,
-				64D63B5A33DC4E638BAC8148 /* fa-solid-900.woff */,
-				EF39E80994AE4D83BAC5DEA8 /* fa-solid-900.woff2 */,
+				D26C3C28A48E4C82A3AB59BE /* fa_brands_400.ttf */,
+				7D98AE8C798B4D0FA9495CD4 /* fa_brands_400.woff */,
+				B7525704D089452BAF4E4891 /* fa_brands_400.woff2 */,
+				760F8258203841EA83D78788 /* fa_regular_400.ttf */,
+				0EB57AD45E564F9891C67739 /* fa_regular_400.woff */,
+				1EA5896A59FC4A1E91530CEC /* fa_regular_400.woff2 */,
+				71FADC3B03AE44A6B6A94E56 /* fa_solid_900.ttf */,
+				64D63B5A33DC4E638BAC8148 /* fa_solid_900.woff */,
+				EF39E80994AE4D83BAC5DEA8 /* fa_solid_900.woff2 */,
+				604047A79F354339AF04C454 /* fa_brands_400.svg */,
+				31200DCE57E142D8AEA274D7 /* fa_regular_400.svg */,
+				3A255965BA68404096134538 /* fa_solid_900.svg */,
+				26390D5D7C764D058DF0B524 /* fa_brands_400.ttf */,
+				A198134F13534921B2A3F85A /* fa_brands_400.woff */,
+				8FAB36622F554EEEAE91D469 /* fa_brands_400.woff2 */,
+				92F83D13BC8E4F128673E1AD /* fa_regular_400.ttf */,
+				C0266605AACA431FA89F6416 /* fa_regular_400.woff */,
+				B5407F83AA4B4F1B9E89A91C /* fa_regular_400.woff2 */,
+				4A10582223C04398AB598145 /* fa_solid_900.ttf */,
+				F10BE7565E39406285782343 /* fa_solid_900.woff */,
+				1C2C259923E44DD792AE7E6D /* fa_solid_900.woff2 */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -4563,10 +4599,13 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = U53ZNDW48W;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = U53ZNDW48W;
 						LastSwiftMigration = 1010;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
@@ -6216,19 +6255,31 @@
 				182FC4C9222A46AB91B18A3C /* x-ray.svg in Resources */,
 				FB3757FB8FFA4C8DAB03B354 /* yen-sign.svg in Resources */,
 				7411A028434640F8AB7FBD9B /* yin-yang.svg in Resources */,
-				AA3AD101A95B41B5A9E024B7 /* fa-brands-400.svg in Resources */,
-				0DB0289F031D47689BBA63E9 /* fa-regular-400.svg in Resources */,
-				D3A935C1B7AD4667B2C28B4E /* fa-solid-900.svg in Resources */,
+				AA3AD101A95B41B5A9E024B7 /* fa_brands_400.svg in Resources */,
+				0DB0289F031D47689BBA63E9 /* fa_regular_400.svg in Resources */,
+				D3A935C1B7AD4667B2C28B4E /* fa_solid_900.svg in Resources */,
 				A3F24DB3FAA34686B05F7DC0 /* Dosis.otf in Resources */,
-				8A2BCC18EB8D4DCEAA990066 /* fa-brands-400.ttf in Resources */,
-				71A223558DCF45D8ABD45725 /* fa-brands-400.woff in Resources */,
-				BA046267DC424259B7FDF301 /* fa-brands-400.woff2 in Resources */,
-				996FA9D7F11044C68A814842 /* fa-regular-400.ttf in Resources */,
-				A6A3E61F81AB4C9FAB1E05FD /* fa-regular-400.woff in Resources */,
-				0B1537AF200047509C0BEB98 /* fa-regular-400.woff2 in Resources */,
-				28B83A68E6C742EEB8FA46E9 /* fa-solid-900.ttf in Resources */,
-				1B8ADF4479D844239E016441 /* fa-solid-900.woff in Resources */,
-				9659435C48CE43C3970809E8 /* fa-solid-900.woff2 in Resources */,
+				8A2BCC18EB8D4DCEAA990066 /* fa_brands_400.ttf in Resources */,
+				71A223558DCF45D8ABD45725 /* fa_brands_400.woff in Resources */,
+				BA046267DC424259B7FDF301 /* fa_brands_400.woff2 in Resources */,
+				996FA9D7F11044C68A814842 /* fa_regular_400.ttf in Resources */,
+				A6A3E61F81AB4C9FAB1E05FD /* fa_regular_400.woff in Resources */,
+				0B1537AF200047509C0BEB98 /* fa_regular_400.woff2 in Resources */,
+				28B83A68E6C742EEB8FA46E9 /* fa_solid_900.ttf in Resources */,
+				1B8ADF4479D844239E016441 /* fa_solid_900.woff in Resources */,
+				9659435C48CE43C3970809E8 /* fa_solid_900.woff2 in Resources */,
+				00CDC478C470495E92D93888 /* fa_brands_400.svg in Resources */,
+				F78C5C6919694AE7BE910D10 /* fa_regular_400.svg in Resources */,
+				0100C3614F184C07910A3E00 /* fa_solid_900.svg in Resources */,
+				37A5F1E4E63242C3A3A64CB3 /* fa_brands_400.ttf in Resources */,
+				A3E2616DD44B4947B4CFA961 /* fa_brands_400.woff in Resources */,
+				419274EBD9C54660A029B7FF /* fa_brands_400.woff2 in Resources */,
+				D06A45BFFC7444EA83AB187B /* fa_regular_400.ttf in Resources */,
+				FCFC24ADEC4745969494EAE7 /* fa_regular_400.woff in Resources */,
+				9BB447BED64149C68B42CD04 /* fa_regular_400.woff2 in Resources */,
+				2064E72D54AD4283BB369D13 /* fa_solid_900.ttf in Resources */,
+				B8EB625130764C64A9B57DE2 /* fa_solid_900.woff in Resources */,
+				5A6C86287DCB43F09FC9E171 /* fa_solid_900.woff2 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6349,6 +6400,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = U53ZNDW48W;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -6386,6 +6438,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = U53ZNDW48W;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
@@ -6418,8 +6471,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = U53ZNDW48W;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
@@ -6436,6 +6492,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = sls;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "sls-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -6448,7 +6505,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U53ZNDW48W;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
@@ -6465,6 +6526,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = sls;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "sls-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";

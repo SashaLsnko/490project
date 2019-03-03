@@ -21,12 +21,13 @@ let getHeader = (title) => {
         },
         headerTitleStyle: {
             fontWeight: "bold",
-            color: colors.darkDarkPurle,
+            color: colors.darkPurple,
             zIndex: 1,
             fontSize: 18,
             lineHeight: 23
         },
         headerTintColor: colors.darkDarkPurle,
+        headerBackTitle: null,
         animationEnabled: true
     }
 };
@@ -37,6 +38,7 @@ const AppNavigator = createStackNavigator(
             screen: HomeScreen,
             navigationOptions: {
                 header: null,
+                headerBackTitle: null,
             }
         },
         Registration: {

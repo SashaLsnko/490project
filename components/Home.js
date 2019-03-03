@@ -5,6 +5,7 @@ import { SafeAreaView } from 'react-navigation';
 import { isLoggedIn, isPaired } from '../utils';
 
 const width = Dimensions.get('window').width; //full width
+const height = Dimensions.get('window').height; //full height
 
 class HomeScreen extends React.Component {
     state = {
@@ -41,7 +42,7 @@ class HomeScreen extends React.Component {
                         </View>
                         <TouchableOpacity
                             style={commonStyles.submitButton}
-                            onPress={() => this.props.navigation.navigate('DeviceSettings',
+                            onPress={() => this.props.navigation.navigate('ManageDevice',
                                 {refreshFunction: this.refreshUserInfo.bind(this)})}>
                             <Text style={commonStyles.buttonText}>Manage Device</Text>
                         </TouchableOpacity>
@@ -175,7 +176,7 @@ class Fake extends React.Component {
 
 const styles = StyleSheet.create({
     logoContainer: {
-        height: 450,
+        height: height*0.5,
         backgroundColor: colors.darkDarkPurle,
         width: width,
         justifyContent: 'center',

@@ -46,15 +46,16 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Dosis.otf</string>
-		<string>fa-brands-400.ttf</string>
-		<string>fa-brands-400.woff</string>
-		<string>fa-brands-400.woff2</string>
-		<string>fa-regular-400.ttf</string>
-		<string>fa-regular-400.woff</string>
-		<string>fa-regular-400.woff2</string>
-		<string>fa-solid-900.ttf</string>
-		<string>fa-solid-900.woff</string>
-		<string>fa-solid-900.woff2</string>
+		<string>fa_brands_400.ttf</string>
+		<string>fa_brands_400.woff</string>
+		<string>fa_brands_400.woff2</string>
+		<string>fa_regular_400.ttf</string>
+		<string>fa_regular_400.woff</string>
+		<string>fa_regular_400.woff2</string>
+		<string>fa_solid_900.ttf</string>
+		<string>fa_solid_900.woff</string>
+		<string>fa_solid_900.woff2</string>
+		<string>fa_solid_900.woff</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
