@@ -1,8 +1,8 @@
 import React from "react";
 import { Button, Dimensions, Image, StyleSheet, Text, TextInput, View } from "react-native";
-import { pcName } from "../utils";
 
 const width = Dimensions.get('window').width; //full width
+const height = Dimensions.get('window').height; //full height
 
 class TextField extends React.Component {
     render() {
@@ -71,8 +71,6 @@ const styles = StyleSheet.create({
     textInput : {
         height: 50,
         backgroundColor: colors.lightPurple,
-        marginHorizontal: 20,
-        marginVertical: 20,
         width: width - 40,
         paddingLeft: 20,
         borderRadius: 20,
@@ -87,17 +85,18 @@ const styles = StyleSheet.create({
         marginVertical: 30
     },
     pcInfoContainer: {
-        height: 200,
+        height: height/4,
         backgroundColor: colors.lightPurple,
         width: width,
         justifyContent: 'space-around',
         flexDirection: 'row',
-        paddingTop: 40
+        display: 'flex',
+        alignItems: 'center'
     },
     computerImage: {
-        height: 120,
-        width: 130,
-        marginLeft: 30
+        height: 100,
+        width: 110,
+        margin: 'auto'
     },
     pcText: {
         fontSize: 18,
@@ -116,7 +115,7 @@ const commonStyles = StyleSheet.create({
         backgroundColor: colors.darkPurple,
         borderRadius: 20,
         height: 50,
-        marginVertical: 20
+        //marginVertical: 20
     },
     buttonText: {
         width: width - 60,
@@ -126,9 +125,12 @@ const commonStyles = StyleSheet.create({
     instructions: {
         fontSize: 20,
         textAlign: 'center',
-        marginVertical: 30,
+        marginVertical: 10,
         width: width-30,
         lineHeight: 40
+    },
+    alignCenter: {
+        alignItems: 'center'
     }
 });
 

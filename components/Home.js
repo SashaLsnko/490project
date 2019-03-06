@@ -34,84 +34,90 @@ class HomeScreen extends React.Component {
         if (this.state.loggedIn && this.state.paired) {
             return (
                 <SafeAreaView>
-                    <View style={{alignItems: "center"}}>
+                    <View style={commonStyles.alignCenter}>
                         <View style={styles.logoContainer}>
                             <Image
                                 source={require("../assets/img/logo_home.png")}
                                 style={styles.logo}/>
                         </View>
-                        <TouchableOpacity
-                            style={commonStyles.submitButton}
-                            onPress={() => this.props.navigation.navigate('ManageDevice',
-                                {refreshFunction: this.refreshUserInfo.bind(this)})}>
-                            <Text style={commonStyles.buttonText}>Manage Device</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            style={commonStyles.submitButton}
-                            onPress={() => this.props.navigation.navigate('SettingsScreen',
-                                {refreshFunction: this.refreshUserInfo.bind(this)})}>
-                            <Text style={commonStyles.buttonText}>Settings</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            style={commonStyles.submitButton}>
-                            <Text style={commonStyles.buttonText}>About</Text>
-                        </TouchableOpacity>
+                        <View style={styles.homeButtons}>
+                            <TouchableOpacity
+                                style={commonStyles.submitButton}
+                                onPress={() => this.props.navigation.navigate('ManageDevice',
+                                    {refreshFunction: this.refreshUserInfo.bind(this)})}>
+                                <Text style={commonStyles.buttonText}>Manage Device</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                style={commonStyles.submitButton}
+                                onPress={() => this.props.navigation.navigate('SettingsScreen',
+                                    {refreshFunction: this.refreshUserInfo.bind(this)})}>
+                                <Text style={commonStyles.buttonText}>Settings</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                style={commonStyles.submitButton}>
+                                <Text style={commonStyles.buttonText}>About</Text>
+                            </TouchableOpacity>
+                        </View>
                     </View>
                 </SafeAreaView>
             )
         } else if (this.state.loggedIn) {
             return (
                 <SafeAreaView>
-                    <View style={{alignItems: 'center',}}>
+                    <View style={commonStyles.alignCenter}>
                         <View style={styles.logoContainer}>
                             <Image
                                 source={require("../assets/img/logo_home.png")}
                                 style={styles.logo}/>
                         </View>
-                        <TouchableOpacity
-                            style={commonStyles.submitButton}
-                            onPress={() => this.props.navigation.navigate('PairingScreen',
-                                {refreshFunction: this.refreshUserInfo.bind(this)})}>
-                            <Text style={commonStyles.buttonText}>Pair Device</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            style={commonStyles.submitButton}
-                            onPress={() => this.props.navigation.navigate('SettingsScreen',
-                                {refreshFunction: this.refreshUserInfo.bind(this)})}>
-                            <Text style={commonStyles.buttonText}>Settings</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            style={commonStyles.submitButton}>
-                            <Text style={commonStyles.buttonText}>About</Text>
-                        </TouchableOpacity>
+                        <View style={styles.homeButtons}>
+                            <TouchableOpacity
+                                style={commonStyles.submitButton}
+                                onPress={() => this.props.navigation.navigate('PairingScreen',
+                                    {refreshFunction: this.refreshUserInfo.bind(this)})}>
+                                <Text style={commonStyles.buttonText}>Pair Device</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                style={commonStyles.submitButton}
+                                onPress={() => this.props.navigation.navigate('SettingsScreen',
+                                    {refreshFunction: this.refreshUserInfo.bind(this)})}>
+                                <Text style={commonStyles.buttonText}>Settings</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                style={commonStyles.submitButton}>
+                                <Text style={commonStyles.buttonText}>About</Text>
+                            </TouchableOpacity>
+                        </View>
                     </View>
                 </SafeAreaView>
             );
         } else {
             return (
                 <SafeAreaView>
-                    <View style={{alignItems: 'center',}}>
+                    <View style={commonStyles.alignCenter}>
                         <View style={styles.logoContainer}>
                             <Image
                                 source={require("../assets/img/logo_home.png")}
                                 style={styles.logo}/>
                         </View>
-                        <TouchableOpacity
-                            style={commonStyles.submitButton}
-                            onPress={() => this.props.navigation.navigate('Login',
-                                {refreshFunction: this.refreshUserInfo.bind(this)})}>
-                            <Text style={commonStyles.buttonText}>Login</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            style={commonStyles.submitButton}
-                            onPress={() => this.props.navigation.navigate('Registration',
-                                {refreshFunction: this.refreshUserInfo.bind(this)})}>
-                            <Text style={commonStyles.buttonText}>Register</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            style={commonStyles.submitButton}>
-                            <Text style={commonStyles.buttonText}>About</Text>
-                        </TouchableOpacity>
+                        <View style={styles.homeButtons}>
+                            <TouchableOpacity
+                                style={commonStyles.submitButton}
+                                onPress={() => this.props.navigation.navigate('Login',
+                                    {refreshFunction: this.refreshUserInfo.bind(this)})}>
+                                <Text style={commonStyles.buttonText}>Login</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                style={commonStyles.submitButton}
+                                onPress={() => this.props.navigation.navigate('Registration',
+                                    {refreshFunction: this.refreshUserInfo.bind(this)})}>
+                                <Text style={commonStyles.buttonText}>Register</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                style={commonStyles.submitButton}>
+                                <Text style={commonStyles.buttonText}>About</Text>
+                            </TouchableOpacity>
+                        </View>
                     </View>
                 </SafeAreaView>
             );
@@ -176,18 +182,22 @@ class Fake extends React.Component {
 
 const styles = StyleSheet.create({
     logoContainer: {
-        height: height*0.5,
+        height: height*0.6,
         backgroundColor: colors.darkDarkPurle,
         width: width,
         justifyContent: 'center',
         alignItems: 'center',
-        top: 0,
-        marginBottom: 20
+        top: 0
     },
     logo: {
         marginLeft: 30,
         marginBottom: 40,
         resizeMode: 'center'
+    },
+    homeButtons: {
+        display: 'flex',
+        justifyContent: 'space-evenly',
+        height: height*0.35
     }
 });
 

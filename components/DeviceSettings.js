@@ -28,7 +28,7 @@ class DeviceSettingsScreen extends React.Component {
                 <View style={styles.formContainer}>
                     <PcInfo pcName={this.state.pcName}/>
                     <TouchableOpacity
-                        style={commonStyles.submitButton}
+                        style={[commonStyles.submitButton, {marginTop: 20}]}
                         onPress={() => {this.unpairDevice()}}>
                         <Text style={commonStyles.buttonText}>Unpair Device</Text>
                     </TouchableOpacity>

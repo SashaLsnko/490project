@@ -35,7 +35,7 @@ class ChangePasswordlView extends React.Component {
     };
     render() {
         return (
-            <View style={styles.changeInfoContainer}>
+            <View style={{...styles.changeInfoContainer, height: 300}}>
                 <TextField
                     secure = {true}
                     placeholder="Current Password"
@@ -49,13 +49,7 @@ class ChangePasswordlView extends React.Component {
                     placeholder="Confirm New Password"
                     onChangeFn={ (password) => this.setState({confirmNewPassword: password})}/>
                 <TouchableOpacity
-                    style={[
-                        commonStyles.submitButton,
-                        {
-                            marginVertical: 0,
-                            marginBottom: 20,
-                            marginTop: 10
-                        }]}>
+                    style={commonStyles.submitButton}>
                     <Text style={commonStyles.buttonText}>Change Password</Text>
                 </TouchableOpacity>
             </View>
@@ -201,6 +195,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderBottomWidth: 1,
         borderBottomColor: colors.lightGrey,
+        display: 'flex',
+        height: 140,
+        marginTop: 15,
+        marginBottom: 10
 
     }
 });

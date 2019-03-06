@@ -62,47 +62,46 @@ class RegistrationScreen extends React.Component {
             }
         };
         return (
-            <View>
-                <View style={styles.formContainer}>
-                    <Text style={{...commonStyles.instructions, lineHeight: 20, marginVertical: 15}}>
-                        Create your account</Text>
-                    <TextField
-                        secure = {false}
-                        placeholder="Full Name"
-                        onChangeFn={ (username) => this.setState({username: username})}/>
-                    <TextField
-                        secure = {false}
-                        placeholder="Email"
-                        onChangeFn={ (email) => this.setState({email: email})}/>
-                    <TextField
-                        secure = {true}
-                        placeholder="Password"
-                        onChangeFn={ (password) => this.setState({password: password})}/>
-                    <TextField
-                        secure = {true}
-                        placeholder="Confirm Password"
-                        onChangeFn={ (confirmPassword) => this.setState({confirmPassword: confirmPassword})}/>
-                    <TouchableOpacity
-                        style={commonStyles.submitButton}
-                        onPress={ () => register() }>
-                        <Text style={commonStyles.buttonText}>Create Account</Text>
-                    </TouchableOpacity>
-                    <View style={{marginVertical: 20}}>
-                        <NavigationLink text='Already have an Account?'
-                                        navigate={ () => this.props.navigation.navigate('Login',
-                                            {refreshFunction: this.props.navigation.state.params.refreshFunction}) }/>
-                    </View>
+            <View style={styles.fields}>
+                <Text style={commonStyles.instructions}>
+                    Create your account</Text>
+                <TextField
+                    secure = {false}
+                    placeholder="Full Name"
+                    onChangeFn={ (username) => this.setState({username: username})}/>
+                <TextField
+                    secure = {false}
+                    placeholder="Email"
+                    onChangeFn={ (email) => this.setState({email: email})}/>
+                <TextField
+                    secure = {true}
+                    placeholder="Password"
+                    onChangeFn={ (password) => this.setState({password: password})}/>
+                <TextField
+                    secure = {true}
+                    placeholder="Confirm Password"
+                    onChangeFn={ (confirmPassword) => this.setState({confirmPassword: confirmPassword})}/>
+                <TouchableOpacity
+                    style={commonStyles.submitButton}
+                    onPress={ () => register() }>
+                    <Text style={commonStyles.buttonText}>Create Account</Text>
+                </TouchableOpacity>
+                <View>
+                    <NavigationLink text='Already have an Account?'
+                                    navigate={ () => this.props.navigation.navigate('Login',
+                                        {refreshFunction: this.props.navigation.state.params.refreshFunction}) }/>
                 </View>
             </View>
         );
     }
 }
 
-
 const styles = StyleSheet.create({
-    formContainer: {
-        height: height,
-        paddingTop: 30,
+    fields: {
+        display: 'flex',
+        justifyContent: 'space-evenly',
+        height: height*0.8,
+        margin: 'auto',
         alignItems: "center"
     }
 });

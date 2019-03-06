@@ -1,12 +1,14 @@
 import React from "react";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {Dimensions, Image, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import { commonStyles, PcInfo } from "./common";
+
+const width = Dimensions.get('window').width; //full width
 
 class ManageDevice extends React.Component {
     render() {
         return (
             <View>
-                <View style={styles.alignCenter}>
+                <View style={commonStyles.alignCenter}>
                     <Text  style={commonStyles.instructions}>You are connected to:</Text>
                     <PcInfo/>
                     <View style={{flexDirection: 'row'}}>
@@ -33,17 +35,13 @@ class ManageDevice extends React.Component {
     }
 }
 
-
 const styles = StyleSheet.create({
     lockButtons: {
-        height: 150,
-        width: 150,
+        height: width/2.5,
+        width: width/2.5,
         marginHorizontal: 10,
         marginVertical: 30,
         marginTop: 50
-    },
-    alignCenter: {
-        alignItems: 'center'
     }
 });
 

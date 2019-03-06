@@ -64,7 +64,7 @@ class LoginScreen extends React.Component {
                         onPress={() => login()}>
                         <Text style={commonStyles.buttonText}>Login</Text>
                     </TouchableOpacity>
-                    <View style={{marginVertical: 20}}>
+                    <View>
                         <Button title='Forgot your passowrd?'/>
                         <HorizontalSeparator/>
                         <NavigationLink text="Don't have an Account?"
@@ -80,9 +80,10 @@ class LoginScreen extends React.Component {
 
 const styles = StyleSheet.create({
     formContainer: {
-        height: height,
-        paddingTop: 30,
-        alignItems: "center"
+        alignItems: "center",
+        display: 'flex',
+        justifyContent: 'space-evenly',
+        height: height*0.8
     }
 });
 
