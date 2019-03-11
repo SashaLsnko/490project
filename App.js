@@ -94,10 +94,10 @@ const AppNavigator = createStackNavigator(
         EncryptionScreen: {
           screen: AESexample,
           navigationOptions: getHeader("AES example")
-        },
+        }
 
-        LoggedHome: LoggedHome,
-        PairedHome: PairedHome,
+        // LoggedHome: LoggedHome,
+        // PairedHome: PairedHome,
     },
     {
       initialRouteName: "Fake"
