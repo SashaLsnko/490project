@@ -697,6 +697,7 @@
 		891E785932234A159911F3FD /* angle-double-left.svg in Resources */ = {isa = PBXBuildFile; fileRef = 487834BACED04C57A52A015E /* angle-double-left.svg */; };
 		892771FD00434139A181EF0D /* database.svg in Resources */ = {isa = PBXBuildFile; fileRef = EF393ED1B49A4B899E14816F /* database.svg */; };
 		892F714D0B494FDEA3F64FC4 /* briefcase-medical.svg in Resources */ = {isa = PBXBuildFile; fileRef = 57AD5D1D27894534AB3100FC /* briefcase-medical.svg */; };
+		893E4B91AD21438B8FE2FF53 /* libRCTAesCrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B372B4FF12434879ABEF4880 /* libRCTAesCrypto.a */; };
 		8949D0E0DC2A4E7B9FDEA469 /* plus-circle.svg in Resources */ = {isa = PBXBuildFile; fileRef = 1F84F066E9F640B79CA6A3CF /* plus-circle.svg */; };
 		8957DA1271974E0E8B99CF47 /* camera-retro.svg in Resources */ = {isa = PBXBuildFile; fileRef = BDD4EC6D321C4759A23D2AB5 /* camera-retro.svg */; };
 		89DD383761FA41419BC80E2B /* motorcycle.svg in Resources */ = {isa = PBXBuildFile; fileRef = FA2CC57773234ADD98674638 /* motorcycle.svg */; };
@@ -1544,6 +1545,13 @@
 			remoteGlobalIDString = D73F06E81D48E17B00AD5963;
 			remoteInfo = BleClient;
 		};
+		5E37B6CB2221FE40003D0938 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47941946F0024181AAB191E8 /* RCTAesCrypto.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D8417CB91F41979100E17599;
+			remoteInfo = RCTAesCrypto;
+		};
 		5E9157321DD0AC6500FF2AA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */;
@@ -1984,6 +1992,7 @@
 		473A61F662144856B85145B2 /* shirtsinbulk.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = shirtsinbulk.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/shirtsinbulk.svg"; sourceTree = "<group>"; };
 		475DAE62EAE64F2C89E3DF1F /* resolving.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = resolving.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/resolving.svg"; sourceTree = "<group>"; };
 		478D5F1A0BDB4CAB8BC1DD70 /* history.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = history.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/history.svg"; sourceTree = "<group>"; };
+		47941946F0024181AAB191E8 /* RCTAesCrypto.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTAesCrypto.xcodeproj; path = "../node_modules/react-native-aes-kit/ios/RCTAesCrypto.xcodeproj"; sourceTree = "<group>"; };
 		47B39C482D9C4AADBBF33CED /* ribbon.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = ribbon.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/ribbon.svg"; sourceTree = "<group>"; };
 		482F2EA002CB46E0AC67956B /* luggage-cart.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "luggage-cart.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/luggage-cart.svg"; sourceTree = "<group>"; };
 		4830D9770C614FC9B4B1AD20 /* yin-yang.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "yin-yang.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/yin-yang.svg"; sourceTree = "<group>"; };
@@ -2533,6 +2542,7 @@
 		B28037D27EE140838CC99E19 /* odnoklassniki.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = odnoklassniki.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/brands/odnoklassniki.svg"; sourceTree = "<group>"; };
 		B287BEA969DE431399ADEE56 /* window-minimize.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "window-minimize.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/regular/window-minimize.svg"; sourceTree = "<group>"; };
 		B34186B7C2DA4E25B43FD244 /* circle.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = circle.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/regular/circle.svg"; sourceTree = "<group>"; };
+		B372B4FF12434879ABEF4880 /* libRCTAesCrypto.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTAesCrypto.a; sourceTree = "<group>"; };
 		B3755633148940198F5D0DA3 /* gas-pump.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "gas-pump.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/gas-pump.svg"; sourceTree = "<group>"; };
 		B3AD9D5694764B2CB1C247B5 /* money-bill.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "money-bill.svg"; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/money-bill.svg"; sourceTree = "<group>"; };
 		B3C9E22E01514CA5B87640EA /* prescription.svg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = prescription.svg; path = "../assets/fonts/fontawesome-free-5.4.1-web/svgs/solid/prescription.svg"; sourceTree = "<group>"; };
@@ -2953,6 +2963,7 @@
 				A9CAEB570F4D443C9BE2E74F /* libRNCamera.a in Frameworks */,
 				6A24FF987D2C4E39A7753479 /* libReactNativePermissions.a in Frameworks */,
 				74294B75E9E749CFAE94097A /* libBleClient.a in Frameworks */,
+				893E4B91AD21438B8FE2FF53 /* libRCTAesCrypto.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3129,6 +3140,14 @@
 			isa = PBXGroup;
 			children = (
 				5E37B6522221C8C7003D0938 /* libBleClient.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5E37B6C82221FE40003D0938 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5E37B6CC2221FE40003D0938 /* libRCTAesCrypto.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -4443,6 +4462,7 @@
 				C5D10A8C80484651A7B23BAC /* RNCamera.xcodeproj */,
 				4C982488C0494CBA8A793F8B /* ReactNativePermissions.xcodeproj */,
 				A1B15A31673E4BB7B5AA7C57 /* BleClient.xcodeproj */,
+				47941946F0024181AAB191E8 /* RCTAesCrypto.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -4501,6 +4521,7 @@
 				E69135D712C146DBACCE1D5C /* libRNCamera.a */,
 				FF0E1C615E674006B3E08A57 /* libReactNativePermissions.a */,
 				29ADA704A4D84A0D91070644 /* libBleClient.a */,
+				B372B4FF12434879ABEF4880 /* libRCTAesCrypto.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -4642,6 +4663,10 @@
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
+				},
+				{
+					ProductGroup = 5E37B6C82221FE40003D0938 /* Products */;
+					ProjectRef = 47941946F0024181AAB191E8 /* RCTAesCrypto.xcodeproj */;
 				},
 				{
 					ProductGroup = 5E91572E1DD0AC6500FF2AA8 /* Products */;
@@ -4926,6 +4951,13 @@
 			fileType = archive.ar;
 			path = libBleClient.a;
 			remoteRef = 5E37B6512221C8C7003D0938 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5E37B6CC2221FE40003D0938 /* libRCTAesCrypto.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTAesCrypto.a;
+			remoteRef = 5E37B6CB2221FE40003D0938 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */ = {
@@ -6411,12 +6443,14 @@
 					"$(SRCROOT)..\node_modules\neact-native-cameraios/**",
 					"$(SRCROOT)..\node_modules\neact-native-permissionsios/**",
 					"$(SRCROOT)..\node_modules\neact-native-ble-plxios/**",
+					"$(SRCROOT)..\node_modules\neact-native-aes-kitiosRCTAesCrypto/**",
 				);
 				INFOPLIST_FILE = slsTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -6445,12 +6479,14 @@
 					"$(SRCROOT)..\node_modules\neact-native-cameraios/**",
 					"$(SRCROOT)..\node_modules\neact-native-permissionsios/**",
 					"$(SRCROOT)..\node_modules\neact-native-ble-plxios/**",
+					"$(SRCROOT)..\node_modules\neact-native-aes-kitiosRCTAesCrypto/**",
 				);
 				INFOPLIST_FILE = slsTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -6482,6 +6518,7 @@
 					"$(SRCROOT)..\node_modules\neact-native-cameraios/**",
 					"$(SRCROOT)..\node_modules\neact-native-permissionsios/**",
 					"$(SRCROOT)..\node_modules\neact-native-ble-plxios/**",
+					"$(SRCROOT)..\node_modules\neact-native-aes-kitiosRCTAesCrypto/**",
 				);
 				INFOPLIST_FILE = sls/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -6516,6 +6553,7 @@
 					"$(SRCROOT)..\node_modules\neact-native-cameraios/**",
 					"$(SRCROOT)..\node_modules\neact-native-permissionsios/**",
 					"$(SRCROOT)..\node_modules\neact-native-ble-plxios/**",
+					"$(SRCROOT)..\node_modules\neact-native-aes-kitiosRCTAesCrypto/**",
 				);
 				INFOPLIST_FILE = sls/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -6551,11 +6589,13 @@
 					"$(SRCROOT)..\node_modules\neact-native-cameraios/**",
 					"$(SRCROOT)..\node_modules\neact-native-permissionsios/**",
 					"$(SRCROOT)..\node_modules\neact-native-ble-plxios/**",
+					"$(SRCROOT)..\node_modules\neact-native-aes-kitiosRCTAesCrypto/**",
 				);
 				INFOPLIST_FILE = "sls-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -6591,11 +6631,13 @@
 					"$(SRCROOT)..\node_modules\neact-native-cameraios/**",
 					"$(SRCROOT)..\node_modules\neact-native-permissionsios/**",
 					"$(SRCROOT)..\node_modules\neact-native-ble-plxios/**",
+					"$(SRCROOT)..\node_modules\neact-native-aes-kitiosRCTAesCrypto/**",
 				);
 				INFOPLIST_FILE = "sls-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -6630,11 +6672,13 @@
 					"$(SRCROOT)..\node_modules\neact-native-cameraios/**",
 					"$(SRCROOT)..\node_modules\neact-native-permissionsios/**",
 					"$(SRCROOT)..\node_modules\neact-native-ble-plxios/**",
+					"$(SRCROOT)..\node_modules\neact-native-aes-kitiosRCTAesCrypto/**",
 				);
 				INFOPLIST_FILE = "sls-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -6669,11 +6713,13 @@
 					"$(SRCROOT)..\node_modules\neact-native-cameraios/**",
 					"$(SRCROOT)..\node_modules\neact-native-permissionsios/**",
 					"$(SRCROOT)..\node_modules\neact-native-ble-plxios/**",
+					"$(SRCROOT)..\node_modules\neact-native-aes-kitiosRCTAesCrypto/**",
 				);
 				INFOPLIST_FILE = "sls-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
