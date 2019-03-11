@@ -11,6 +11,9 @@ import DeviceSettingsScreen from "./components/DeviceSettings";
 import QRexample from "./components/QRexample.js";
 import HTTPexample from "./components/HTTPexample.js";
 import BLEexample from "./components/BluetoothExample.js";
+import GeolocationExample from "./components/GeolocationExample.js";
+import AESexample from "./components/AESexample.js";
+
 import { colors } from "./components/common";
 
 let getHeader = (title) => {
@@ -83,7 +86,18 @@ const AppNavigator = createStackNavigator(
         BluetoothScreen: {
           screen: BLEexample,
           navigationOptions: getHeader("Bluetooth example")
-        }
+        },
+        GeolocationScreen: {
+          screen: GeolocationExample,
+          navigationOptions: getHeader("Geolocation example")
+        },
+        EncryptionScreen: {
+          screen: AESexample,
+          navigationOptions: getHeader("AES example")
+        },
+
+        LoggedHome: LoggedHome,
+        PairedHome: PairedHome,
     },
     {
       initialRouteName: "Fake"
