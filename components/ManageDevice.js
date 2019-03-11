@@ -12,7 +12,7 @@ class ManageDevice extends React.Component {
       //  };
     }
 
-    sendCommand(cmd) {
+    sendCommand(user, cmd) {
       fetch('https://sls.alaca.ca/saveCommands', {
         method: 'POST',
         headers: {
@@ -20,12 +20,12 @@ class ManageDevice extends React.Component {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          uname: 'Desktop',
+          uname: user,
           command: cmd,
         }),
       })
       .then((response) => {
-        alert(response);
+        //alert(JSON.stringify(response));
       })
       .catch(function(error) { alert(error) });
     }
@@ -37,12 +37,12 @@ class ManageDevice extends React.Component {
                     <Text  style={commonStyles.instructions}>You are connected to:</Text>
                     <PcInfo/>
                     <View style={{flexDirection: 'row'}}>
-                        <TouchableOpacity onPress={this.sendCommand.bind(this,'lock')}>
+                        <TouchableOpacity onPress={this.sendCommand.bind(this,'Desktop','lock')}>
                             <Image
                                 source={require("../assets/img/lock_button.png")}
                                 style={styles.lockButtons}/>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={this.sendCommand.bind(this,'unlock')}>
+                        <TouchableOpacity onPress={this.sendCommand.bind(this,'Desktop','unlock')}>
                             <Image
                                 source={require("../assets/img/unlock_button.png")}
                                 style={styles.lockButtons}/>
