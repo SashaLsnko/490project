@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
-import { Text, View, Button, TextInput, NativeModules } from 'react-native';
+import { Text, View, Button, TextInput } from 'react-native';
 import AesCrypto from 'react-native-aes-kit';
+import TestBridge from './TestModule';
+
+TestBridge.show('Awesome', TestBridge.SHORT);
 
 class AESexample extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      key: 'defaultkey123456',
+      key: 'defaultkey223456',
       plaintext: 'default_plaintext',
       cipher: ''
      };
+  }
+
+  temp() {
+    //alert(yeet["EXAMPLE_CONSTANT"]);
+    //alert(JSON.stringify(TestBridge));
   }
 
   encryptDecrypt() {
@@ -33,6 +41,8 @@ class AESexample extends Component {
     }).catch(err=>{
         alert(err);
     });
+
+
   }
 
   render() {
@@ -50,7 +60,7 @@ class AESexample extends Component {
           value={this.state.plaintext}
         />
         <Button
-          onPress={this.encryptDecrypt.bind(this)}
+          onPress={this.temp.bind(this)}
           title="Encrypt Decrypt"
           color="#841584"
           accessibilityLabel="Learn more about this purple button"
