@@ -6,6 +6,7 @@ import {AsyncStorage} from "react-native";
 import AesCrypto from 'react-native-aes-kit';
 import {decode as atob, encode as btoa} from 'base-64'
 var aesjs = require('aes-js');
+var unixTime = require('unix-time');
 
 const width = Dimensions.get('window').width; //full width
 
@@ -82,6 +83,8 @@ class ManageDevice extends React.Component {
     }
 
     sendEncryptedCommand(user, text) {
+      text = this.pad(text + '|' + unixTime(new Date()));
+      alert(text);
       return
       var key = this.state.key;
       var iv = this.state.iv;
@@ -116,7 +119,6 @@ class ManageDevice extends React.Component {
     pad(str) {
       extraChars = 16 - (str.length % 16);
       result = str + '|' + '0'.repeat(extraChars-1)
-      alert(result.length)
       return result
     }
 
@@ -150,7 +152,7 @@ class ManageDevice extends React.Component {
                                 source={require("../assets/img/lock_button.png")}
                                 style={styles.lockButtons}/>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => (this.sendEncryptedCommand('Desktop',this.pad('lock')))}>
+                        <TouchableOpacity onPress={() => (this.sendEncryptedCommand('Desktop','lock'))}>
                             <Image
                                 source={require("../assets/img/unlock_button.png")}
                                 style={styles.lockButtons}/>
