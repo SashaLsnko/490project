@@ -36,7 +36,8 @@ class SettingsScreen extends React.Component {
                     </View>
                     <TouchableOpacity
                         style={ styles.settingOption }
-                        onPress={ () => this.props.navigation.navigate('LoginInfo') }>
+                        onPress={ () => this.props.navigation.navigate('LoginInfo',
+                            {refreshFunction: this.props.navigation.state.params.refreshFunction}) }>
 
                         <View style={ styles.proximityTextContainer }>
                             <Text style={ styles.description }>

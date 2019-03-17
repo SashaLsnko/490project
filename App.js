@@ -13,6 +13,8 @@ import HTTPexample from "./components/HTTPexample.js";
 import BLEexample from "./components/BluetoothExample.js";
 import GeolocationExample from "./components/GeolocationExample.js";
 import AESexample from "./components/AESexample.js";
+import ForgotPasswordScreen from "./components/forgotPassword";
+import AboutScreen from "./components/About";
 
 import { colors } from "./components/common";
 
@@ -94,9 +96,15 @@ const AppNavigator = createStackNavigator(
         EncryptionScreen: {
           screen: AESexample,
           navigationOptions: getHeader("AES example")
+        },
+        ForgotPassword: {
+            screen: ForgotPasswordScreen,
+            navigationOptions: getHeader("Reset Password")
+        },
+        AboutScreen :{
+            screen: AboutScreen,
+            navigationOptions: getHeader("About")
         }
-        // LoggedHome: LoggedHome,
-        // PairedHome: PairedHome,
     },
     {
       initialRouteName: "Fake"

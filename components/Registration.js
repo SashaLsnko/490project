@@ -1,5 +1,5 @@
 import React from "react";
-import { Dimensions, StyleSheet, Text, TouchableOpacity, View, Alert } from "react-native";
+import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { TextField, NavigationLink, commonStyles } from './common';
 import { setUserInfo } from '../utils'
 
@@ -32,7 +32,7 @@ class RegistrationScreen extends React.Component {
                     this.props.navigation.navigate('Home');
                 } else
                     if (response.status === 400) {
-                        Alert.alert("Your Username already exists. Perhaps you would like to log in?", "",
+                        alert("Your Username already exists. Perhaps you would like to log in?", "",
                             [
                                 {text: "Try Again"},
                                 {text: "Login",
@@ -46,19 +46,16 @@ class RegistrationScreen extends React.Component {
     }
 
     render() {
-        const showAlert = (message) =>{
-            Alert.alert( message )
-        };
         const register = () =>{
             if (this.state.username && this.state.email && this.state.password
                 && this.state.confirmPassword) {
                 if (this.state.password === this.state.confirmPassword) {
                     this.sendUserInformation(this.state.email, this.state.password);
                 } else {
-                    showAlert("The password in two fields should match")
+                    alert("The password in two fields should match")
                 }
             } else {
-                showAlert("please fill in username and password fields")
+                alert("please fill in username and password fields")
             }
         };
         return (

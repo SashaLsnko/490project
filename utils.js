@@ -16,10 +16,13 @@ const isPaired = () => AsyncStorage.getItem('isPaired');
 
 const pcName = () => AsyncStorage.getItem('pcName');
 
+const userEmail = () => AsyncStorage.getItem('userEmail');
+
 export {
     setUserInfo,
     setPairing,
     isLoggedIn,
     isPaired,
-    pcName
+    pcName,
+    userEmail
 }

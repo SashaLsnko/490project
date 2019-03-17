@@ -3,23 +3,69 @@ import {Dimensions, StyleSheet, Text, TouchableOpacity, View,
     TouchableWithoutFeedback, ScrollView } from "react-native";
 import {colors, TextField, commonStyles} from "./common";
 import FontAwesome, { Icons } from 'react-native-fontawesome';
+import { setUserInfo, userEmail } from "../utils";
 
 const width = Dimensions.get('window').width; //full width
 
 class ChangeEmailView extends React.Component {
-    state= {username : ""};
+    state= {
+        password : "",
+        newUsername : "",
+        oldUsername : ""
+    };
+
+    changeUsername() {
+        fetch('http://sls.alaca.ca/changeUsername', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                oldUname: this.state.oldUsername,
+                newUname: this.state.newUsername,
+                pass: this.state.password,
+            }),
+        })
+            .then((response) => {
+                if (response.status === 200) {
+                    setUserInfo(this.state.newUsername, 'true');
+                    this.props.refresh();
+                    this.props.navigate();
+                    alert("Username successfully changed!");
+                } else
+                    alert("Oops, something went wrong. Check your Username and Password!")
+            })
+            .catch(function(error) { alert(error) });
+    }
+
     render() {
+
+        userEmail().then(res => {
+            if (res !== this.state.oldUsername) {
+                this.setState({oldUsername: res})
+            }
+        });
+
+        const prepareChangeUsername = () =>{
+            this.changeUsername(this.state.username);
+        };
+
         return (
-            <View style={styles.changeInfoContainer}>
+            <View style={{...styles.changeInfoContainer, height: 200}}>
                 <TextField
                     secure = {false}
                     placeholder="New Email"
-                    onChangeFn={ (username) => this.setState({username: username})}/>
+                    onChangeFn={ (newUsername) => this.setState({newUsername: newUsername})}/>
+
+                <TextField
+                    secure = {true}
+                    placeholder="Password"
+                    onChangeFn={ (password) => this.setState({password: password})}/>
+
                 <TouchableOpacity
-                    style={[
-                        commonStyles.submitButton,
-                        {marginVertical: 0,
-                        marginBottom: 20}]}>
+                    style={commonStyles.submitButton}
+                    onPress={() => prepareChangeUsername()}>
                     <Text style={commonStyles.buttonText}>Change Email</Text>
                 </TouchableOpacity>
             </View>
@@ -31,9 +77,50 @@ class ChangePasswordlView extends React.Component {
     state= {
         oldPassword : "",
         newPassword : "",
-        confirmNewPassword : ""
+        confirmNewPassword : "",
+        username : ""
     };
+
+    changePassword() {
+        fetch('http://sls.alaca.ca/changePassword', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                uname: this.state.username,
+                oldPass: this.state.oldPassword,
+                newPass: this.state.newPassword,
+            }),
+        })
+            .then((response) => {
+                if (response.status === 200) {
+                    setUserInfo("", 'false');
+                    this.props.refresh();
+                    this.props.navigate();
+                    alert("Please log in with your new password");
+                } else
+                if (response.status === 400) {
+                    alert("Your Username or Password is incorrect");
+                } else
+                    alert("Oops, something went wrong. Check your Username and Password!")
+            })
+            .catch(function(error) { alert(error) });
+    }
+
     render() {
+
+        userEmail().then(res => {
+            if (res !== this.state.username) {
+                this.setState({username: res})
+            }
+        });
+
+        const prepareChangePassword = () =>{
+            this.changePassword();
+        };
+
         return (
             <View style={{...styles.changeInfoContainer, height: 300}}>
                 <TextField
@@ -49,7 +136,8 @@ class ChangePasswordlView extends React.Component {
                     placeholder="Confirm New Password"
                     onChangeFn={ (password) => this.setState({confirmNewPassword: password})}/>
                 <TouchableOpacity
-                    style={commonStyles.submitButton}>
+                    style={commonStyles.submitButton}
+                    onPress={() => prepareChangePassword()}>
                     <Text style={commonStyles.buttonText}>Change Password</Text>
                 </TouchableOpacity>
             </View>
@@ -60,7 +148,7 @@ class ChangePasswordlView extends React.Component {
 function ChangeEmail(props) {
     const display = props.display;
     if (display) {
-        return <ChangeEmailView/>;
+        return <ChangeEmailView {...props}/>;
     }
     return <View/>;
 }
@@ -68,7 +156,7 @@ function ChangeEmail(props) {
 function ChangePassword(props) {
     const display = props.display;
     if (display) {
-        return <ChangePasswordlView/>;
+        return <ChangePasswordlView {...props}/>;
     }
     return <View/>;
 }
@@ -127,7 +215,10 @@ class LoginInfoScreen extends React.Component {
                             <ExpandCollapseIcon displayContent={this.state.displayEmailChange}/>
                         </View>
                     </TouchableWithoutFeedback>
-                    <ChangeEmail display={this.state.displayEmailChange}/>
+                    <ChangeEmail
+                        display={this.state.displayEmailChange}
+                        navigate={ () => this.props.navigation.navigate('Home')}
+                        refresh={ () => this.props.navigation.state.params.refreshFunction()}/>
                     <TouchableOpacity
                         style={styles.settingOption}
                         onPress={ () =>
@@ -140,7 +231,10 @@ class LoginInfoScreen extends React.Component {
                         </View>
                         <ExpandCollapseIcon displayContent={this.state.displayPasswordChange}/>
                     </TouchableOpacity>
-                    <ChangePassword display={this.state.displayPasswordChange}/>
+                    <ChangePassword
+                        display={this.state.displayPasswordChange}
+                        navigate={ () => this.props.navigation.navigate('Home')}
+                        refresh={ () => this.props.navigation.state.params.refreshFunction()}/>
                 </View>
             </ScrollView>
         );

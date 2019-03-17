@@ -26,10 +26,6 @@ class HomeScreen extends React.Component {
         this.refreshUserInfo();
     }
 
-    componentWillUnmount() {
-        alert("unmounted home");
-    }
-
     render() {
         if (this.state.loggedIn && this.state.paired) {
             return (
@@ -54,7 +50,8 @@ class HomeScreen extends React.Component {
                                 <Text style={commonStyles.buttonText}>Settings</Text>
                             </TouchableOpacity>
                             <TouchableOpacity
-                                style={commonStyles.submitButton}>
+                                style={commonStyles.submitButton}
+                                onPress={() => this.props.navigation.navigate('AboutScreen')}>
                                 <Text style={commonStyles.buttonText}>About</Text>
                             </TouchableOpacity>
                         </View>
@@ -84,7 +81,8 @@ class HomeScreen extends React.Component {
                                 <Text style={commonStyles.buttonText}>Settings</Text>
                             </TouchableOpacity>
                             <TouchableOpacity
-                                style={commonStyles.submitButton}>
+                                style={commonStyles.submitButton}
+                                onPress={() => this.props.navigation.navigate('AboutScreen')}>
                                 <Text style={commonStyles.buttonText}>About</Text>
                             </TouchableOpacity>
                         </View>
@@ -114,7 +112,8 @@ class HomeScreen extends React.Component {
                                 <Text style={commonStyles.buttonText}>Register</Text>
                             </TouchableOpacity>
                             <TouchableOpacity
-                                style={commonStyles.submitButton}>
+                                style={commonStyles.submitButton}
+                                onPress={() => this.props.navigation.navigate('AboutScreen')}>
                                 <Text style={commonStyles.buttonText}>About</Text>
                             </TouchableOpacity>
                         </View>

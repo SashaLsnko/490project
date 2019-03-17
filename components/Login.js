@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Dimensions, StyleSheet, Text, TouchableOpacity, View, Alert } from "react-native";
+import { Button, Dimensions, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { NavigationLink, TextField, HorizontalSeparator, commonStyles } from "./common";
 import { setUserInfo } from "../utils";
 
@@ -36,17 +36,15 @@ class LoginScreen extends React.Component {
     }
 
     render() {
-        const showAlert = (message) =>{
-            Alert.alert( message )
-        };
         const login = () =>{
             if (this.state.email && this.state.password) {
                 this.sendUserInformation();
                 this.state.password = "";
             } else {
-                showAlert("please fill in username and password fields")
+                alert("please fill in username and password fields")
             }
         };
+
         return (
             <View>
                 <View style={styles.formContainer}>
@@ -65,7 +63,9 @@ class LoginScreen extends React.Component {
                         <Text style={commonStyles.buttonText}>Login</Text>
                     </TouchableOpacity>
                     <View>
-                        <Button title='Forgot your passowrd?'/>
+                        <Button title='Forgot your passowrd?'
+                                onPress={() => this.props.navigation.navigate('ForgotPassword',
+                                    {refreshFunction: this.props.navigation.state.params.refreshFunction})}/>
                         <HorizontalSeparator/>
                         <NavigationLink text="Don't have an Account?"
                                         navigate={ () => this.props.navigation.navigate('Registration',
