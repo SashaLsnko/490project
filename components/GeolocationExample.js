@@ -22,8 +22,65 @@ export default class App extends Component<{}> {
   state = {
     loading: false,
     updatesEnabled: false,
+    base: { coords: {longitude: 0, latitude: 0}},
     location: {}
   };
+
+  distance(lat1, lon1, lat2, lon2, unit) {
+  	if ((lat1 == lat2) && (lon1 == lon2)) {
+  		return 0;
+  	}
+  	else {
+  		var radlat1 = Math.PI * lat1/180;
+  		var radlat2 = Math.PI * lat2/180;
+  		var theta = lon1-lon2;
+  		var radtheta = Math.PI * theta/180;
+  		var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+  		if (dist > 1) {
+  			dist = 1;
+  		}
+  		dist = Math.acos(dist);
+  		dist = dist * 180/Math.PI;
+  		dist = dist * 60 * 1.1515;
+  		if (unit=="K") { dist = dist * 1.609344 }
+  		if (unit=="N") { dist = dist * 0.8684 }
+  		return dist;
+  	}
+  }
+
+  distance2(lat1, lon1, lat2, lon2){  // generally used geo measurement function
+      var R = 6378.137; // Radius of earth in KM
+      var dLat = lat2 * Math.PI / 180 - lat1 * Math.PI / 180;
+      var dLon = lon2 * Math.PI / 180 - lon1 * Math.PI / 180;
+      var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+      Math.sin(dLon/2) * Math.sin(dLon/2);
+      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+      var d = R * c;
+      return d * 1000; // meters
+  }
+
+  distance3(lat1, lon1, lat2, lon2) {
+    return Math.abs(lat1-lat2) + Math.abs(lon1-lon2)
+  }
+
+  sendCommand(user, cmd) {
+    fetch('https://sls.alaca.ca/saveCommands', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        uname: user,
+        command: cmd,
+      }),
+    })
+    .then((response) => {
+      //alert(JSON.stringify(response));
+    })
+    .catch(function(error) { alert(error) });
+  }
 
   hasLocationPermission = async () => {
     if (Platform.OS === 'ios' ||
@@ -57,17 +114,20 @@ export default class App extends Component<{}> {
 
     if (!hasLocationPermission) return;
 
+    //alert(this.state.base.coords.longitude);
     this.setState({ loading: true }, () => {
       Geolocation.getCurrentPosition(
         (position) => {
-          this.setState({ location: position, loading: false });
+          this.setState({ location: position, loading: false, base: position });
+          alert('base set');
+          //alert(this.state.base.coords.longitude);
           console.log(position);
         },
         (error) => {
           this.setState({ location: error, loading: false });
           console.log(error);
         },
-        { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000, distanceFilter: 50 }
+        { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000, distanceFilter: 0 }
       );
     });
   }
@@ -81,13 +141,23 @@ export default class App extends Component<{}> {
       this.watchId = Geolocation.watchPosition(
         (position) => {
           this.setState({ location: position });
+          ret = this.distance3(position.coords.latitude,
+                        position.coords.longitude,
+                        this.state.base.coords.latitude,
+                        this.state.base.coords.longitude);
+          alert(ret);
+          if( ret < 0.00005) {
+            this.sendCommand('Desktop', 'unlock');
+          } else {
+            this.sendCommand('Desktop', 'lock');
+          }
           console.log(position);
         },
         (error) => {
           this.setState({ location: error });
           console.log(error);
         },
-        { enableHighAccuracy: true, distanceFilter: 0, interval: 1000, fastestInterval: 500 }
+        { enableHighAccuracy: true, distanceFilter: 0, interval: 2000, fastestInterval: 1000 }
       );
     });
   }
