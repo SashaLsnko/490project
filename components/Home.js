@@ -46,7 +46,10 @@ class HomeScreen extends React.Component {
                             <TouchableOpacity
                                 style={commonStyles.submitButton}
                                 onPress={() => this.props.navigation.navigate('SettingsScreen',
-                                    {refreshFunction: this.refreshUserInfo.bind(this)})}>
+                                    {
+                                        refreshFunction: this.refreshUserInfo.bind(this),
+                                        paired: this.state.paired
+                                    })}>
                                 <Text style={commonStyles.buttonText}>Settings</Text>
                             </TouchableOpacity>
                             <TouchableOpacity
@@ -77,7 +80,10 @@ class HomeScreen extends React.Component {
                             <TouchableOpacity
                                 style={commonStyles.submitButton}
                                 onPress={() => this.props.navigation.navigate('SettingsScreen',
-                                    {refreshFunction: this.refreshUserInfo.bind(this)})}>
+                                    {
+                                        refreshFunction: this.refreshUserInfo.bind(this),
+                                        paired: this.state.paired
+                                    })}>
                                 <Text style={commonStyles.buttonText}>Settings</Text>
                             </TouchableOpacity>
                             <TouchableOpacity

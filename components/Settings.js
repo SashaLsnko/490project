@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Dimensions, StyleSheet, Text, TouchableOpacity, View, Switch } from "react-native";
 import { colors, commonStyles } from "./common";
-import { setUserInfo } from "../utils";
+import {isPaired, setUserInfo} from "../utils";
 
 const width = Dimensions.get('window').width; //full width
 
@@ -48,7 +48,11 @@ class SettingsScreen extends React.Component {
                     </TouchableOpacity>
                     <TouchableOpacity
                         style={ styles.settingOption }
-                        onPress={ () => this.props.navigation.navigate('DeviceSettings') }>
+                        onPress={ () => this.props.navigation.navigate('DeviceSettings',
+                            {
+                                refreshFunction: this.props.navigation.state.params.refreshFunction,
+                                paired: this.props.navigation.getParam('paired', false)
+                            })}>
                         <View style={ styles.proximityTextContainer }>
                             <Text style={ styles.description }>
                                 Devices Information
