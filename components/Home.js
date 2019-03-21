@@ -134,7 +134,12 @@ class Fake extends React.Component {
     render() {
         const {navigate} = this.props.navigation;
         return (
-            <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+            <View style={{
+                flex: 1,
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "black"
+            }}>
                 <Text>Home Screen</Text>
                 <Button
                     title="Go Home"

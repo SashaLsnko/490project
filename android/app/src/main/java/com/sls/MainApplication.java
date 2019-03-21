@@ -3,6 +3,7 @@ package com.sls;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import cc.rocwang.aescrypto.AesCryptoPackage;
 import com.polidea.reactnativeble.BlePackage;
 import org.reactnative.camera.RNCameraPackage;
@@ -29,6 +30,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new SplashScreenReactPackage(),
           new TestBridgePackage(),
             new AesCryptoPackage(),
             new BlePackage(),
