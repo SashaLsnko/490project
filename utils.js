@@ -25,11 +25,6 @@ export {
     setPairing,
     isLoggedIn,
     isPaired,
-<<<<<<< HEAD
     pcName,
     userEmail
 }
-=======
-    pcName
-}
->>>>>>> persistent-storage
