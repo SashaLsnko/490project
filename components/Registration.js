@@ -83,11 +83,9 @@ class RegistrationScreen extends React.Component {
                     onPress={ () => register() }>
                     <Text style={commonStyles.buttonText}>Create Account</Text>
                 </TouchableOpacity>
-                <View>
-                    <NavigationLink text='Already have an Account?'
-                                    navigate={ () => this.props.navigation.navigate('Login',
-                                        {refreshFunction: this.props.navigation.state.params.refreshFunction}) }/>
-                </View>
+                <NavigationLink text='Already have an Account?'
+                                navigate={ () => this.props.navigation.navigate('Login',
+                                    {refreshFunction: this.props.navigation.state.params.refreshFunction}) }/>
             </View>
         );
     }

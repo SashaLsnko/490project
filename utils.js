@@ -5,8 +5,10 @@ const setUserInfo = (userEmail, loggingIn) => {
     AsyncStorage.setItem('isloggedIn', loggingIn);
 };
 
-const setPairing = (pcName, pairing) => {
+const setPairing = (key, iv, pcName, pairing) => {
     AsyncStorage.setItem('pcName', pcName);
+    AsyncStorage.setItem('key', key);
+    AsyncStorage.setItem('iv', iv);
     AsyncStorage.setItem('isPaired', pairing);
 };
 

@@ -6,11 +6,20 @@ import { setPairing } from "../utils";
 
 class PairingScreen extends React.Component {
 
-    pairDevice() {
+    temp() {
         setPairing("Sasha's PC", 'true')
         this.props.navigation.state.params.refreshFunction();
         this.props.navigation.navigate('Home');
     };
+
+    pairDevice(value) {
+      split = value.split('|');
+      alert(split);
+      key = split[0];
+      iv = split[1];
+      pcName = split[2];
+      setPairing(key, iv, pcName, 'true');
+    }
 
     render() {
         return (
@@ -23,13 +32,8 @@ class PairingScreen extends React.Component {
                         cameraStyle={styles.qrstyle}
                         showMarker={true}
                         markerStyle={{borderColor: colors.darkPurple}}
-                        onRead={ (e) => (alert(e.data))} />
+                        onRead={ (e) => (this.pairDevice(e.data))} />
                 </View>
-                <TouchableOpacity
-                    style={[commonStyles.submitButton, {marginTop: 300}]}
-                    onPress={() => {this.pairDevice()}}>
-                    <Text style={commonStyles.buttonText}>Fake Pair</Text>
-                </TouchableOpacity>
             </View>
         );
     }

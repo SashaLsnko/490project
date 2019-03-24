@@ -23,10 +23,10 @@ class SettingsScreen extends React.Component {
                             <Text style={ styles.description }>
                                 Proximity authentication
                             </Text>
-                            <Button
-                                style={ styles.explanationBtn }
-                                title='What is this?'
-                            />
+                            <TouchableOpacity
+                                style={commonStyles.justifyCenter}>
+                                <Text style={commonStyles.linkText}>What is this?</Text>
+                            </TouchableOpacity>
                         </View>
                         <Switch
                             trackColor={{ true: colors.lightPurple }}
@@ -44,7 +44,7 @@ class SettingsScreen extends React.Component {
                                 Login Information
                             </Text>
                         </View>
-                        <Button title='>'/>
+                        <Text style={styles.links}> > </Text>
                     </TouchableOpacity>
                     <TouchableOpacity
                         style={ styles.settingOption }
@@ -58,7 +58,7 @@ class SettingsScreen extends React.Component {
                                 Devices Information
                             </Text>
                         </View>
-                        <Button title='>'/>
+                        <Text style={styles.links}> > </Text>
                     </TouchableOpacity>
                 </View>
                 <View style={ styles.logoutBtnContainer }>
@@ -77,12 +77,6 @@ const styles = StyleSheet.create({
     description: {
         fontSize: 18,
         lineHeight: 40
-    },
-    explanationBtn: {
-        marginLeft: 0,
-        paddingLeft: 0,
-        backgroundColor: 'red',
-        textAlign: 'left'
     },
     proximityTextContainer: {
         alignItems: 'flex-start',
@@ -115,6 +109,11 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-end',
         marginBottom: 36,
+    },
+    links: {
+        color: colors.baseBlue,
+        marginTop: 9,
+        fontSize: 19
     }
 });
 

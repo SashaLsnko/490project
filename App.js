@@ -1,6 +1,5 @@
 import React from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import { StatusBar, View } from "react-native";
 import SplashScreen from "react-native-splash-screen"
 import { HomeScreen, Fake, LoggedHome } from './components/Home';
 import RegistrationScreen from './components/Registration';
@@ -123,19 +122,7 @@ export default class App extends React.Component {
 
     render() {
     return (
-
         <AppContainer/>
-      /*<View>
-          <StatusBar
-              //backgroundColor={colors.darkPurple}
-              barStyle="light-content"
-          />
-          <View style={{
-              backgroundColor: "black"
-          }}>
-              <AppContainer />
-          </View>
-      </View> */
     )
   }
 }

@@ -62,15 +62,19 @@ class LoginScreen extends React.Component {
                         onPress={() => login()}>
                         <Text style={commonStyles.buttonText}>Login</Text>
                     </TouchableOpacity>
-                    <View>
-                        <Button title='Forgot your passowrd?'
-                                onPress={() => this.props.navigation.navigate('ForgotPassword',
-                                    {refreshFunction: this.props.navigation.state.params.refreshFunction})}/>
-                        <HorizontalSeparator/>
-                        <NavigationLink text="Don't have an Account?"
-                                        navigate={ () => this.props.navigation.navigate('Registration',
-                                            {refreshFunction: this.props.navigation.state.params.refreshFunction}) }/>
-                    </View>
+                    <TouchableOpacity
+                        style={commonStyles.justifyCenter}
+                        onPress={() => this.props.navigation.navigate('ForgotPassword',
+                            {refreshFunction: this.props.navigation.state.params.refreshFunction})}>
+                        <Text style={commonStyles.linkText}>Forgot your passowrd?</Text>
+                    </TouchableOpacity>
+
+                    <HorizontalSeparator/>
+
+                    <NavigationLink text="Don't have an Account?"
+                                    navigate={ () => this.props.navigation.navigate('Registration',
+                                        {refreshFunction: this.props.navigation.state.params.refreshFunction}) }/>
+
                 </View>
             </View>
         );
@@ -80,10 +84,16 @@ class LoginScreen extends React.Component {
 
 const styles = StyleSheet.create({
     formContainer: {
+        margin: 'auto',
         alignItems: "center",
         display: 'flex',
         justifyContent: 'space-evenly',
         height: height*0.8
+    },
+    linksContainer: {
+        margin: 'auto',
+        alignItems: "center",
+        display: 'flex'
     }
 });
 

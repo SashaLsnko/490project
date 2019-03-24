@@ -7,10 +7,14 @@
     "test": "jest"
   },
   "dependencies": {
+    "aes-js": "^3.1.2",
+    "base-64": "^0.1.0",
     "buffer": "^5.2.1",
+    "crypto-js": "^3.1.9-1",
     "react": "16.6.3",
     "react-native": "0.58.3",
     "react-native-aes-kit": "^1.0.2",
+    "react-native-base64": "0.0.2",
     "react-native-ble-plx": "^1.0.2",
     "react-native-camera": "^1.12.0",
     "react-native-create-bridge": "^2.0.1",
@@ -18,8 +22,9 @@
     "react-native-geolocation-service": "^2.0.0",
     "react-native-gesture-handler": "^1.0.15",
     "react-native-qrcode-scanner": "^1.1.2",
-    "react-native-splash-screen": "3.0.6",
-    "react-navigation": "^3.1.2"
+    "react-native-splash-screen": "^3.0.6",
+    "react-navigation": "^3.1.2",
+    "unix-time": "^1.0.1"
   },
   "devDependencies": {
     "babel-core": "^7.0.0-bridge.0",

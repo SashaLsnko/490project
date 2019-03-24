@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Dimensions, Image, StyleSheet, Text, TextInput, View } from "react-native";
+import {Button, Dimensions, Image, StyleSheet, Text, TextInput, TouchableOpacity, View} from "react-native";
 
 const width = Dimensions.get('window').width; //full width
 const height = Dimensions.get('window').height; //full height
@@ -23,10 +23,11 @@ class NavigationLink extends React.Component {
     render() {
         const {text, navigate} = this.props;
         return (
-            <Button
-                title={text}
-                onPress={() => navigate()}
-            />
+            <TouchableOpacity
+                style={commonStyles.justifyCenter}
+                onPress={() => navigate()}>
+                <Text style={commonStyles.linkText}> {text}</Text>
+            </TouchableOpacity>
         );
     }
 }
@@ -82,7 +83,7 @@ const styles = StyleSheet.create({
         width: width-100,
         height: 1,
         backgroundColor: colors.darkGrey,
-        marginVertical: 30
+        marginVertical: 0
     },
     pcInfoContainer: {
         height: height/4,
@@ -114,8 +115,7 @@ const commonStyles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: colors.darkPurple,
         borderRadius: 20,
-        height: 50,
-        //marginVertical: 20
+        height: 50
     },
     buttonText: {
         width: width - 60,
@@ -131,6 +131,12 @@ const commonStyles = StyleSheet.create({
     },
     alignCenter: {
         alignItems: 'center'
+    },
+    justifyCenter: {
+        justifyContent: "center"
+    },
+    linkText: {
+        color: colors.baseBlue
     }
 });
 
