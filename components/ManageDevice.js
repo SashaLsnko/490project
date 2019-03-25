@@ -7,18 +7,26 @@ import AesCrypto from 'react-native-aes-kit';
 import {decode as atob, encode as btoa} from 'base-64'
 var aesjs = require('aes-js');
 var unixTime = require('unix-time');
+import Geolocation from 'react-native-geolocation-service';
 
 const width = Dimensions.get('window').width; //full width
 
 class ManageDevice extends React.Component {
     constructor(props) {
       super(props);
+      this.watchId = null;
+      this.pcState = null;
       this.state = {
         email: '',
         key: '',
         iv: '',
         pcName: '',
-        cipher: ''
+        cipher: '',
+        baseLat: null,
+        baseLon: null,
+        updatesEnabled: false,
+        loading: false,
+        location: {}
        };
     }
 
@@ -36,6 +44,14 @@ class ManageDevice extends React.Component {
     };
 
     componentDidMount() {
+      // GET PC STATE!!!!!!!!!!!!!!!!! (POLL) 
+      this._getField('latitude', (lat) => {
+        this._getField('longitude', (lon) => {
+          this.setState({baseLat: lat, baseLon: lon}, () => {
+            this.getLocationUpdates();
+          });
+        });
+      });
       this._getField('userEmail', (value) => {this.setState({ email: value })});
       this._getField('key', (value) => {
         key = value.split('+').map(Number);
@@ -46,6 +62,80 @@ class ManageDevice extends React.Component {
         this.setState({ iv: iv });
       });
       this._getField('pcName', (value) => {this.setState({ pcName: value })});
+    }
+
+    componentWillUnmount() {
+      this.removeLocationUpdates();
+    }
+
+    hasLocationPermission = async () => {
+      if (Platform.OS === 'ios' ||
+          (Platform.OS === 'android' && Platform.Version < 23)) {
+        return true;
+      }
+
+      const hasPermission = await PermissionsAndroid.check(
+        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION
+      );
+
+      if (hasPermission) return true;
+
+      const status = await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION
+      );
+
+      if (status === PermissionsAndroid.RESULTS.GRANTED) return true;
+
+      if (status === PermissionsAndroid.RESULTS.DENIED) {
+        alert('Location permission denied by user.');
+      } else if (status === PermissionsAndroid.RESULTS.NEVER_ASK_AGAIN) {
+        alert('Location permission revoked by user.');
+      }
+
+      return false;
+    }
+
+    getLocationUpdates = async () => {
+      const hasLocationPermission = await this.hasLocationPermission();
+
+      if (!hasLocationPermission) return;
+
+      this.setState({ updatesEnabled: true }, () => {
+        this.watchId = Geolocation.watchPosition(
+          (position) => {
+            this.setState({ location: position });
+            ret = this.geoDistance(position.coords.latitude,
+                          position.coords.longitude,
+                          this.state.baseLat,
+                          this.state.baseLon);
+            alert(ret); // distance between base and phone
+            if( ret < 0.00005) {
+              // only send if previous command was not the same
+              if (this.pcState!='unlocked') {
+                this.sendEncryptedCommand(this.state.email,'unlock');
+              }
+            } else {
+              // only send if previous command was not the same
+              if (this.pcState!='locked') {
+                this.sendEncryptedCommand(this.state.email,'lock');
+              }
+            }
+            console.log(position);
+          },
+          (error) => {
+            this.setState({ location: error });
+            console.log(error);
+          },
+          { enableHighAccuracy: true, distanceFilter: 0, interval: 2000, fastestInterval: 1000 }
+        );
+      });
+    }
+
+    removeLocationUpdates = () => {
+        if (this.watchId !== null) {
+            Geolocation.clearWatch(this.watchId);
+            this.setState({ updatesEnabled: false })
+        }
     }
 
     encryptDecrypt3() {
@@ -110,6 +200,8 @@ class ManageDevice extends React.Component {
       })
       .then((response) => {
         //alert(JSON.stringify(response));
+        // POLL SERVER FOR PCSTATE HERE (for like 30 seconds?)
+        // UPDATE pcState accordingly
       })
       .catch(function(error) { alert(error) });
     }
@@ -118,6 +210,10 @@ class ManageDevice extends React.Component {
       extraChars = 16 - (str.length % 16);
       result = str + '|' + '0'.repeat(extraChars-1)
       return result
+    }
+
+    geoDistance(lat1, lon1, lat2, lon2) {
+      return Math.abs(lat1-lat2) + Math.abs(lon1-lon2)
     }
 
     sendCommand(user, cmd) {

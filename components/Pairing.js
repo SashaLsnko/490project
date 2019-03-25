@@ -1,16 +1,82 @@
 import React from "react";
-import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import {
+  Button,
+  PermissionsAndroid,
+  Platform,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  ToastAndroid,
+  View
+} from 'react-native';
 import { commonStyles, colors } from "./common";
 import QRCodeScanner from 'react-native-qrcode-scanner';
-import { setPairing } from "../utils";
+import { setPairing, setBase } from "../utils";
+import Geolocation from 'react-native-geolocation-service';
 
 class PairingScreen extends React.Component {
+
+    state = {
+      loading: false,
+      location: {}
+    }
 
     temp() {
         setPairing("Sasha's PC", 'true')
         this.props.navigation.state.params.refreshFunction();
         this.props.navigation.navigate('Home');
     };
+
+    hasLocationPermission = async () => {
+      if (Platform.OS === 'ios' ||
+          (Platform.OS === 'android' && Platform.Version < 23)) {
+        return true;
+      }
+
+      const hasPermission = await PermissionsAndroid.check(
+        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION
+      );
+
+      if (hasPermission) return true;
+
+      const status = await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION
+      );
+
+      if (status === PermissionsAndroid.RESULTS.GRANTED) return true;
+
+      if (status === PermissionsAndroid.RESULTS.DENIED) {
+        alert('Location permission denied by user.');
+      } else if (status === PermissionsAndroid.RESULTS.NEVER_ASK_AGAIN) {
+        alert('Location permission revoked by user.');
+      }
+
+      return false;
+    }
+
+    getLocation = async () => {
+      const hasLocationPermission = await this.hasLocationPermission();
+
+      if (!hasLocationPermission) return;
+
+      //alert(this.state.base.coords.longitude);
+      this.setState({ loading: true }, () => {
+        Geolocation.getCurrentPosition(
+          (position) => {
+            setBase(position.coords.latitude, position.coords.longitude);
+            // this.setState({ location: position, loading: false, base: position });
+            // alert('base set');
+            //alert(this.state.base.coords.longitude);
+            console.log(position);
+          },
+          (error) => {
+            this.setState({ location: error, loading: false });
+            console.log(error);
+          },
+          { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000, distanceFilter: 0 }
+        );
+      });
+    }
 
     pairDevice(value) {
       split = value.split('|');
@@ -19,6 +85,7 @@ class PairingScreen extends React.Component {
       iv = split[1];
       pcName = split[2];
       setPairing(key, iv, pcName, 'true');
+      this.getLocation();
     }
 
     render() {
