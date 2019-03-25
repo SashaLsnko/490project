@@ -84,8 +84,7 @@ class ManageDevice extends React.Component {
 
     sendEncryptedCommand(user, text) {
       text = this.pad(text + '|' + unixTime(new Date()));
-      alert(text);
-      return
+
       var key = this.state.key;
       var iv = this.state.iv;
 
@@ -97,9 +96,8 @@ class ManageDevice extends React.Component {
 
       // To print or store the binary data, you may convert it to hex
       var cmd = aesjs.utils.hex.fromBytes(encryptedBytes);
-      alert(cmd);
 
-      fetch('https://sls.alaca.ca/saveCommands', {
+      fetch('http://sls.alaca.ca/saveCommands', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -135,7 +133,7 @@ class ManageDevice extends React.Component {
         }),
       })
       .then((response) => {
-        //alert(JSON.stringify(response));
+        alert(JSON.stringify(response));
       })
       .catch(function(error) { alert(error) });
     }
@@ -147,12 +145,12 @@ class ManageDevice extends React.Component {
                     <Text  style={commonStyles.instructions}>You are connected to:</Text>
                     <PcInfo pcName={this.state.pcName}/>
                     <View style={{flexDirection: 'row'}}>
-                        <TouchableOpacity onPress={() => (alert(JSON.stringify(this.state)))}>
+                        <TouchableOpacity onPress={() => (this.sendEncryptedCommand(this.state.email,'lock'))}>
                             <Image
                                 source={require("../assets/img/lock_button.png")}
                                 style={styles.lockButtons}/>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => (this.sendEncryptedCommand('Desktop','lock'))}>
+                        <TouchableOpacity onPress={() => (this.sendEncryptedCommand(this.state.email,'unlock'))}>
                             <Image
                                 source={require("../assets/img/unlock_button.png")}
                                 style={styles.lockButtons}/>
