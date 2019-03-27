@@ -27,7 +27,7 @@ class RegistrationScreen extends React.Component {
         })
             .then((response) => {
                 if (response.status === 200) {
-                    setUserInfo(this.state.email, 'true');
+                    setUserInfo(this.state.email, response._bodyText, 'true');
                     this.props.navigation.state.params.refreshFunction();
                     this.props.navigation.navigate('Home');
                 } else

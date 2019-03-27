@@ -1,6 +1,6 @@
 import React from "react";
-import {Dimensions, Image, StyleSheet,
-   Text, TouchableOpacity, View, Platform} from "react-native";
+import {Dimensions, Image, StyleSheet, Button,
+   Text, TouchableOpacity, View, Platform, ScrollView} from "react-native";
 import { commonStyles, PcInfo } from "./common";
 import * as storage from "../utils";
 import {AsyncStorage} from "react-native";
@@ -21,6 +21,7 @@ class ManageDevice extends React.Component {
       this.outRangeCount = 1;
       this.state = {
         email: '',
+        token: '',
         key: '',
         iv: '',
         pcName: '',
@@ -55,7 +56,11 @@ class ManageDevice extends React.Component {
           });
         });
       });
-      this._getField('userEmail', (value) => {this.setState({ email: value })});
+      this._getField('userEmail', (email) => {this.setState({ email: email })});
+      this._getField('userToken', (token) => {
+        //alert(token);
+        this.setState({ token: token });
+      });
       this._getField('key', (value) => {
         key = value.split('+').map(Number);
         this.setState({ key: key });
@@ -67,7 +72,7 @@ class ManageDevice extends React.Component {
       this._getField('pcName', (value) => {this.setState({ pcName: value })});
 
       tmt = setTimeout(() => {
-        alert(JSON.stringify(this.state));
+        //alert(JSON.stringify(this.state));
       }, 3000);
     }
 
@@ -193,7 +198,7 @@ class ManageDevice extends React.Component {
       }, 2000);
     }
 
-    sendEncryptedCommand(user, text) {
+    sendEncryptedCommand(tok, text) {
       text = this.pad(text + '|' + unixTime(new Date()));
 
       var key = this.state.key;
@@ -207,7 +212,10 @@ class ManageDevice extends React.Component {
 
       // To print or store the binary data, you may convert it to hex
       var cmd = aesjs.utils.hex.fromBytes(encryptedBytes);
-
+      // alert(JSON.stringify({
+      //   token: tok,
+      //   command: cmd,
+      // }));
       fetch('https://sls.alaca.ca/saveCommands', {
         method: 'POST',
         headers: {
@@ -215,7 +223,7 @@ class ManageDevice extends React.Component {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          uname: user,
+          token: tok,
           command: cmd,
         }),
       })
@@ -267,19 +275,39 @@ class ManageDevice extends React.Component {
       .catch(function(error) { alert(error) });
     }
 
+    getPCStatus(tok) {
+      fetch('https://sls.alaca.ca/checkStatus', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          token: tok
+        }),
+      })
+      .then((response) => {
+        alert(JSON.stringify(response));
+        // POLL SERVER FOR PCSTATE HERE (for like 30 seconds?)
+        // UPDATE pcState accordingly
+      })
+      .catch(function(error) { alert(error) });
+    }
+
     render() {
         return (
-            <View>
+            <ScrollView>
+                <Text>{this.state.email}</Text>
                 <View style={commonStyles.alignCenter}>
                     <Text  style={commonStyles.instructions}>You are connected to:</Text>
                     <PcInfo pcName={this.state.pcName}/>
                     <View style={{flexDirection: 'row'}}>
-                        <TouchableOpacity onPress={() => (this.sendEncryptedCommand(this.state.email,'lock'))}>
+                        <TouchableOpacity onPress={() => (this.sendEncryptedCommand(this.state.token,'lock'))}>
                             <Image
                                 source={require("../assets/img/lock_button.png")}
                                 style={styles.lockButtons}/>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => (this.sendEncryptedCommand(this.state.email,'unlock'))}>
+                        <TouchableOpacity onPress={() => (this.sendEncryptedCommand(this.state.token,'unlock'))}>
                             <Image
                                 source={require("../assets/img/unlock_button.png")}
                                 style={styles.lockButtons}/>
@@ -291,8 +319,20 @@ class ManageDevice extends React.Component {
                         onPress={() => this.props.navigation.navigate('SettingsScreen')}>
                         <Text style={commonStyles.buttonText}>Settings</Text>
                     </TouchableOpacity>
+                    <Button
+                        title="Enable Geolocation"
+                        onPress={() => this.getLocationUpdates()}
+                    />
+                    <Button
+                        title="Show State Info"
+                        onPress={() => alert(JSON.stringify(this.state))}
+                    />
+                    <Button
+                        title="Get PC status"
+                        onPress={() => this.getPCStatus(this.state.token)}
+                    />
                 </View>
-            </View>
+            </ScrollView>
         );
     }
 }

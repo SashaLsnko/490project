@@ -10,7 +10,7 @@ class SettingsScreen extends React.Component {
 
     render() {
         const logOut = () => {
-            setUserInfo("", 'false');
+            setUserInfo("", "", 'false');
             this.props.navigation.state.params.refreshFunction();
             this.props.navigation.navigate('Home');
         };

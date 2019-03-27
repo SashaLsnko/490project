@@ -10,7 +10,7 @@ class LoginScreen extends React.Component {
             password: ""};
 
     sendUserInformation() {
-        fetch('http://sls.alaca.ca/login', {
+        fetch('https://sls.alaca.ca/login', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -23,7 +23,7 @@ class LoginScreen extends React.Component {
         })
             .then((response) => {
                 if (response.status === 200) {
-                    setUserInfo(this.state.email, 'true');
+                    setUserInfo(this.state.email, response._bodyText, 'true');
                     this.props.navigation.state.params.refreshFunction();
                     this.props.navigation.navigate('Home');
                 } else
