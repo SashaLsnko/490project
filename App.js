@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import SplashScreen from "react-native-splash-screen"
+//import SplashScreen from "react-native-splash-screen"
 import { HomeScreen, Fake, LoggedHome } from './components/Home';
 import RegistrationScreen from './components/Registration';
 import LoginScreen from './components/Login';
@@ -117,7 +117,7 @@ const AppContainer = createAppContainer(AppNavigator);
 export default class App extends React.Component {
 
     componentDidMount() {
-        SplashScreen.hide();
+        //SplashScreen.hide();
     }
 
     render() {

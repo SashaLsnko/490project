@@ -27,6 +27,14 @@ class PairingScreen extends React.Component {
         this.props.navigation.navigate('Home');
     };
 
+    componentDidMount() {
+      //this.getLocation();
+    }
+
+    componentWillUnmount() {
+      // /alert("Unmounting");
+    }
+
     hasLocationPermission = async () => {
       if (Platform.OS === 'ios' ||
           (Platform.OS === 'android' && Platform.Version < 23)) {
@@ -63,7 +71,9 @@ class PairingScreen extends React.Component {
       this.setState({ loading: true }, () => {
         Geolocation.getCurrentPosition(
           (position) => {
-            setBase(position.coords.latitude, position.coords.longitude);
+            setBase(position.coords.latitude.toString(),
+             position.coords.longitude.toString());
+            //alert(JSON.stringify(position));
             // this.setState({ location: position, loading: false, base: position });
             // alert('base set');
             //alert(this.state.base.coords.longitude);

@@ -1,5 +1,6 @@
 import React from "react";
-import {Dimensions, Image, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import {Dimensions, Image, StyleSheet,
+   Text, TouchableOpacity, View, Platform} from "react-native";
 import { commonStyles, PcInfo } from "./common";
 import * as storage from "../utils";
 import {AsyncStorage} from "react-native";
@@ -16,6 +17,8 @@ class ManageDevice extends React.Component {
       super(props);
       this.watchId = null;
       this.pcState = null;
+      this.inRangeCount = 1;
+      this.outRangeCount = 1;
       this.state = {
         email: '',
         key: '',
@@ -44,11 +47,11 @@ class ManageDevice extends React.Component {
     };
 
     componentDidMount() {
-      // GET PC STATE!!!!!!!!!!!!!!!!! (POLL) 
+      // GET PC STATE!!!!!!!!!!!!!!!!! (POLL)
       this._getField('latitude', (lat) => {
         this._getField('longitude', (lon) => {
           this.setState({baseLat: lat, baseLon: lon}, () => {
-            this.getLocationUpdates();
+            //this.getLocationUpdates();
           });
         });
       });
@@ -62,6 +65,10 @@ class ManageDevice extends React.Component {
         this.setState({ iv: iv });
       });
       this._getField('pcName', (value) => {this.setState({ pcName: value })});
+
+      tmt = setTimeout(() => {
+        alert(JSON.stringify(this.state));
+      }, 3000);
     }
 
     componentWillUnmount() {
@@ -103,22 +110,35 @@ class ManageDevice extends React.Component {
       this.setState({ updatesEnabled: true }, () => {
         this.watchId = Geolocation.watchPosition(
           (position) => {
+            //alert(JSON.stringify(position));
             this.setState({ location: position });
             ret = this.geoDistance(position.coords.latitude,
                           position.coords.longitude,
                           this.state.baseLat,
                           this.state.baseLon);
-            alert(ret); // distance between base and phone
+            //alert(ret); // distance between base and phone
             if( ret < 0.00005) {
-              // only send if previous command was not the same
-              if (this.pcState!='unlocked') {
-                this.sendEncryptedCommand(this.state.email,'unlock');
+              this.inRangeCount += 1;
+              this.outRangeCount = 1;
+              if (this.inRangeCount % 5 == 0) {
+                alert("UNLOCK");
               }
+              // only send if previous command was not the same
+              //this.sendEncryptedCommand(this.state.email,'unlock');
+              // if (this.pcState!='unlocked') {
+              //   this.sendEncryptedCommand(this.state.email,'unlock');
+              // }
             } else {
-              // only send if previous command was not the same
-              if (this.pcState!='locked') {
-                this.sendEncryptedCommand(this.state.email,'lock');
+              this.outRangeCount += 1;
+              this.inRangeCount = 1;
+              if (this.outRangeCount % 5 == 0) {
+                alert("LOCK");
               }
+              // only send if previous command was not the same
+              //this.sendEncryptedCommand(this.state.email,'lock');
+              // if (this.pcState!='locked') {
+              //   this.sendEncryptedCommand(this.state.email,'lock');
+              // }
             }
             console.log(position);
           },
@@ -126,13 +146,14 @@ class ManageDevice extends React.Component {
             this.setState({ location: error });
             console.log(error);
           },
-          { enableHighAccuracy: true, distanceFilter: 0, interval: 2000, fastestInterval: 1000 }
+          { enableHighAccuracy: true, distanceFilter: 0, interval: 1000, fastestInterval: 500 }
         );
       });
     }
 
     removeLocationUpdates = () => {
         if (this.watchId !== null) {
+          alert(this.watchId);
             Geolocation.clearWatch(this.watchId);
             this.setState({ updatesEnabled: false })
         }
@@ -187,7 +208,7 @@ class ManageDevice extends React.Component {
       // To print or store the binary data, you may convert it to hex
       var cmd = aesjs.utils.hex.fromBytes(encryptedBytes);
 
-      fetch('http://sls.alaca.ca/saveCommands', {
+      fetch('https://sls.alaca.ca/saveCommands', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -214,6 +235,18 @@ class ManageDevice extends React.Component {
 
     geoDistance(lat1, lon1, lat2, lon2) {
       return Math.abs(lat1-lat2) + Math.abs(lon1-lon2)
+    }
+
+    geoDistance2(lat1, lon1, lat2, lon2){  // generally used geo measurement function
+        var R = 6378.137; // Radius of earth in KM
+        var dLat = lat2 * Math.PI / 180 - lat1 * Math.PI / 180;
+        var dLon = lon2 * Math.PI / 180 - lon1 * Math.PI / 180;
+        var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+        Math.sin(dLon/2) * Math.sin(dLon/2);
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        var d = R * c;
+        return d * 1000; // meters
     }
 
     sendCommand(user, cmd) {
