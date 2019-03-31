@@ -7,7 +7,6 @@ const height = Dimensions.get('window').height; //full height
 
 class RegistrationScreen extends React.Component {
     state= {
-        username : "",
         email: "",
         password: "",
         confirmPassword: ""
@@ -46,26 +45,46 @@ class RegistrationScreen extends React.Component {
     }
 
     render() {
+
+        const checkPassword = () => {
+            const lowerCaseLetters = /[a-z]/g;
+            const upperCaseLetters = /[A-Z]/g;
+            const numbers = /[0-9]/g;
+            const specialCharacters = /[!@#$%^&*(),.?":{}|<>]/g;
+            return (
+                this.state.password.length > 7 &&
+                lowerCaseLetters.test(this.state.password) &&
+                upperCaseLetters.test(this.state.password) &&
+                numbers.test(this.state.password) &&
+                specialCharacters.test(this.state.password)
+            );
+        };
+
+        const checkEmail = () => {
+            const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ ;
+            return reg.test(this.state.email);
+        };
+
         const register = () =>{
-            if (this.state.username && this.state.email && this.state.password
+            if (this.state.email && this.state.password
                 && this.state.confirmPassword) {
                 if (this.state.password === this.state.confirmPassword) {
-                    this.sendUserInformation(this.state.email, this.state.password);
-                } else {
-                    alert("The password in two fields should match")
-                }
-            } else {
-                alert("please fill in username and password fields")
-            }
+                    if (checkPassword()) {
+                        if (checkEmail()) this.sendUserInformation(this.state.email, this.state.password);
+                        else alert("Please register with a valid email")
+                    }
+                    else alert("Please make sure to include an upper-case letter, " +
+                            "a number, and a special character")
+                } else alert("The password in two fields should match")
+            } else alert("please fill in email and password fields")
         };
         return (
             <View style={styles.fields}>
-                <Text style={commonStyles.instructions}>
-                    Create your account</Text>
-                <TextField
-                    secure = {false}
-                    placeholder="Full Name"
-                    onChangeFn={ (username) => this.setState({username: username})}/>
+                <Text style={styles.instructions}>
+                    Please use a valid Email.
+                    Password must include an upper-case letter,
+                    a number, and a special character, and be longer than 7 characters
+                </Text>
                 <TextField
                     secure = {false}
                     placeholder="Email"
@@ -98,6 +117,11 @@ const styles = StyleSheet.create({
         height: height*0.8,
         margin: 'auto',
         alignItems: "center"
+    },
+    instructions: {
+        fontStyle: "italic",
+        fontSize: 15,
+        marginHorizontal: 20
     }
 });
 
