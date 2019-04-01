@@ -131,6 +131,23 @@ class HomeScreen extends React.Component {
 }
 
 class Fake extends React.Component {
+    state = {
+        loggedIn: true,
+        paired: true
+    };
+
+    refreshUserInfo () {
+        isLoggedIn().then(response => {
+            this.setState({ loggedIn: response === 'true' })
+        });
+        isPaired().then(response => {
+            this.setState({ paired: response === 'true' })
+        });
+    }
+
+    componentDidMount() {
+        this.refreshUserInfo();
+    }
     render() {
         const {navigate} = this.props.navigation;
         return (
@@ -192,6 +209,11 @@ class Fake extends React.Component {
                 <Button
                     title="AES example"
                     onPress={() => navigate('EncryptionScreen')}
+                />
+                <Button
+                    title="Confirmation screen"
+                    onPress={() => navigate('Confirmation',
+                        {refreshFunction: this.refreshUserInfo.bind(this)})}
                 />
             </View>
         );

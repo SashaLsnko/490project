@@ -12,6 +12,33 @@ class RegistrationScreen extends React.Component {
         confirmPassword: ""
     };
 
+    sendConfirmationLink () {
+        fetch('http://sls.alaca.ca/sendConfirmEmail', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                uname: this.state.email,
+            }),
+        }).then((response) => {
+            if (response.status === 200) {
+                alert("We've sent you a confirmation email. Please check your inbox");
+                setUserInfo(this.state.email, response._bodyText, 'true');
+                this.props.navigation.state.params.refreshFunction();
+                this.props.navigation.navigate('Home');
+            } else {
+                if (response.status === 400) {
+                    alert("Oops, something went wrong. Are you sure you provided a valid email? Try again.");
+                } else {
+                    alert("Oops, something went wrong. Are you sure you provided a valid email? Try again.");
+                }
+            }
+        })
+            .catch(function(error) { alert(error) });
+    }
+
     sendUserInformation() {
         fetch('http://sls.alaca.ca/register', {
             method: 'POST',
@@ -26,20 +53,18 @@ class RegistrationScreen extends React.Component {
         })
             .then((response) => {
                 if (response.status === 200) {
-                    setUserInfo(this.state.email, response._bodyText, 'true');
-                    this.props.navigation.state.params.refreshFunction();
-                    this.props.navigation.navigate('Home');
-                } else
+                    this.sendConfirmationLink();
+                } else {
                     if (response.status === 400) {
                         alert("Your Username already exists. Perhaps you would like to log in?", "",
                             [
                                 {text: "Try Again"},
                                 {text: "Login",
-                                onPress : () => this.props.navigation.navigate('Login',
-                                {refreshFunction: this.props.navigation.state.params.refreshFunction})},
+                                    onPress : () => this.props.navigation.navigate('Login',
+                                        {refreshFunction: this.props.navigation.state.params.refreshFunction})},
                             ]);
-                    } else
-                        alert("Oops, something went wrong. Check your Username and Password!")
+                    } else alert("Oops, something went wrong. Check your Username and Password!")
+                }
             })
             .catch(function(error) { alert(error) });
     }
@@ -70,8 +95,9 @@ class RegistrationScreen extends React.Component {
                 && this.state.confirmPassword) {
                 if (this.state.password === this.state.confirmPassword) {
                     if (checkPassword()) {
-                        if (checkEmail()) this.sendUserInformation(this.state.email, this.state.password);
-                        else alert("Please register with a valid email")
+                        if (checkEmail()) {
+                            this.sendUserInformation();
+                        } else alert("Please register with a valid email")
                     }
                     else alert("Please make sure to include an upper-case letter, " +
                             "a number, and a special character")

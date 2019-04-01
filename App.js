@@ -16,6 +16,7 @@ import GeolocationExample from "./components/GeolocationExample.js";
 import AESexample from "./components/AESexample.js";
 import ForgotPasswordScreen from "./components/forgotPassword";
 import AboutScreen from "./components/About";
+import ConfirmationScreen from "./components/Confirmation";
 
 import { colors } from "./components/common";
 
@@ -105,6 +106,14 @@ const AppNavigator = createStackNavigator(
         AboutScreen :{
             screen: AboutScreen,
             navigationOptions: getHeader("About")
+        },
+        Confirmation : {
+            screen: ConfirmationScreen,
+            navigationOptions: {
+                header: null,
+                headerBackTitle: null,
+            }
+
         }
     },
     {

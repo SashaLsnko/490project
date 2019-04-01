@@ -14,6 +14,30 @@ class ChangeEmailView extends React.Component {
         oldUsername : ""
     };
 
+    sendConfirmationLink () {
+        fetch('http://sls.alaca.ca/sendConfirmEmail', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                uname: this.state.newUsername,
+            }),
+        })
+            .then((response) => {
+                if (response.status === 200) {
+                    alert("We've sent you a confirmation email. Please check your inbox");
+                    setUserInfo(this.state.newUsername, 'true', 'true');
+                    this.props.refresh();
+                    this.props.navigate();
+                } else {
+                    alert("Oops, something went wrong. Are you sure you provided a valid email? Try again.");
+                }
+        })
+            .catch(function(error) { alert(error) });
+    }
+
     changeUsername() {
         fetch('http://sls.alaca.ca/changeUsername', {
             method: 'POST',
@@ -22,19 +46,17 @@ class ChangeEmailView extends React.Component {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                oldUname: this.state.oldUsername,
-                newUname: this.state.newUsername,
+                olduname: this.state.oldUsername,
+                newuname: this.state.newUsername,
                 pass: this.state.password,
             }),
         })
             .then((response) => {
                 if (response.status === 200) {
-                    setUserInfo(this.state.newUsername, 'true');
-                    this.props.refresh();
-                    this.props.navigate();
-                    alert("Username successfully changed!");
-                } else
-                    alert("Oops, something went wrong. Check your Username and Password!")
+                    this.sendConfirmationLink();
+                } else {
+                    alert("Oops, something went wrong. Check your Username and Password!");
+                }
             })
             .catch(function(error) { alert(error) });
     }
@@ -46,10 +68,6 @@ class ChangeEmailView extends React.Component {
                 this.setState({oldUsername: res})
             }
         });
-
-        const prepareChangeUsername = () =>{
-            this.changeUsername(this.state.username);
-        };
 
         return (
             <View style={{...styles.changeInfoContainer, height: 200}}>
@@ -65,7 +83,7 @@ class ChangeEmailView extends React.Component {
 
                 <TouchableOpacity
                     style={commonStyles.submitButton}
-                    onPress={() => prepareChangeUsername()}>
+                    onPress={() => this.changeUsername()}>
                     <Text style={commonStyles.buttonText}>Change Email</Text>
                 </TouchableOpacity>
             </View>
