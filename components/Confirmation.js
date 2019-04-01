@@ -3,6 +3,7 @@ import {Dimensions, Image, StyleSheet, Text, TouchableOpacity, View} from "react
 import { NavigationLink, commonStyles, colors} from './common';
 import {SafeAreaView} from "react-navigation";
 import {setUserInfo, userEmail} from "../utils";
+import {AsyncStorage} from "react-native";
 
 const width = Dimensions.get('window').width; //full width
 const height = Dimensions.get('window').height; //full height
@@ -10,6 +11,23 @@ const height = Dimensions.get('window').height; //full height
 class ConfirmationScreen extends React.Component {
     state= {
         email: ""
+    };
+
+    componentDidMount() {
+      //alert(this.state.email);
+    }
+
+    _getField = async (field, callback) => {
+      try {
+        const value = await AsyncStorage.getItem(field);
+        if (value !== null) {
+          // We have data!!
+          callback(value);
+        }
+      } catch (error) {
+        // Error retrieving data
+        //alert(error);
+      }
     };
 
     sendConfirmationLink () {
@@ -25,9 +43,9 @@ class ConfirmationScreen extends React.Component {
         }).then((response) => {
             if (response.status === 200) {
                 alert("We've sent you a confirmation email. Please check your inbox");
-                setUserInfo(this.state.email, response._bodyText, 'true');
-                this.props.navigation.state.params.refreshFunction();
-                this.props.navigation.navigate('Home');
+                setUserInfo(this.state.email, response._bodyText, 'false');
+                // this.props.navigation.state.params.refreshFunction();
+                // this.props.navigation.navigate('Home');
             } else {
                 if (response.status === 400) {
                     alert("Oops, something went wrong. Are you sure you provided a valid email? Try again.");
@@ -55,14 +73,24 @@ class ConfirmationScreen extends React.Component {
                             source={require("../assets/img/logo_home.png")}
                             style={styles.logo}/>
                     </View>
+                    <View>
+                      <Text style={commonStyles.instructions}>
+                          Please confirm your email: we sent a link to {this.state.email}!
+                      </Text>
+                    </View>
                     <View style={styles.homeButtons}>
-                        <Text style={commonStyles.instructions}>
-                            Please confirm your email: we sent a link to your email!
-                        </Text>
                         <TouchableOpacity
                             style={commonStyles.submitButton}
                             onPress={this.sendConfirmationLink.bind(this)}>
                             <Text style={commonStyles.buttonText}>Re-send confirmation link</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={commonStyles.submitButton}
+                            onPress={() => {
+                              this.props.navigation.navigate('Login',
+                              {refreshFunction: this.props.navigation.state.params.refreshFunction});
+                            }}>
+                            <Text style={commonStyles.buttonText}>Login</Text>
                         </TouchableOpacity>
                         <View style={[commonStyles.alignCenter, {marginTop: 20}]}>
                             <NavigationLink text='Use another email'
@@ -80,7 +108,7 @@ class ConfirmationScreen extends React.Component {
 
 const styles = StyleSheet.create({
     logoContainer: {
-        height: height*0.6,
+        height: height*0.45,
         backgroundColor: colors.darkDarkPurle,
         width: width,
         justifyContent: 'center',

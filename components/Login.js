@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Dimensions, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Button, Dimensions, StyleSheet, Text, TouchableOpacity, View, ScrollView } from "react-native";
 import { NavigationLink, TextField, HorizontalSeparator, commonStyles } from "./common";
 import { setUserInfo } from "../utils";
 
@@ -29,6 +29,8 @@ class LoginScreen extends React.Component {
                 } else
                     if (response.status === 400) {
                         alert("Your Username or Password is incorrect");
+                    } else if (response.status == 401) {
+                        alert("Please verify your email address");
                     } else
                         alert("Oops, something went wrong. Check your Username and Password!")
             })
@@ -46,7 +48,7 @@ class LoginScreen extends React.Component {
         };
 
         return (
-            <View>
+            <ScrollView>
                 <View style={styles.formContainer}>
                     <Text style={commonStyles.instructions}>Login to your account</Text>
                     <TextField
@@ -66,7 +68,7 @@ class LoginScreen extends React.Component {
                         style={commonStyles.justifyCenter}
                         onPress={() => this.props.navigation.navigate('ForgotPassword',
                             {refreshFunction: this.props.navigation.state.params.refreshFunction})}>
-                        <Text style={commonStyles.linkText}>Forgot your passowrd?</Text>
+                        <Text style={commonStyles.linkText}>Forgot your password?</Text>
                     </TouchableOpacity>
 
                     <HorizontalSeparator/>
@@ -76,7 +78,7 @@ class LoginScreen extends React.Component {
                                         {refreshFunction: this.props.navigation.state.params.refreshFunction}) }/>
 
                 </View>
-            </View>
+            </ScrollView>
         );
     }
 }

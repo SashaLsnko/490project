@@ -155,7 +155,7 @@ class Fake extends React.Component {
                 flex: 1,
                 alignItems: "center",
                 justifyContent: "center",
-                backgroundColor: "black"
+                backgroundColor: "gray"
             }}>
                 <Text>Home Screen</Text>
                 <Button

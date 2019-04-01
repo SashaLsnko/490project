@@ -122,11 +122,11 @@ class ManageDevice extends React.Component {
                           this.state.baseLat,
                           this.state.baseLon);
             //alert(ret); // distance between base and phone
-            if( ret < 0.00005) {
+            if( ret < 0.005) {
               this.inRangeCount += 1;
               this.outRangeCount = 1;
               if (this.inRangeCount % 5 == 0) {
-                alert("UNLOCK");
+                this.sendEncryptedCommand(this.state.email,'unlock');
               }
               // only send if previous command was not the same
               //this.sendEncryptedCommand(this.state.email,'unlock');
@@ -137,7 +137,7 @@ class ManageDevice extends React.Component {
               this.outRangeCount += 1;
               this.inRangeCount = 1;
               if (this.outRangeCount % 5 == 0) {
-                alert("LOCK");
+                this.sendEncryptedCommand(this.state.email,'lock');
               }
               // only send if previous command was not the same
               //this.sendEncryptedCommand(this.state.email,'lock');
@@ -287,7 +287,7 @@ class ManageDevice extends React.Component {
         }),
       })
       .then((response) => {
-        alert(JSON.stringify(response));
+        alert(response._bodyText);
         // POLL SERVER FOR PCSTATE HERE (for like 30 seconds?)
         // UPDATE pcState accordingly
       })

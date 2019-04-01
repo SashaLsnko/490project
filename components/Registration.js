@@ -1,5 +1,5 @@
 import React from "react";
-import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Dimensions, StyleSheet, Text, TouchableOpacity, View, ScrollView } from "react-native";
 import { TextField, NavigationLink, commonStyles } from './common';
 import { setUserInfo } from '../utils'
 
@@ -25,9 +25,11 @@ class RegistrationScreen extends React.Component {
         }).then((response) => {
             if (response.status === 200) {
                 alert("We've sent you a confirmation email. Please check your inbox");
-                setUserInfo(this.state.email, response._bodyText, 'true');
-                this.props.navigation.state.params.refreshFunction();
-                this.props.navigation.navigate('Home');
+                //alert(JSON.stringify(response));
+                setUserInfo(this.state.email, null, 'false');
+                //this.props.navigation.state.params.refreshFunction();
+                this.props.navigation.navigate('Confirmation',
+                    {refreshFunction: this.props.navigation.state.params.refreshFunction});
             } else {
                 if (response.status === 400) {
                     alert("Oops, something went wrong. Are you sure you provided a valid email? Try again.");
@@ -99,13 +101,16 @@ class RegistrationScreen extends React.Component {
                             this.sendUserInformation();
                         } else alert("Please register with a valid email")
                     }
-                    else alert("Please make sure to include an upper-case letter, " +
-                            "a number, and a special character")
+                    else {
+                      alert("Please make sure to include an upper-case letter, " +
+                            "a number, and a special character");
+                      alert(this.state.password);
+                    }
                 } else alert("The password in two fields should match")
             } else alert("please fill in email and password fields")
         };
         return (
-            <View style={styles.fields}>
+            <ScrollView contentContainerStyle={styles.fields}>
                 <Text style={styles.instructions}>
                     Please use a valid Email.
                     Password must include an upper-case letter,
@@ -131,7 +136,7 @@ class RegistrationScreen extends React.Component {
                 <NavigationLink text='Already have an Account?'
                                 navigate={ () => this.props.navigation.navigate('Login',
                                     {refreshFunction: this.props.navigation.state.params.refreshFunction}) }/>
-            </View>
+            </ScrollView>
         );
     }
 }
