@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import SplashScreen from "react-native-splash-screen";
-import { HomeScreen, Fake, LoggedHome } from './components/Home';
+import { HomeScreen, LoggedHome } from './components/Home';
 import RegistrationScreen from './components/Registration';
 import LoginScreen from './components/Login';
 import PairingScreen from './components/Pairing';
@@ -9,11 +9,11 @@ import ManageDevice from './components/ManageDevice';
 import SettingsScreen from './components/Settings';
 import LoginInfoScreen from './components/LoginInfo';
 import DeviceSettingsScreen from "./components/DeviceSettings";
-import QRexample from "./components/QRexample.js";
-import HTTPexample from "./components/HTTPexample.js";
-import BLEexample from "./components/BluetoothExample.js";
-import GeolocationExample from "./components/GeolocationExample.js";
-import AESexample from "./components/AESexample.js";
+import QRexample from "./components_unused/QRexample.js";
+import HTTPexample from "./components_unused/HTTPexample.js";
+import BLEexample from "./components_unused/BluetoothExample.js";
+import GeolocationExample from "./components_unused/GeolocationExample.js";
+import AESexample from "./components_unused/AESexample.js";
 import ForgotPasswordScreen from "./components/forgotPassword";
 import AboutScreen from "./components/About";
 import ConfirmationScreen from "./components/Confirmation";
@@ -56,9 +56,6 @@ const AppNavigator = createStackNavigator(
             screen:LoginScreen,
             navigationOptions: getHeader("Login")
         },
-        Fake: {
-            screen: Fake
-        },
         LoginInfo: {
             screen: LoginInfoScreen,
             navigationOptions: getHeader("Login Info")
@@ -79,26 +76,6 @@ const AppNavigator = createStackNavigator(
             screen: SettingsScreen,
             navigationOptions: getHeader("Settings")
         },
-        QRScannerScreen: {
-            screen: QRexample,
-            navigationOptions: getHeader("QR example")
-        },
-        HTTPRequestScreen: {
-            screen: HTTPexample,
-            navigationOptions: getHeader("HTTP example")
-        },
-        BluetoothScreen: {
-          screen: BLEexample,
-          navigationOptions: getHeader("Bluetooth example")
-        },
-        GeolocationScreen: {
-          screen: GeolocationExample,
-          navigationOptions: getHeader("Geolocation example")
-        },
-        EncryptionScreen: {
-          screen: AESexample,
-          navigationOptions: getHeader("AES example")
-        },
         ForgotPassword: {
             screen: ForgotPasswordScreen,
             navigationOptions: getHeader("Reset Password")
@@ -117,7 +94,7 @@ const AppNavigator = createStackNavigator(
         }
     },
     {
-      initialRouteName: "Fake"
+      initialRouteName: "Home"
     }
 );
 

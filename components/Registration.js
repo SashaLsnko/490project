@@ -25,9 +25,8 @@ class RegistrationScreen extends React.Component {
         }).then((response) => {
             if (response.status === 200) {
                 alert("We've sent you a confirmation email. Please check your inbox");
-                //alert(JSON.stringify(response));
-                setUserInfo(this.state.email, null, 'false');
-                //this.props.navigation.state.params.refreshFunction();
+                setUserInfo(this.state.email, 'null', 'false');
+                this.props.navigation.state.params.refreshFunction();
                 this.props.navigation.navigate('Confirmation',
                     {refreshFunction: this.props.navigation.state.params.refreshFunction});
             } else {
@@ -104,7 +103,6 @@ class RegistrationScreen extends React.Component {
                     else {
                       alert("Please make sure to include an upper-case letter, " +
                             "a number, and a special character");
-                      alert(this.state.password);
                     }
                 } else alert("The password in two fields should match")
             } else alert("please fill in email and password fields")

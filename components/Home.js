@@ -130,96 +130,6 @@ class HomeScreen extends React.Component {
     }
 }
 
-class Fake extends React.Component {
-    state = {
-        loggedIn: true,
-        paired: true
-    };
-
-    refreshUserInfo () {
-        isLoggedIn().then(response => {
-            this.setState({ loggedIn: response === 'true' })
-        });
-        isPaired().then(response => {
-            this.setState({ paired: response === 'true' })
-        });
-    }
-
-    componentDidMount() {
-        this.refreshUserInfo();
-    }
-    render() {
-        const {navigate} = this.props.navigation;
-        return (
-            <View style={{
-                flex: 1,
-                alignItems: "center",
-                justifyContent: "center",
-                backgroundColor: "gray"
-            }}>
-                <Text>Home Screen</Text>
-                <Button
-                    title="Go Home"
-                    onPress={() => navigate('Home')}
-                />
-                <Button
-                    title="Go to Registration"
-                    onPress={() => navigate('Registration')}
-                />
-                <Button
-                    title="Go to Login"
-                    onPress={() => navigate('Login')}
-                />
-                <Button
-                    title="Go to Home when Logged in"
-                    onPress={() => navigate('LoggedHome')}
-                />
-                <Button
-                    title="Pair device"
-                    onPress={() => navigate('PairingScreen')}
-                />
-                <Button
-                    title="Go to Home when Paired"
-                    onPress={() => navigate('PairedHome')}
-                />
-                <Button
-                    title="Go to Manage Device"
-                    onPress={() => navigate('ManageDevice')}
-                />
-                <Button
-                    title="Go to Settings"
-                    onPress={() => navigate('SettingsScreen')}
-                />
-                <Button
-                    title="QR-Code Scanner"
-                    onPress={() => navigate('QRScannerScreen')}
-                />
-                <Button
-                    title="HTTP request example"
-                    onPress={() => navigate('HTTPRequestScreen')}
-                />
-                <Button
-                    title="Bluetooth example"
-                    onPress={() => navigate('BluetoothScreen')}
-                />
-                <Button
-                    title="Geolocation example"
-                    onPress={() => navigate('GeolocationScreen')}
-                />
-                <Button
-                    title="AES example"
-                    onPress={() => navigate('EncryptionScreen')}
-                />
-                <Button
-                    title="Confirmation screen"
-                    onPress={() => navigate('Confirmation',
-                        {refreshFunction: this.refreshUserInfo.bind(this)})}
-                />
-            </View>
-        );
-    }
-}
-
 const styles = StyleSheet.create({
     logoContainer: {
         height: height*0.6,
@@ -242,6 +152,5 @@ const styles = StyleSheet.create({
 });
 
 export {
-    HomeScreen,
-    Fake
+    HomeScreen
 };
