@@ -11,6 +11,7 @@ var unixTime = require('unix-time');
 import Geolocation from 'react-native-geolocation-service';
 
 const width = Dimensions.get('window').width; //full width
+const height = Dimensions.get('window').height;
 
 class ManageDevice extends React.Component {
     constructor(props) {
@@ -19,6 +20,7 @@ class ManageDevice extends React.Component {
       this.pcState = null;
       this.inRangeCount = 1;
       this.outRangeCount = 1;
+      this.statusPoll = null;
       this.state = {
         email: '',
         token: '',
@@ -30,7 +32,9 @@ class ManageDevice extends React.Component {
         baseLon: null,
         updatesEnabled: false,
         loading: false,
-        location: {}
+        location: {},
+        battery: 0,
+        status: "unlocked"
        };
     }
 
@@ -59,7 +63,12 @@ class ManageDevice extends React.Component {
       this._getField('userEmail', (email) => {this.setState({ email: email })});
       this._getField('userToken', (token) => {
         //alert(token);
-        this.setState({ token: token });
+        this.setState({ token: token }, () => {
+          this.getPCStatus(this.state.token);
+          this.statusPoll = setInterval(() => {
+            this.getPCStatus(this.state.token);
+          }, 5000);
+        });
       });
       this._getField('key', (value) => {
         key = value.split('+').map(Number);
@@ -71,13 +80,12 @@ class ManageDevice extends React.Component {
       });
       this._getField('pcName', (value) => {this.setState({ pcName: value })});
 
-      tmt = setTimeout(() => {
-        //alert(JSON.stringify(this.state));
-      }, 3000);
+
     }
 
     componentWillUnmount() {
       this.removeLocationUpdates();
+      clearInterval(this.statusPoll);
     }
 
     hasLocationPermission = async () => {
@@ -287,9 +295,11 @@ class ManageDevice extends React.Component {
         }),
       })
       .then((response) => {
-        alert(response._bodyText);
-        // POLL SERVER FOR PCSTATE HERE (for like 30 seconds?)
-        // UPDATE pcState accordingly
+        plaintext = response._bodyText;
+        listResponse = plaintext.slice(1,plaintext.length-1).split(",");
+        status = (listResponse[0]=='"false"') ? "unlocked" : "locked";
+        battery = parseInt(listResponse[1].slice(1,listResponse[1].length-1));
+        this.setState({battery: battery, status: status});
       })
       .catch(function(error) { alert(error) });
     }
@@ -300,7 +310,7 @@ class ManageDevice extends React.Component {
                 <Text>{this.state.email}</Text>
                 <View style={commonStyles.alignCenter}>
                     <Text  style={commonStyles.instructions}>You are connected to:</Text>
-                    <PcInfo pcName={this.state.pcName}/>
+                    <PcInfo pcName={this.state.pcName} battery={this.state.battery} status={this.state.status}/>
                     <View style={{flexDirection: 'row'}}>
                         <TouchableOpacity onPress={() => (this.sendEncryptedCommand(this.state.token,'lock'))}>
                             <Image
@@ -319,18 +329,11 @@ class ManageDevice extends React.Component {
                         onPress={() => this.props.navigation.navigate('SettingsScreen')}>
                         <Text style={commonStyles.buttonText}>Settings</Text>
                     </TouchableOpacity>
-                    <Button
-                        title="Enable Geolocation"
-                        onPress={() => this.getLocationUpdates()}
-                    />
-                    <Button
-                        title="Show State Info"
-                        onPress={() => alert(JSON.stringify(this.state))}
-                    />
-                    <Button
-                        title="Get PC status"
-                        onPress={() => this.getPCStatus(this.state.token)}
-                    />
+                    <TouchableOpacity
+                        style={[commonStyles.submitButton, {marginTop: height*0.5, marginBottom: 50}]}
+                        onPress={() => this.getLocationUpdates()}>
+                        <Text style={commonStyles.buttonText}>Enable Geolocation</Text>
+                    </TouchableOpacity>
                 </View>
             </ScrollView>
         );

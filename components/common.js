@@ -49,8 +49,8 @@ class PcInfo extends React.Component {
                     style={styles.computerImage}/>
                 <Text style={styles.pcText}>
                     <Text style={styles.pcTextBold}>{this.props.pcName} {"\n"}</Text>
-                    <Text style={styles.pcTextBold}>IP:</Text> 123.456.78.910 {"\n"}
-                    <Text style={styles.pcTextBold}>Bluetooth:</Text> off {"\n"}
+                    <Text style={styles.pcTextBold}>Battery: </Text>{this.props.battery} {"%\n"}
+                    <Text style={styles.pcTextBold}>Status: </Text>{this.props.status} {"\n"}
                 </Text>
             </View>
         );
