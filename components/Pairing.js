@@ -1,12 +1,9 @@
 import React from "react";
 import {
-  Button,
   PermissionsAndroid,
   Platform,
   StyleSheet,
   Text,
-  TouchableOpacity,
-  ToastAndroid,
   View
 } from 'react-native';
 import { commonStyles, colors } from "./common";
@@ -21,18 +18,8 @@ class PairingScreen extends React.Component {
       location: {}
     }
 
-    temp() {
-        setPairing("Sasha's PC", 'true')
-        this.props.navigation.state.params.refreshFunction();
-        this.props.navigation.navigate('Home');
-    };
-
     componentDidMount() {
       //this.getLocation();
-    }
-
-    componentWillUnmount() {
-      // /alert("Unmounting");
     }
 
     hasLocationPermission = async () => {
@@ -90,11 +77,12 @@ class PairingScreen extends React.Component {
 
     pairDevice(value) {
       split = value.split('|');
-      alert(split);
+      alert("Seems like you are paired!");
       key = split[0];
       iv = split[1];
       pcName = split[2];
       setPairing(key, iv, pcName, 'true');
+      this.props.navigation.state.params.refreshFunction();
       this.getLocation();
     }
 

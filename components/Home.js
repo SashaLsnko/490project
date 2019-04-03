@@ -40,13 +40,9 @@ class HomeScreen extends React.Component {
                             <TouchableOpacity
                                 style={commonStyles.submitButton}
                                 onPress={() => this.props.navigation.navigate('ManageDevice',
-                                    {refreshFunction: this.refreshUserInfo.bind(this)})}>
+                                    {refreshFunction: this.refreshUserInfo.bind(this),
+                                        paired: this.state.paired})}>
                                 <Text style={commonStyles.buttonText}>Manage Device</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity
-                                style={commonStyles.submitButton}
-                                onPress={() => this.props.navigation.navigate('PairingScreen')}>
-                                <Text style={commonStyles.buttonText}>Pair</Text>
                             </TouchableOpacity>
                             <TouchableOpacity
                                 style={commonStyles.submitButton}
@@ -56,6 +52,11 @@ class HomeScreen extends React.Component {
                                         paired: this.state.paired
                                     })}>
                                 <Text style={commonStyles.buttonText}>Settings</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                style={commonStyles.submitButton}
+                                onPress={() => this.props.navigation.navigate('AboutScreen')}>
+                                <Text style={commonStyles.buttonText}>About</Text>
                             </TouchableOpacity>
                         </View>
                     </View>

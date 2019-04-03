@@ -13,6 +13,38 @@ import Geolocation from 'react-native-geolocation-service';
 const width = Dimensions.get('window').width; //full width
 const height = Dimensions.get('window').height;
 
+function DisplayLockButton(props) {
+    const status = props.status;
+    if (status === "updating" || status === "locked") {
+        return <Image
+            source={
+                require("../assets/img/lock_button_grey.png")
+            }
+            style={styles.lockButtons}/>;
+    }
+    return <Image
+        source={
+            require("../assets/img/lock_button.png")
+        }
+        style={styles.lockButtons}/>;
+}
+
+function DisplayUnlockButton(props) {
+    const status = props.status;
+    if (status === "updating" || status === "unlocked") {
+        return <Image
+            source={
+                require("../assets/img/unlock_button_grey.png")
+            }
+            style={styles.lockButtons}/>;
+    }
+    return <Image
+        source={
+            require("../assets/img/unlock_button.png")
+        }
+        style={styles.lockButtons}/>;
+}
+
 class ManageDevice extends React.Component {
     constructor(props) {
       super(props);
@@ -34,7 +66,8 @@ class ManageDevice extends React.Component {
         loading: false,
         location: {},
         battery: 0,
-        status: "unlocked"
+        status: "unlocked",
+        sentCommandTime : null
        };
     }
 
@@ -236,7 +269,7 @@ class ManageDevice extends React.Component {
         }),
       })
       .then((response) => {
-        //alert(JSON.stringify(response));
+          this.setState({status: "updating", sentCommandTime: new Date() });
         // POLL SERVER FOR PCSTATE HERE (for like 30 seconds?)
         // UPDATE pcState accordingly
       })
@@ -295,10 +328,20 @@ class ManageDevice extends React.Component {
         }),
       })
       .then((response) => {
-        plaintext = response._bodyText;
-        listResponse = plaintext.slice(1,plaintext.length-1).split(",");
-        status = (listResponse[0]=='"false"') ? "unlocked" : "locked";
-        battery = parseInt(listResponse[1].slice(1,listResponse[1].length-1));
+        let plaintext = response._bodyText;
+        let listResponse = plaintext.slice(1,plaintext.length-1).split(",");
+        let currentTime = new Date();
+        let secondsPassed = 0;
+        if (this.state.sentCommandTime) {
+            secondsPassed = (currentTime - this.state.sentCommandTime) / 1000;
+        }
+        if (secondsPassed > 5 || secondsPassed === 0) {
+            status = (listResponse[0] ==='"false"') ? "unlocked" : "locked";
+            this.setState({sentCommandTime: null});
+        } else {
+            status = "updating"
+        }
+        let battery = parseInt(listResponse[1].slice(1,listResponse[1].length-1));
         this.setState({battery: battery, status: status});
       })
       .catch(function(error) { alert(error) });
@@ -307,26 +350,27 @@ class ManageDevice extends React.Component {
     render() {
         return (
             <ScrollView>
-                <Text>{this.state.email}</Text>
                 <View style={commonStyles.alignCenter}>
                     <Text  style={commonStyles.instructions}>You are connected to:</Text>
                     <PcInfo pcName={this.state.pcName} battery={this.state.battery} status={this.state.status}/>
                     <View style={{flexDirection: 'row'}}>
                         <TouchableOpacity onPress={() => (this.sendEncryptedCommand(this.state.token,'lock'))}>
-                            <Image
-                                source={require("../assets/img/lock_button.png")}
-                                style={styles.lockButtons}/>
+                            <DisplayLockButton
+                            status={this.state.status}
+                            />
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => (this.sendEncryptedCommand(this.state.token,'unlock'))}>
-                            <Image
-                                source={require("../assets/img/unlock_button.png")}
-                                style={styles.lockButtons}/>
+                            <DisplayUnlockButton
+                                status={this.state.status}
+                            />
                         </TouchableOpacity>
                     </View>
 
                     <TouchableOpacity
                         style={commonStyles.submitButton}
-                        onPress={() => this.props.navigation.navigate('SettingsScreen')}>
+                        onPress={() => this.props.navigation.navigate('SettingsScreen',
+                            {refreshFunction: this.props.navigation.state.params.refreshFunction,
+                                paired: this.props.navigation.getParam('paired', false)})}>
                         <Text style={commonStyles.buttonText}>Settings</Text>
                     </TouchableOpacity>
                     <TouchableOpacity

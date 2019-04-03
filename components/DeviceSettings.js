@@ -12,7 +12,7 @@ class DeviceSettingsScreen extends React.Component {
     };
 
     unpairDevice() {
-        setPairing("", 'false');
+        setPairing("", "","","false");
         this.props.navigation.state.params.refreshFunction();
         this.props.navigation.goBack();
     }
